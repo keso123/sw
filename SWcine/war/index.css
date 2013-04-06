@@ -12,6 +12,23 @@ body {
 	background: #000080;
 }
 
+h1 {
+	margin: 0px;
+	padding: 10px 0;
+	font-size: 34px;
+	color: #ffffff;
+	font-weight: normal;	
+}
+
+h3 {
+	margin: 0 0 10px 0;
+	padding: 0 0 5px 0;
+	font-size: 20px;
+	color: #ffffff;
+	font-weight: normal;	
+	border-bottom: 1px dotted #ffffff;	
+}
+
 /* top-bar */
 
 #top_bar {
@@ -136,3 +153,56 @@ body {
 }
 
 /* top-menu */
+
+/* content-panel */
+
+#content_panel {
+	clear: both;
+	width: 940px;
+	padding: 40px 20px 0 20px;
+	margin: 0 auto;
+	background: #FFFFFF;
+}
+
+.left_column {
+	float: left;
+	color: #FFFF00;
+	width: 160px;
+	padding: 0px 20px;
+	background: #FFFF00;
+}
+
+.left_column .box {
+	margin-bottom: 30px;
+}
+
+.left_column form {
+	margin: 0px;
+	padding: 0px;
+}
+
+.left_menu {
+	list-style: none;
+	padding: 0px;
+	margin: 0 0 0 0;
+}
+
+.left_menu li {
+	padding: 0;
+	margin: 5px 0;
+}
+
+.left_menu li a {
+	display: block;
+	padding: 3px 0;
+	color: #e4e4e4;
+	font-weight: normal;	
+	text-decoration: none;
+}
+
+.left_menu li a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+/* content-panel */
