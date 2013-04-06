@@ -1,0 +1,2 @@
+# Module SWcine
+# RPC service class, partial path of RPC policy file
