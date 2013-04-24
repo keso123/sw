@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <link type="text/css" rel="stylesheet" href="tutorial.css">
+
+    <title>TUTORIAL HTML5</title>
+</head>
+<body>
+
+<div class="content">
+
+	<div class="main">
+	
+		<div class="main_head">
+			<h1>Tutorial HTML5</h1>
+		</div>
+		<div class="main_body">
+		
+			<!-- INDICE -->
+				<a id="ind"></a>
+				<h2>Índice</h2>
+				
+				<ol>
+					<li><a href="#intro">Introducción</a></li>
+					<li><a href="#compatibility">Compatibilidad en navegadores con HTML5</a></li>
+					<li><a href="#elements">Nuevos elementos</a>
+						<ul>
+							<li><a href="#canvas">Canvas</a></li>
+							<li><a href="#svg">Inline SVG</a></li>
+							<li><a href="#input">Input</a></li>
+							<li><a href="#video">Vídeo</a></li>
+							<li><a href="#audio">Audio</a></li>
+						</ul>
+					</li>
+					<li><a href="#deprecated">Elementos eliminados</a></li>
+					<li><a href="#javascript">JavaScript</a>
+						<ul>
+							<li><a href="#web_storage">Web Storage</a></li>
+							<li><a href="#web_workers">Web Workers</a></li>
+							<li><a href="#web_sockets">Web Sockets</a></li>
+							<li><a href="#drag_drop">Drag and Drop</a></li>
+							<li><a href="#geolocation">Geolocalización</a></li>
+						</ul>
+					</li>
+					<li><a href="#reference">Referencias</a></li>
+					<li><a href="../index.html">Volver a la página principal</a></li>
+				</ol>
+			<!--  FIN INDICE -->
+			<!--  CONTENIDO  -->
+				<a id="intro"></a>
+				<h2>1. Introducción</h2>
+				
+				<p>
+Este tutorial pretende ser una guía sencilla para mostrar las nuevas características de HTML5.
+				</p>
+				<p>
+HTML5 es la quinta versión del lenguaje HTML. Según la W3C está en modo experimental, aunque cada vez es más usado por desarrolladores Web.
+				</p>
+				<p>
+La versión anterior carece de características necesarias para la creación de aplicaciones modernas. Con HTML5 ya no es necesario el uso de Flash para el desarrollo de aplicaciones que superan las habilidades de un navegador (audio, vídeo, animaciones, etc.).
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--             -->
+<!-- FINAL INTRO -->
+<!--             -->
+				
+				<a id="compatibility"></a>
+				<h2>2. Compatibilidad en navegadores con HTML5</h2>
+				
+				<p>
+HTML5 oficialmente todavía no es un estándar, por lo tanto no todos los nevegadores lo soportan completamente. Aún así la mayoría de ellos continúan añadiendo nuevas características en sus nuevas versiones.
+				</p>
+				
+				<p>
+La inmensa mayoría de las características de HTML5 ya son soportadas por todos los navegadores en sus últimas versiones.
+				</p>
+				
+				<p>
+Algo que suele preocupar es si se puede portar el código de HTML a HTML5. La respuesta es sí, HTML5 es completamente retrocompatible con HTML. Lo único que tienes que hacer para empezar a usar HTML5 es cambiar el DOCTYPE por el siguiente:
+				</p>
+				
+				<pre>
+				<code>
+	&lt;!DOCTYPE html&gt;
+				</code>
+				</pre>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--                      -->
+<!-- FINAL COMPATIBILIDAD -->
+<!--                      -->
+
+				<a id="elements"></a>
+				<h2>3. Nuevos elementos</h2> 
+				
+				<p>
+&lt;article&gt; : define un artículo.
+				</p>
+				<p>
+&lt;aside&gt; : define contenido aparte del contenido de la página.
+				</p>
+				<p>
+&lt;bdi&gt; : aísla una parte del texto al que se le puede dar formato de una forma distinta al formato que hay fuera.
+				</p>
+				<p>
+&lt;comando&gt; : define un botón de comando que el usuario puede invocar.
+				</p>
+
+				<p>
+&lt;details&gt; : define detalles adicionales que el usuario puede ver o esconder.
+				</p>
+				
+				<p>
+&lt;dialog&gt; : define un diálogo o una ventana.
+				</p>
+				
+				<p>
+&lt;summary&gt; : define un encabezado visible para un elemento &lt;details&gt;
+				</p>
+				
+				<p>
+&lt;figure&gt; : específica contenido como ilustraciones, diagramas, fotos, etc.
+				</p>
+				
+				<p>
+&lt;figcaption&gt; : define un título para un elemento &lt;figure&gt;.
+				</p>
+				
+				<p>
+&lt;footer&gt; : define un pie de página para una sección o documento.
+				</p>
+				
+				<p>
+&lt;header&gt; : define un encabezado para una sección o documento.
+				</p>
+				
+				<p>
+&lt;hgroup&gt; : agrupa un conjunto de elementos &lt;h1&gt; a &lt;h6&gt; cuando el encabezado tiene muchos niveles.
+				</p>
+				
+				<p>
+&lt;mark&gt; : define un texto remarcado o resaltado.
+				</p>
+				
+				<p>
+&lt;meter&gt; : define una medida escalar dentro de un rango conocido.
+				</p>
+				
+				<p>
+&lt;nav&gt; : define links de navegación.
+				</p>
+				
+				<p>
+&lt;progress&gt; : representa el progreso de una tarea.
+				</p>
+				
+				<p>
+&lt;ruby&gt; : define una anotación ruby (para tipografía del Este de Asia).
+				</p>
+				
+				<p>
+&lt;rt&gt; :  define una explicación/pronunciación de caracteres (para tipografía del Este de Asia).
+				</p>
+				
+				<p>
+&lt;rp&gt; : define qué mostrar en buscadores que no soportan anotaciones ruby.
+				</p>
+				
+				<p>
+&lt;section&gt; : define una sección de un documento.
+				</p>
+				
+				<p>
+&lt;time&gt; : define una fecha/hora.
+				</p>
+				
+				<p>
+&lt;wbr&gt; : define un posible salto de línea.
+				</p>
+				
+				<p>
+&lt;audio&gt; : define un contenido de audio.
+				</p>
+				
+				<p>
+&lt;video&gt; : define un vídeo o película.
+				</p>
+				
+				<p>
+&lt;source&gt; : define múltiples elementos de medios de &lt;video&gt; y &lt;audio&gt;.
+				</p>
+				
+				<p>
+&lt;embed&gt; : define un contenedor para una aplicación externa o contenido interactivo (plug-in).
+				</p>
+				
+				<p>
+&lt;track&gt; : define pistas de texto para &lt;video&gt; y &lt;audio&gt;.
+				</p>
+				
+				<p>
+&lt;canvas&gt; : se usa para pintar gráficos, sobre la marcha, utilizando scripts (normalmente JavaScripts).
+				</p>
+				
+				<p>
+&lt;datalist&gt; : especifica una lista de opciones predefinidas para controles de entrada.
+				</p>
+				
+				<p>
+&lt;keygen&gt; : define un campo generador de claves (para formularios).
+				</p>
+				
+				<p>
+&lt;output&gt; : define el resultado de un cálculo.
+				</p>
+			
+				<a href="#ind">volver al índice</a>
+
+<!--                 -->
+<!-- FINAL ELEMENTOS -->
+<!--                 -->
+
+				<a id="canvas"></a>
+				<h3>3.1. Canvas</h3>
+
+				<p>
+Canvas (&lt;canvas&gt;) es un elemento de HTML5 que sirve para dibujar gráficos sobre la marcha. Normalmente se utiliza JavaScript para ello. El elemento &lt;canvas&gt; es sólo un contenedor, para dibujar es necesario utilizar scripts.
+				</p>
+				
+				<p>
+Un lienzo canvas se especifica con la etiqueta &lt;canvas&gt;. Es necesario añadir un id para luego poder ser referenciado por un script.
+				</p>
+				
+				<p>
+Ejemplo:
+				</p>
+				<pre>
+				<code>
+	&lt;canvas id="Canvas" width="400" height="200"
+	style="border:1px solid blue;"&gt;
+	&lt;/canvas&gt;
+				</code>
+				</pre>
+				
+				<p>
+Existen numerosas funciones para dibujar en el lienzo. Desde funciones para dibujar líneas rectas, rectángulos, círculos hasta escribir texto, pintar imágenes y hacer degradados.
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--              -->
+<!-- FINAL CANVAS -->
+<!--              -->
+
+				<a id="svg"></a>
+				<h3>3.2. Inline SVG</h3>
+				
+				<p>
+SVG (Scalable Vector Graphics) se utiliza para definir gráficos basados en vectores en formato XML. Todos los atributos y elementos en archivos SVG pueden ser animados y no pierden calidad al ser redimensionados.
+				</p>
+				
+				<p>
+La principal diferencia entre Canvas y SVG es que el primero es para dibujar gráficos 2D sobre la marcha (con JavaScript) y el segundo describe gráficos 2D en XML.
+				</p>
+				
+				<p>
+El principal inconveniente de SVG es que para renderizar gráficos complejos puede ser bastante lento. No es recomendable su uso para aplicaciones de juegos.
+				</p>
+				
+				<p>
+Ejemplo:
+				</p>
+				
+				<pre>
+				<code>
+	&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190"&gt;
+	  &lt;polygon points="100,10 40,180 190,60 10,60 160,180"
+	  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"&gt;
+	&lt;/svg&gt;
+				</code>
+				</pre>
+				
+				<a href="#ind">volver al índice</a>
+
+<!--           -->
+<!-- FINAL SVG -->
+<!--           -->
+
+				<a id="input"></a>
+				<h3>3.3. Input</h3>
+				
+				<p>
+La etiqueta &lt;input *&gt; ya se utilizaba para insertar cajas de texto y botones. Ahora además nos permite insertar cajas de tipo “email”, calendarios, sliders, etc. Estas nuevas características permiten un control de entrada y validación mucho mejor.
+				</p>
+				
+				<p>
+Estas son los nuevos tipos de input: color, date, datetime, datetime-local, email, month, number, range, search, such, time, url y week.
+				</p>
+								
+				<a href="#ind">volver al índice</a>
+				
+<!--             -->
+<!-- FINAL INPUT -->
+<!--             -->
+
+				<a id="video"></a>
+				<h3>3.4. Vídeo</h3>
+				
+				<p>
+Hasta la llegada de HTML5 la mayoría de los vídeos tenían que ser mostrados con plug-ins como Flash. HTML5 proporciona un estándar para reproducir vídeos en una página Web.
+				</p>
+				
+				<p>
+Ejemplo:
+				</p>
+				
+				<pre>
+				<code>
+	&lt;video width="400" height="200" controls&gt;
+	  &lt;source src="file.mp4" type="video/mp4"&gt;
+	  &lt;source src="file.ogg" type="video/ogg"&gt;
+	El navegador no soporta la etiqueta video.
+	&lt;/video&gt;
+				</code>
+				</pre>
+				
+				<p>
+El atributo controls añade los controles para el vídeo (reproducción, pausa, etc). La etiqueta source vincula a los archivos de vídeo, si hay varias el navegador utilizará la primera que tenga un formato que sea capaz de reconocer.
+				</p>
+				
+				<p>
+También existen métodos, propiedades y eventos DOM para el vídeo y audio. Estos permiten manipular elementos de vídeo y audio utilizando JavaScript.
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--             -->
+<!-- FINAL VIDEO -->
+<!--             -->
+
+				<a id="audio"></a>
+				<h3>3.5. Audio</h3>
+				
+				<p>
+Al igual que pasaba con los vídeos hasta ahora para reproducir archivos de audio en la Web eran necesarios plug-ins (como Flash). Pero al igual que con los vídeos HTML5 proporciona un estándar para reproducir audio sin necesidad de estos plug-ins.
+				</p>
+				
+				<p>
+Ejemplo:
+				</p>
+				
+				<pre>
+				<code>
+	&lt;audio controls&gt;
+	  &lt;source src="file.mp3" type="audio/mpeg"&gt;
+	  &lt;source src="file.ogg" type="audio/ogg"&gt;
+	El navegador no soporta la etiqueta audio.
+	&lt;/audio&gt;
+				</code>
+				</pre>
+				
+				<p>
+Al igual que en los vídeos el atributo controls añade los controles para, en este caso, el audio. También al igual que con los vídeos la etiqueta source vincula a los archivos de audio y si hay varias el navegador utilizará la primera que tenga un formato que sea capaz de reconocer.
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--             -->
+<!-- FINAL AUDIO -->
+<!--             -->
+
+				<a id="deprecated"></a>
+				<h2>4. Elementos eliminados</h2>
+				
+				<p>
+Las siguientes etiquetas han sido eliminadas: &lt;acronym&gt;, &lt;applet&gt;, &lt;basefont&gt;, &lt;big&gt;, &lt;center&gt;, &lt;dir&gt;, &lt;font&gt;, &lt;frame&gt;, &lt;frameset&gt;, &lt;noframes&gt;, &lt;strike&gt;, &lt;tt&gt;.
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--                 -->
+<!-- FINAL ELEMENTOS -->
+<!--                 -->
+
+				<a id="javascript"></a>
+				<h2>5. JavaScript</h2>
+				
+				<p>
+Javascript ha sido potenciado con la llegada de HTML5. A continuación una breve descripción de las actualizaciones más importantes.
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--                  -->
+<!-- FINAL JAVASCRIPT -->
+<!--                  -->
+				
+				<a id="web_storage"></a>
+				<h3>5.1. Web Storage</h3>
+				
+				<p>
+Web Storage es una alternativa a las cookies. Las cookies guardan información en el lado del cliente, pero de forma mucho más limitada a como lo hace Web Storage.
+				</p>
+				
+				<p>
+Web Storage es más seguro y más rápido. Y los datos no se suben con cada petición al servidor, no como con las cookies que por cada petición al servidor se tenían que subir. También es posible almacenar mayor cantidad de datos.
+				</p>
+				
+				<p>
+Ejemplos:
+				</p>
+				<p>
+Antes de almacenar algo hay que comprobar que el navegador soporte Web Storage.
+				</p>
+				
+				<pre>
+				<code>
+	if(typeof(Storage)!=="undefined"){
+	  //localStorage y sessionStorage estan soportados
+	} else {
+	  //No hay soporte web storage
+	}
+				</code>
+				</pre>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--                   -->
+<!-- FINAL WEB STORAGE -->
+<!--                   -->
+
+				<a id="web_workers"></a>
+				<h3>5.2. Web Workers</h3>
+				
+				<p>
+Los Web Workers hacen que la multitarea sea posible con JavaScript. Antes sólo podía haber un script ejecutándose al mismo tiempo, con los Web Workers puede haber más de uno ejecutándose al mismo tiempo.
+				</p>
+				
+				<p>
+El siguiente código muestra dos botones uno para arrancar un worker y otro para pararlo. La función startWorker lo único que hace es crear un nuevo worker (si este no ha sido creado ya) y cada vez que el worker envía un mensaje lo recogemos con el evento onmessage y mostramos en resultado en result. Cuando se pulsa el botón de terminar el worker se elimina.
+				</p>
+				
+				<pre>
+				<code>
+	&lt;p&gt;Contador: &lt;output id="result"&gt;&lt;/output&gt;&lt;/p&gt;
+	&lt;button onclick="startWorker()"&gt;Empezar&lt;/button&gt; 
+	&lt;button onclick="stopWorker()"&gt;Terminar&lt;/button&gt;
+	&lt;br&gt;&lt;br&gt;
+	
+	&lt;script&gt;
+	var w;
+	
+	function startWorker(){
+		if(typeof(Worker)!=="undefined"){
+	  		if(typeof(w)=="undefined"){
+	    		w = new Worker("test.js");
+	    	}
+	  		w.onmessage = function (event) {
+	    		document.getElementById("result").innerHTML=event.data;
+	  		};
+		}else{
+			document.getElementById("result").innerHTML=
+			"El navegador no soporta web workers";
+		}
+	}
+	
+	function stopWorker(){ 
+		w.terminate();
+	}
+	&lt;/script&gt;
+				</code>
+				</pre>
+				
+				<p>
+El siguiente código es el contenido del fichero test.js que no es ni más ni menos que el código que ejecuta el worker en segundo plano. En este caso es simplemente un contador que después de un timeout cuenta y envía el resultado de dicha cuenta.
+				</p>
+				
+				<pre>
+				<code>
+	var i=0;
+	
+	function timedCount(){
+		i=i+1;
+		postMessage(i);
+		setTimeout("timedCount()",500);
+	}
+	timedCount();
+				</code>
+				</pre>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--                   -->
+<!-- FINAL WEB WORKERS -->
+<!--                   -->
+
+				<a id="web_sockets"></a>
+				<h3>5.3. Web Sockets</h3>
+				
+				<p>
+Los Web Sockets permiten aplicaciones multiusuario en tiempo real. Proporcionan un canal de comunicación bidireccional full-duplex sobre un único socket TCP.
+				</p>
+				
+				<p>
+Para establecer una conexión el cliente tiene que mandar una petición similar a la siguiente:
+				</p>
+				
+				<pre>
+				<code>
+	GET ws://echo.websocket.org/?encoding=text HTTP/1.1 
+	Origin: http://websocket.org 
+	Cookie: __utma=99as 
+	Connection: Upgrade 
+	Host: echo.websocket.org 
+	Sec-WebSocket-Key: uRovscZjNol/umbTt5uKmw== 
+	Upgrade: websocket 
+	Sec-WebSocket-Version: 13
+				</code>
+				</pre>
+				
+				<p>
+El servidor contestará con una respuesta de negociación similar a la siguiente:
+				</p>
+				
+				<pre>
+				<code>
+	HTTP/1.1 101 WebSocket Protocol Handshake 
+	Date: Fri, 10 Feb 2012 17:38:18 GMT 
+	Connection: Upgrade 
+	Server: Kaazing Gateway 
+	Upgrade: WebSocket 
+	Access-Control-Allow-Origin: http://websocket.org 
+	Access-Control-Allow-Credentials: true 
+	Sec-WebSocket-Accept: rLHCkw/SKsO9GAH/ZSFhBATDKrU= 
+	Access-Control-Allow-Headers: content-type
+				</code>
+				</pre>
+				
+				<p>
+Una vez establecida la conexión ya se puede empezar a enviar datos.
+				</p>
+				
+				<p>
+Ejemplo:
+				</p>
+				
+				<pre>
+				<code>
+	var myWebSocket = new WebSocket("ws://www.websockets.org");
+	
+	myWebSocket.onopen = function(evt) { alert("Connection open ..."); }; 
+	myWebSocket.onmessage = function(evt) { alert( "Received Message: " + evt.data); }; 
+	myWebSocket.onclose = function(evt) { alert("Connection closed."); };
+	
+	myWebSocket.send("Hello WebSockets!"); myWebSocket.close();
+				</code>
+				</pre>
+				
+				<p>
+En este ejemplo creamos un websocket, la URL representa la dirección a la que queremos conectarnos. El prefijo ws:// puede ser sustituido por wss:// para establecer una conexión segura.
+				</p>
+				
+				<p>
+A los eventos onopen, onmessage y onclose se les puede asociar una función para controlar dichos eventos durante el tiempo de conexión.
+				</p>
+				
+				<p>
+Para enviar un mensaje se utiliza la función send. Para cerrar la conexión hay que utilizar la función close.
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--                   -->
+<!-- FINAL WEB SOCKETS -->
+<!--                   -->
+				
+				<a id="drag_drop"></a>
+				<h3>5.4. Drag and Drop</h3>
+				
+				<p>
+En HTML5 drag and drop (arrastrar y soltar) es parte de la norma, todos los elementos pueden arrastrarse.
+				</p>
+				
+				<p>
+Ejemplo:
+				</p>
+				
+				<pre>
+				<code>
+	&lt;img id="elementDrag" draggable="true" ondragstart="drag(evento)" &gt;
+				</code>
+				</pre>
+				
+				<p>
+Para hacer un elemento arrastrable hay que poner el atributo draggable a true.
+				</p>
+				
+				<pre>
+				<code>
+	function drag(ev){
+		ev.dataTransfer.setData("Text",ev.target.id);
+	}
+				</code>
+				</pre>
+				
+				<p>
+El atributo ondragstart llama a la función drag(evento). Esta función indica que datos han de ser arrastrados. El método setData establece que tipo de datos han de ser arrastrados y su valor.
+				</p>
+				
+				<pre>
+				<code>
+	function drop(ev){
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+				</code>
+				</pre>
+				
+				<p>
+La función precentDefault() evita que el navegador manipule los datos. La función getData(“Text”) permite obtener los datos. La función appendChild añade el elemento.
+				</p>
+				
+				<pre>
+				<code>
+	&lt;div id="elementDrop" ondrop="drop(evento)"
+	ondragover="allowDrop(evento)"&gt;&lt;/div&gt;
+				</code>
+				</pre>
+				
+				<p>
+Para indicar donde se puede soltar el elemento hay que añadir al atributo ondragover al elemento donde se quiera soltar. También hay que indicar con el atributo ondrop la función que queremos que se invoque cuando se suelten los datos.
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--                     -->
+<!-- FINAL DRAG AND DROP -->
+<!--                     -->
+
+				<a id="geolocation"></a>
+				<h3>5.5. Geolocalización</h3>
+				
+				<p>
+Sirve para localizar la posición del usuario.
+				</p>
+				
+				<p>
+Ejemplo:
+				</p>
+				
+				<pre>
+				<code>
+	&lt;script&gt;
+	var x=document.getElementById("demo");
+	function getLocation(){
+	  if (navigator.geolocation){
+	    navigator.geolocation.getCurrentPosition(showPosition);
+	  }else{x.innerHTML="El navegador no soporta la geolocalicacion";}
+	}
+	function showPosition(position){
+	  x.innerHTML="Latitude: " + position.coords.latitude + 
+	  "&lt;br&gt;Longitude: " + position.coords.longitude; 
+	}
+	&lt;/script&gt;
+				</code>
+				</pre>
+				
+				<p>
+Este ejemplo muestra la latitud y longitud de la posición donde se encuentra el usuario. El método getCurrentPosition() obtiene la posición del usuario.
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+<!--                   -->
+<!-- FINAL GEOLOCATION -->
+<!--                   -->
+
+				<a id="reference"></a>
+				<h2>6. Referencias</h2>
+				
+				<p>
+El tutorial ha sido desarrollado siguiendo los siguientes enlaces.
+				</p>
+				
+				<p>
+				Página oficial de w3c: <a href="http://www.w3.org/standards/webdesign/">w3c</a>
+				</p>
+				<p>
+				Blog introductorio a HTML5: <a href="http://www.cristalab.com/tutoriales/introduccion-a-html5-c92171l/">Crisalab</a>
+				</p>
+				<p>
+				Página oficial de Web Sockets: <a href="http://www.websocket.org/">websocket.org</a>
+				</p>
+				<p>
+				Página de tutoriales Web: <a href="http://www.w3schools.com/html/html5_intro.asp">w3schools</a>
+				</p>
+				<p>
+				Manual de HTML5 en castellano: <a href="http://www.htmlcinco.com/manual-html5-en-espanol/">htmlcinco</a>
+				</p>
+				
+				<a href="#ind">volver al índice</a>
+				
+			<!-- FIN CONTENIDO -->
+			
+		</div> <!-- fin main_body -->
+	
+	</div> <!-- fin main -->
+	
+	<!-- validadores y licencias -->
+	
+		<p>
+		<a href="http://validator.w3.org/check?uri=http%3A%2F%2Flvaleromsw.appspot.com%2F">Validador HTML5</a>
+    	<a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="¡CSS Válido!" />
+    	</a>
+		</p>
+		
+		<p>
+		Copyright (C) 2013 Luis Valero Martín.
+		<br />
+		<a rel="license" href="http://www.gnu.org/licenses/gpl.html">
+		<img src="images/gplv3-88x31.png" alt="gplv3"></a>
+		<br />El código esta bajo una <a rel="license" href="http://www.gnu.org/licenses/gpl.html"> licencia GPLV3</a>
+		<br />
+		
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">
+		<img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
+		<br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">licencia de Creative Commons Reconocimiento-CompartirIgual 3.0 Unported</a>
+		</p>
+	<!-- fin licencias y validadores -->
+
+</div> <!-- fin content tocho  -->
+	
+</body>
+</html>
