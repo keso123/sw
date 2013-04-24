@@ -192,6 +192,12 @@ body {
 	text-align: left;
 	padding-top: 20px;
 }
+
+.cine_bottom_banner_content a {
+	color: #000000;
+	/*text-decoration: none;*/
+}
+
 .cine_bottom_banner_left {
 	float: left;
 	width: 300px;
