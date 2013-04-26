@@ -64,7 +64,7 @@ body {
 
 .cine_top_banner_title_content_search {
 	float: left;
-	width: 300px;
+	width: 350px;
 	height:65px;
 }
 
@@ -75,7 +75,7 @@ body {
 
 .cine_top_banner_title_content_login {
 	float: left;
-	width: 300px;
+	width: 250px;
 	height:65px;
 }
 
@@ -328,3 +328,42 @@ body {
 /* oooooooooooooooooooooooooooooo LOGIN oooooooooooooooooooooooooooooo */
 /* ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
 
+.cine_login_title {
+	width: 750px;
+	padding: 10px 10px 10px 10px;
+}
+
+.cine_login_title h1 {
+	font-size: 2.00em;
+	font-weight: bold;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+}
+
+.cine_login_frame {
+	width: 400px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border: 1px solid black;
+	border-radius: 0.3em 0.3em 0.3em 0.3em;
+}
+
+.cine_login_frame_row {
+	width: 400px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.cine_login_frame_colum {
+	float: left;
+	width: 200px;
+}
+
+.cine_login_frame h1 {
+	font-size: 1.30em;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+	text-align: right;	
+}
