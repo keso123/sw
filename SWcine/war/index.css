@@ -23,7 +23,7 @@ body {
 	width: 100%;
 	height: 100px;
 	/*margin: 0px auto;*/
-	margin-top: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
 	/*border: 1px solid #6495ED;*/
 	background-color: #6495ED;
 }
@@ -178,7 +178,7 @@ body {
 	width: 100%;
 	height: 100px;
 	/*margin: 0px auto;*/
-	margin-top: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
 	/*border: 1px solid #6495ED;*/
 	background-color: #708090;	
 }
