@@ -221,6 +221,23 @@ body {
 	height: 100px;
 }
 
+/* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+/* oooooooooooooooooooooooooooooo MAPA oooooooooooooooooooooooooooooo */
+/* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+
+.cine_sitemap_title {
+	width: 750px;
+	padding: 10px 10px 10px 10px;
+}
+
+.cine_sitemap_title h1 {
+	font-size: 2.00em;
+	font-weight: bold;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+}
+
 /* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
 /* oooooooooooooooooooooooooooooo LISTAS oooooooooooooooooooooooooooooo */
 /* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
