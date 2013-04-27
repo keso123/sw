@@ -290,12 +290,29 @@ body {
 
 .cine_list_content_box {
 	width: 728px;
-	padding-left: 5px;
-	padding-right: 5px;
 	margin-left: 5px;
 	margin-right: 5px;
 	margin-bottom: 5px;
 	border: 1px solid black;
+}
+
+.cine_list_content_box_pic {
+	float: left;
+	width: 50px;
+	height: 75px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 1px solid black;
+}
+
+.cine_list_content_box_text {
+	float: left;
+	width: 661px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .cine_list_content_box h1 {
@@ -321,7 +338,8 @@ body {
 }
 
 .cine_list_content_box a {
-	
+	color: #000000;
+	text-decoration: none;
 }
 
 /* ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
@@ -366,4 +384,84 @@ body {
 	color: #000000;
 	margin: 0px 0px 0px 0px;
 	text-align: right;	
+}
+
+/* ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+/* oooooooooooooooooooooooooooooo MOVIE oooooooooooooooooooooooooooooo */
+/* ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+
+.cine_moviecard_title {
+	width: 750px;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+}
+
+.cine_moviecard_title h1 {
+	font-size: 2.00em;
+	font-weight: bold;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+}
+
+.cine_moviecard_content {
+	width: 750px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+}
+
+.cine_moviecard_content_info {
+	width: 750px;
+}
+
+.cine_moviecard_content_info_pic {
+	float: left;
+	width: 100px;
+	height: 150px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+	border: 1px solid black;
+}
+
+.cine_moviecard_content_info_text {
+	float: left;
+	width: 628px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.cine_moviecard_content_info_text dl {
+	display: block;
+	position: relative;
+}
+
+.cine_moviecard_content_info_text dt {
+	position: absolute;
+	width: 100px;
+	text-align: right;
+	color: #777777;
+}
+
+.cine_moviecard_content_info_text dd {
+	margin-left: 105px;
+	margin-right: 5px;
+	color: #333333;
+	padding-bottom: 10px;
+}
+
+.cine_moviecard_content_synopsis {
+	width: 750px;
+}
+
+.cine_moviecard_comments {
+	width:750px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
 }
