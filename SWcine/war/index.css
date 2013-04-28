@@ -4,6 +4,7 @@ body {
 	/*background-color: #FFFFFF;*/
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
+	font-family: Verdana;
 }
 
 /* ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
@@ -551,4 +552,55 @@ body {
 	padding-left: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+/* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+/* oooooooooooooooooooooooooooooo EDIT oooooooooooooooooooooooooooooo */
+/* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+
+.cine_edit_title {
+	width: 750px;
+	padding: 10px 10px 10px 10px;
+}
+
+.cine_edit_title h1 {
+	font-size: 2.00em;
+	font-weight: bold;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+}
+
+.cine_edit_frame {
+	width: 728px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	border: 1px solid black;
+	border-radius: 0.3em 0.3em 0.3em 0.3em;	
+}
+
+.cine_edit_frame_row {
+	width: 728px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.cine_edit_frame_colum_left {
+	float: left;
+	/*width: 364px;*/
+	width: 200px;
+}
+
+.cine_edit_frame_colum_right {
+	float: left;
+	width: 528px;
+}
+
+.cine_edit_frame h1 {
+	font-size: 1.30em;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+	text-align: right;	
 }
