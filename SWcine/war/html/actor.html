@@ -20,8 +20,7 @@
 			<h1><a href="../index.html">SW Cine</a></h1>
 			</div>
 			<div class="cine_top_banner_title_content_search">
-				<p>
-					<form action="">
+					<form action="#">
 						<input type="text" name="stext" size="20" value=" ">
 						<select name="stype">
 							<option value="all">Todos</option>
@@ -29,12 +28,11 @@
 							<option value="director">Director</option>
 							<option value="cast">Reparto</option>
 						</select>
-						<input type="submit" id="button-search" value=" ">
+						<input type="submit" id="button-search" value="Buscar">
 					</form>
-				</p>
 			</div>
 			<div class="cine_top_banner_title_content_login">
-				<p><a href="#">Sign in</a>/<a href="#">Sign up</a></p>
+				<p><a href="../html/login.html">Sign in</a>/<a href="../html/register.html">Sign up</a></p>
 			</div>
 			<div class="cine_clear"></div>
 		</div>
@@ -48,6 +46,7 @@
 
 </div>
 
+
 <!-- ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
 <!-- ooooooooooooooooooooooooooooooooooooooooo FIN MENU BANNER ooooooooooooooooooooooooooooooooooooooooo -->
 <!-- ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
@@ -57,14 +56,18 @@
 	<div class="cine_left_menu">
 		<div class="cine_left_menu_box">
 			<h1>Usuarios</h1>
-			<p>Entrar</p>
-			<p>Registrarse</p>
+			<p><a href="../html/login.html">Entrar</a></p>
+			<p><a href="../html/register.html">Registrarse</a></p>
 		</div>
 		<div class="cine_left_menu_box">
 			<h1>Secciones</h1>
 			<p><a href="../html/movielist.html">Peliculas</a></p>
 			<p><a href="../html/directorlist.html">Directores</a></p>
 			<p><a href="../html/actorlist.html">Actores</a></p>
+		</div>
+		<div class="cine_left_menu_box">
+			<h1>Mapa</h1>
+			<p><a href="../html/sitemap.html">Mapa del sitio</a></p>
 		</div>
 		<div class="cine_left_menu_box">
 			<h1>Tutoriales</h1>
@@ -78,7 +81,82 @@
 <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
 
 	<div class="cine_main_wrapper">
-		<h3>actor</h3>
+		<div class="cine_moviecard_title">
+			<h1>Bruce Willis</h1>
+			<form action="#"><input type="button" onClick="openEditActor()" id="button-edit" value="Editar"></form>
+			<script>
+				function openEditActor() {
+					location.href="../html/editactor.html";
+				}
+			</script>
+		</div>
+		<div class="cine_moviecard_content">
+			<div class="cine_moviecard_content_info">
+				<div class="cine_moviecard_content_info_text">
+					<dl>
+						<dt>Nombre</dt>
+						<dd>Bruce Willis</dd>
+						<dt>Nombre real</dt>
+						<dd>Walter Bruce Willis</dd>
+						<dt>Nacimiento</dt>
+						<dd>Idar-Oberstein, Alemania Occidental, 19 de marzo de 1955</dd>
+						<dt>Fallecimiento</dt>
+						<dd>-</dd>
+						<dt>Edad</dt>
+						<dd>58 años</dd>
+						<dt>Ocupación</dt>
+						<dd>Actor, productor y músico</dd>
+						<dt>Debut</dt>
+						<dd>1977</dd>
+						<dt>Premios</dt>
+						<dd>Globos de Oro, Mejor actor de serie de TV-Comedia o musical. Premios Emmy, Mejor actor - Serie dramática, Mejor actor invitado - Serie comedia.</dd>
+						<dt>Filmografía</dt>
+						<dd>Sin City, Armageddon, Pulp Fiction, The Sixth Sense, Die Hard, [...]</dd>
+						<dt>Comentarios</dt>
+						<dd>
+							<div class="cine_moviecard_comments">
+								<div class="cine_moviecard_comment">
+									<div class="cine_moviecard_comment_text">
+										<p>
+										comentarios...
+										</p>
+									</div>
+									<div class="cine_moviecard_comment_author">
+										<p>
+										autor
+										</p>
+									</div>
+								</div>
+								<div class="cine_moviecard_comment">
+									<div class="cine_moviecard_comment_text">
+										<p>
+										comentarios comentarios comentarios comentarios comentarios comentarios comentarios comentarios comentarios comentarios comentarios...
+										</p>
+									</div>
+									<div class="cine_moviecard_comment_author">
+										<p>
+										autor
+										</p>
+									</div>
+								</div>
+								<div class="cine_moviecard_comment_frame">
+									<form action="#">
+										<input type="text" name="stext" size="63" value=" ">
+										<input type="submit" id="button-coment" value="Comentar">
+									</form>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="cine_moviecard_content_info_pic">
+					<img alt="" src="../images/Bruce_Willis_by_Gage_Skidmore.jpg" width="100" height="150">
+				</div>
+				<div class="cine_clear"></div>
+			</div>
+			<div class="cine_moviecard_content_synopsis">
+			</div>
+		</div>
 	</div>
 	<div class="cine_clear"></div>
 

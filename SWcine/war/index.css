@@ -576,13 +576,13 @@ body {
 
 .cine_moviecard_content_info_text dt {
 	position: absolute;
-	width: 100px;
+	width: 105px;
 	text-align: right;
 	color: #777777;
 }
 
 .cine_moviecard_content_info_text dd {
-	margin-left: 105px;
+	margin-left: 110px;
 	margin-right: 5px;
 	color: #333333;
 	padding-bottom: 10px;
