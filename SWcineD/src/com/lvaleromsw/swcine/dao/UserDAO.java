@@ -20,6 +20,8 @@ public class UserDAO {
 	public void createUser(SimpleUser user){
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
+		//TODO comprobar que no exista por email
+		
 		try{
 			//pm.makePersistent(user);
 			

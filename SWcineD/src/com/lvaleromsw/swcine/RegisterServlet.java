@@ -29,7 +29,6 @@ public class RegisterServlet extends HttpServlet {
 			dao.createUser(user);
 		}
 		
-		
 		response.sendRedirect("/index.html");
 	}
 	
