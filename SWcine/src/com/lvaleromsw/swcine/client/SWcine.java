@@ -6,7 +6,6 @@ public class SWcine implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
-		// TODO Auto-generated method stub
 		
 	}
 
