@@ -6,38 +6,30 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lvaleromsw.swcine.dao.UserDAO;
 import com.lvaleromsw.swcine.persistence.SimpleUser;
 
 @SuppressWarnings("serial")
-public class RegisterServlet extends HttpServlet {
-	
+public class LoginServlet extends HttpServlet {
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		
 		String name = request.getParameter("username");
 		String passwd = request.getParameter("passwd");
-		String repasswd = request.getParameter("repasswd");
-		String email = request.getParameter("email");
-		
-		if(checkPass(passwd,repasswd)){
-		
-			SimpleUser user = new SimpleUser(name, passwd, email);
 			
 			UserDAO dao = UserDAO.getInstance();
-			if(dao.createUser(user)){
-				System.out.println("usuario creado");
+			SimpleUser user = dao.getUser(name,passwd);
+			if(user == null){
+				System.out.println("usuario no valido");
 			}else{
-				System.out.println("el usuario ya existe");
+				HttpSession sesion = request.getSession(true);
+				//sesion.setAttribute("user",user);
+				System.out.println("login correcto");
 			}
-		}
 		
 		response.sendRedirect("/index.html");
-	}
-	
-	private boolean checkPass(String pass, String repass){
-		
-		return pass.equals(repass);
 	}
 }

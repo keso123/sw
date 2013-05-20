@@ -24,7 +24,7 @@
 						<input type="text" name="stext" size="20" value=" ">
 						<select name="stype">
 							<option value="all">Todos</option>
-							<option value="title">T�tulo</option>
+							<option value="title">Título</option>
 							<option value="director">Director</option>
 							<option value="cast">Reparto</option>
 						</select>
@@ -65,17 +65,17 @@
 						</ul>
 					</li>
 					<li class="cine_top_banner_menu_content_parent">
-						<a href="#">Secciones</a>
+						<a href="#">Seciones</a>
 						<ul>
-							<li><a href="../html/movielist.html">Pel�culas</a></li>
+							<li><a href="../html/movielist.html">Películas</a></li>
 							<li><a href="../html/directorlist.html">Directores</a></li>
 							<li><a href="../html/actorlist.html">Actores</a></li>
 						</ul>
 					</li>
 					<li class="cine_top_banner_menu_content_parent">
-						<a href="#">A�adir</a>
+						<a href="#">Añadir</a>
 						<ul>
-							<li><a href="../html/addmovie.html">Pel�cula</a></li>
+							<li><a href="../html/addmovie.html">Película</a></li>
 							<li><a href="../html/adddirector.html">Director</a></li>
 							<li><a href="../html/addactor.html">Actor</a></li>
 						</ul>
@@ -122,57 +122,37 @@
 <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
 
 	<div class="cine_main_wrapper">
-		<div class="cine_index">
-			<h1>Propuestas Sistemas Web</h1>
-			<h2>Propuesta de web</h2>
-	
-	<p>
-Descripci�n: 
-Desarrollar una web sobre cine. La idea es que cualquier persona pueda encontrar informaci�n de pel�culas, directores, actores, etc. 
-Se podr�n crear usuarios para que estos comenten en las entradas (pel�culas, directores, etc) y las puntuen. S�lo se podr� comentar o puntuar si 
-eres un usuario registrado en la web y est�s logeado en ese momento.
-</p>
-	
-	<p>
-En la entrada de un director se encontrar� una descripci�n y se enlazar� una lista con todas sus pel�culas. En la de un actor se encontrar� otra 
-descripci�n y otra lista con todas sus pel�culas. En la entrada de una pel�cula se encontrar� toda la informaci�n relativa a la pel�cula (director, 
-reparto, a�o, premios, etc).
-	</p>
-	
-	<p>
-Parte p�blica y privada: 
-Cualquier persona podr� ver todos los contenidos de la p�gina web. S�lo usuarios registrados podr�n comentar y puntuar las entradas de la web. 
-Los �nico que puede editar los contenidos de las entradas ser�n los administradores de la web.
-	</p>
-	
-<p>Tipos de usuarios: </p>
-<ul>
-	<li><p>An�nimo: Usuarios sin registrar, s�lo podr�n visualizar el contenido de la web.</p></li>
-	<li><p>Registrado: Usuarios registrados, podr�n comentar y puntuar todas las entradas.</p></li>
-	<li><p>Administradores: Podr�n crear y administrar todos los contenidos de la web.</p></li>
-</ul>
-
-	<p>
-Estructura: 
-En proceso.
-	</p>
-	
-	<p>
-Tecnolog�as: 
-HTML, CSS, y J2EE. Esta informaci�n se completar� en un futuro.
-	</p>
-	
-	<p>
-Esta informaci�n es orientativa y esta sujeta a posibles cambios y a�adidos.
-	</p>
-	
-	<h2>Propuesta de trabajo</h2>
-	
-	<p>
-Descripci�n: 
-Realizar un peque�o tutorial sobre HTML5. Se comparar� HTML5 con HTML, indicando las similitudes y las diferencias entre ambos. 
-Se complementar� la informaci�n con ejemplos de c�digo para que resulte m�s facil aprender lo b�sico sobre HTML5.
-	</p>
+		<div class="cine_login_title">
+			<h1>Acceso a usuarios</h1>
+		</div>
+		<div class="cine_login_frame">
+			<form action="loginservlet" method="post">
+				<div class="cine_login_frame_row">
+					<div class="cine_login_frame_colum">
+						<h1>Usuario:</h1>
+					</div>
+					<div class="cine_login_frame_colum">
+						<input type="text" name="username" size="20" value=" ">
+					</div>
+				</div>
+				<div class="cine_clear"></div>
+				
+				<div class="cine_login_frame_row">
+					<div class="cine_login_frame_colum">
+						<h1>Contraseña:</h1>
+					</div>
+					<div class="cine_login_frame_colum">
+						<input type="password" name="passwd" size="20" value="">
+					</div>
+				</div>
+				<div class="cine_clear"></div>
+				
+				<div class="cine_login_frame_row">
+					<input type="submit" id="button-send" value="Enviar">
+				</div>
+				<div class="cine_clear"></div>
+				
+			</form>
 		</div>
 	</div>
 	<div class="cine_clear"></div>
@@ -187,16 +167,16 @@ Se complementar� la informaci�n con ejemplos de c�digo para que resulte m�
 	<div class="cine_bottom_banner_content">
 		<div class="cine_bottom_banner_left">
 			<p>
-				<a href="http://validator.w3.org/check?uri=http%3A%2F%2Flvaleromsw.appspot.com%2Findex.html">Validador HTML5</a>
+				<a href="http://validator.w3.org/check?uri=http%3A%2F%2Flvaleromsw.appspot.com%2Fhtml%2Flogin.html">Validador HTML5</a>
 		    	<a href="http://jigsaw.w3.org/css-validator/check/referer">
 			        <img style="border:0;width:88px;height:31px"
 			            src="http://jigsaw.w3.org/css-validator/images/vcss"
-			            alt="�CSS V�lido!" />
+			            alt="¡CSS Válido!" />
 			    </a>
 		    	<a href="http://jigsaw.w3.org/css-validator/check/referer">
 				    <img style="border:0;width:88px;height:31px"
 				        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
-				        alt="�CSS V�lido!" />
+				        alt="¡CSS Válido!" />
 				</a>
 			</p>
 		</div>
@@ -204,11 +184,11 @@ Se complementar� la informaci�n con ejemplos de c�digo para que resulte m�
 		<div class="cine_bottom_banner_center">
 		
 			<p>
-				Copyright (C) 2013 Luis Valero Mart�n.
+				Copyright (C) 2013 Luis Valero Martín.
 				<br />
 				<a rel="license" href="http://www.gnu.org/licenses/gpl.html">
 				<img src="../images/gplv3-88x31.png" alt="gplv3"></a>
-				<br />El c�digo esta bajo una <a rel="license" href="http://www.gnu.org/licenses/gpl.html"> licencia GPLV3</a>
+				<br />El código esta bajo una <a rel="license" href="http://www.gnu.org/licenses/gpl.html"> licencia GPLV3</a>
 			</p>
 			
 		</div>
@@ -217,7 +197,7 @@ Se complementar� la informaci�n con ejemplos de c�digo para que resulte m�
 			<p>
 				<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">
 				<img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
-				<br />Esta obra est� bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">licencia de Creative Commons Reconocimiento-CompartirIgual 3.0 Unported</a>
+				<br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">licencia de Creative Commons Reconocimiento-CompartirIgual 3.0 Unported</a>
 			</p>
 		</div>
 	</div>

@@ -1,5 +1,7 @@
 package com.lvaleromsw.swcine.dao;
 
+import java.util.List;
+
 import javax.jdo.PersistenceManager;
 
 import com.lvaleromsw.swcine.persistence.SimpleUser;
@@ -17,19 +19,41 @@ public class UserDAO {
 		return instance;
 	}
 	
-	public void createUser(SimpleUser user){
+	public boolean createUser(SimpleUser user){
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
-		//TODO comprobar que no exista por email
+		String query = "select from "+SimpleUser.class.getName()+" where name == '"+user.getName()+"' && email == '"+user.getEmail()+"'";
 		
 		try{
-			//pm.makePersistent(user);
-			
-			System.out.println("makeingPersistent");
+			List<SimpleUser> list = (List<SimpleUser>) pm.newQuery(query).execute();
+			if(list.isEmpty()){
+				pm.makePersistent(user);
+				return true;
+			}
 			
 		}finally {
 			pm.close();
 		}
 		
+		return false;
+		
+	}
+	
+	public SimpleUser getUser(String username,String pass){
+		
+		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
+		
+		String query = "select from "+SimpleUser.class.getName()+" where name == '"+username+"' && pass == '"+pass+"'";
+		
+		try {
+			List<SimpleUser> user = (List<SimpleUser>) pm.newQuery(query).execute();
+			if(!user.isEmpty()){
+				return user.get(0);
+			}
+		}finally {
+			pm.close();
+		}
+		
+		return null;
 	}
 }
