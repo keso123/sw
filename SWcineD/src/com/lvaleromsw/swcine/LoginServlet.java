@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.appengine.api.users.UserServiceFactory;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.User;
+
 import com.lvaleromsw.swcine.dao.UserDAO;
 import com.lvaleromsw.swcine.persistence.SimpleUser;
 
@@ -26,10 +30,11 @@ public class LoginServlet extends HttpServlet {
 				System.out.println("usuario no valido");
 			}else{
 				HttpSession sesion = request.getSession(true);
-				//sesion.setAttribute("user",user);
+				sesion.setAttribute("username",user.getName());
+				
 				System.out.println("login correcto");
 			}
 		
-		response.sendRedirect("/index.html");
+		response.sendRedirect("/index.jsp");
 	}
 }

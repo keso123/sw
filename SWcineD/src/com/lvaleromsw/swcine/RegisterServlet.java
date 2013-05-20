@@ -33,7 +33,7 @@ public class RegisterServlet extends HttpServlet {
 			}
 		}
 		
-		response.sendRedirect("/index.html");
+		response.sendRedirect("/index.jsp");
 	}
 	
 	private boolean checkPass(String pass, String repass){

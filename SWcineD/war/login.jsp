@@ -17,7 +17,7 @@
 		
 		<div class="cine_top_banner_title_content">
 			<div class="cine_top_banner_title_content_title">
-			<h1><a href="../index.html">SW Cine</a></h1>
+			<h1><a href="../index.jsp">SW Cine</a></h1>
 			</div>
 			<div class="cine_top_banner_title_content_search">
 					<form action="#">
@@ -32,7 +32,7 @@
 					</form>
 			</div>
 			<div class="cine_top_banner_title_content_login">
-				<p><a href="../login.html">Entrar</a>/<a href="../register.html">Registrarse</a></p>
+				<p><a href="../login.jsp">Entrar</a>/<a href="../register.jsp">Registrarse</a></p>
 			</div>
 			<div class="cine_clear"></div>
 		</div>
@@ -56,12 +56,12 @@
 			
 			<nav>
 				<ul>
-					<li><a href="../index.html">Inicio</a></li>
+					<li><a href="../index.jsp">Inicio</a></li>
 					<li class="cine_top_banner_menu_content_parent">
 						<a href="#">Usuarios</a>
 						<ul>
-							<li><a href="../login.html">Entrar</a></li>
-							<li><a href="../register.html">Registarse</a></li>
+							<li><a href="../login.jsp">Entrar</a></li>
+							<li><a href="../register.jsp">Registarse</a></li>
 						</ul>
 					</li>
 					<li class="cine_top_banner_menu_content_parent">
@@ -97,8 +97,8 @@
 	<div class="cine_left_menu">
 		<div class="cine_left_menu_box">
 			<h1>Usuarios</h1>
-			<p><a href="../login.html">Entrar</a></p>
-			<p><a href="../register.html">Registrarse</a></p>
+			<p><a href="../login.jsp">Entrar</a></p>
+			<p><a href="../register.jsp">Registrarse</a></p>
 		</div>
 		<div class="cine_left_menu_box">
 			<h1>Secciones</h1>
@@ -123,10 +123,10 @@
 
 	<div class="cine_main_wrapper">
 		<div class="cine_login_title">
-			<h1>Registro</h1>
+			<h1>Acceso a usuarios</h1>
 		</div>
 		<div class="cine_login_frame">
-			<form action="registerservlet" method="post">
+			<form action="loginservlet" method="post">
 				<div class="cine_login_frame_row">
 					<div class="cine_login_frame_colum">
 						<h1>Usuario:</h1>
@@ -143,26 +143,6 @@
 					</div>
 					<div class="cine_login_frame_colum">
 						<input type="password" name="passwd" size="20" value="">
-					</div>
-				</div>
-				<div class="cine_clear"></div>
-				
-				<div class="cine_login_frame_row">
-					<div class="cine_login_frame_colum">
-						<h1>Repetir Contraseña:</h1>
-					</div>
-					<div class="cine_login_frame_colum">
-						<input type="password" name="repasswd" size="20" value="">
-					</div>
-				</div>
-				<div class="cine_clear"></div>
-				
-				<div class="cine_login_frame_row">
-					<div class="cine_login_frame_colum">
-						<h1>Email:</h1>
-					</div>
-					<div class="cine_login_frame_colum">
-						<input type="text" name="email" size="20" value=" ">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -187,7 +167,7 @@
 	<div class="cine_bottom_banner_content">
 		<div class="cine_bottom_banner_left">
 			<p>
-				<a href="http://validator.w3.org/check?uri=http%3A%2F%2Flvaleromsw.appspot.com%2Fhtml%2Fregister.html">Validador HTML5</a>
+				<a href="http://validator.w3.org/check?uri=http%3A%2F%2Flvaleromsw.appspot.com%2Fhtml%2Flogin.html">Validador HTML5</a>
 		    	<a href="http://jigsaw.w3.org/css-validator/check/referer">
 			        <img style="border:0;width:88px;height:31px"
 			            src="http://jigsaw.w3.org/css-validator/images/vcss"
