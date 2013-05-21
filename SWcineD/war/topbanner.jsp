@@ -10,6 +10,12 @@
 </head>
 
 <body>
+
+<% 
+	//Object user = session.getAttribute("username");
+	//Object admin = session.getAttribute("admin");
+%>
+
 <div class="cine_top_banner_wrapper">
 
 	<div class="cine_top_banner_title_wrapper">
@@ -32,10 +38,9 @@
 			</div>
 			<div class="cine_top_banner_title_content_login">
 				<% 
-						Object user = session.getAttribute("username");
 					    if (user == null) {
 				%>
-				<p><a href="../login.jsp">Entrar</a>/<a href="../register.jsp">Registrarse</a></p>
+				<p><a href="../login.jsp">Entrar</a>/<a href="../register.jsp">Registro</a></p>
 				<%
 					    }else{
 				%>
@@ -84,7 +89,7 @@
 					    		if (user == null) {
 							%>
 							<li><a href="../login.jsp">Entrar</a></li>
-							<li><a href="../register.jsp">Registarse</a></li>
+							<li><a href="../register.jsp">Registro</a></li>
 							<%
 								}else{
 							%>
@@ -96,13 +101,12 @@
 					</li>
 					
 					<% 
-						Object admin = session.getAttribute("admin");
 					    if (admin != null) {
 					%>
 					<li class="cine_top_banner_menu_content_parent">
 						<a href="#">A&ntildeadir</a>
 						<ul>
-							<li><a href="../html/addmovie.html">Pel&iacutecula</a></li>
+							<li><a href="../newmovie.jsp">Pel&iacutecula</a></li>
 							<li><a href="../html/adddirector.html">Director</a></li>
 							<li><a href="../html/addactor.html">Actor</a></li>
 						</ul>

@@ -16,7 +16,7 @@
 			<h1>Usuarios</h1>
 			<% if(user == null){ %>
 			<p><a href="../login.jsp">Entrar</a></p>
-			<p><a href="../register.jsp">Registrarse</a></p>
+			<p><a href="../register.jsp">Registro</a></p>
 			<% }else{ %>
 			<p><a href=<%= request.getContextPath()+"logoutservlet"%>>Salir</a></p>
 			<% } %>
