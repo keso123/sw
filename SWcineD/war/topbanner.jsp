@@ -67,13 +67,7 @@
 			<nav>
 				<ul>
 					<li><a href="../index.jsp">Inicio</a></li>
-					<li class="cine_top_banner_menu_content_parent">
-						<a href="#">Usuarios</a>
-						<ul>
-							<li><a href="../login.jsp">Entrar</a></li>
-							<li><a href="../register.jsp">Registarse</a></li>
-						</ul>
-					</li>
+					
 					<li class="cine_top_banner_menu_content_parent">
 						<a href="#">Secciones</a>
 						<ul>
@@ -82,6 +76,25 @@
 							<li><a href="../html/actorlist.html">Actores</a></li>
 						</ul>
 					</li>
+					
+					<li class="cine_top_banner_menu_content_parent">
+						<a href="#">Usuarios</a>
+						<ul>
+							<% 
+					    		if (user == null) {
+							%>
+							<li><a href="../login.jsp">Entrar</a></li>
+							<li><a href="../register.jsp">Registarse</a></li>
+							<%
+								}else{
+							%>
+							<li><a href=<%= request.getContextPath()+"logoutservlet"%>>Salir</a></li>
+							<%
+								}
+							%>
+						</ul>
+					</li>
+					
 					<% 
 						Object admin = session.getAttribute("admin");
 					    if (admin != null) {
