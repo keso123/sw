@@ -22,6 +22,12 @@ public class MyUser {
 	
 	@Persistent
 	private String email;
+	
+	public MyUser(String name,String pass,String email){
+		this.name = name;
+		this.pass = pass;
+		this.email = email;
+	}
 
 	public Key getKey() {
 		return key;

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.jdo.PersistenceManager;
 
+import com.lvaleromsw.swcine.persistence.MyUser;
 import com.lvaleromsw.swcine.persistence.SimpleUser;
 
 public class UserDAO {
@@ -19,14 +20,17 @@ public class UserDAO {
 		return instance;
 	}
 	
-	public boolean createUser(SimpleUser user){
+	//public boolean createUser(SimpleUser user){
+	public boolean createUser(MyUser user){
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
-		String query = "select from "+SimpleUser.class.getName()+" where name == '"+user.getName()+"' && email == '"+user.getEmail()+"'";
+		//String query = "select from "+SimpleUser.class.getName()+" where name == '"+user.getName()+"' && email == '"+user.getEmail()+"'";
+		String query = "select from "+MyUser.class.getName()+" where name == '"+user.getName()+"' && email == '"+user.getEmail()+"'";
 		
 		try{
 			
-			List<SimpleUser> list = (List<SimpleUser>) pm.newQuery(query).execute();
+			//List<SimpleUser> list = (List<SimpleUser>) pm.newQuery(query).execute();
+			List<MyUser> list = (List<MyUser>) pm.newQuery(query).execute();
 			if(list.isEmpty()){
 				pm.makePersistent(user);
 				return true;
@@ -40,14 +44,16 @@ public class UserDAO {
 		
 	}
 	
-	public SimpleUser getUser(String username,String pass){
+	//public SimpleUser getUser(String username,String pass){
+	public MyUser getUser(String username,String pass){
 		
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
-		String query = "select from "+SimpleUser.class.getName()+" where name == '"+username+"' && pass == '"+pass+"'";
+		//String query = "select from "+SimpleUser.class.getName()+" where name == '"+username+"' && pass == '"+pass+"'";
+		String query = "select from "+MyUser.class.getName()+" where name == '"+username+"' && pass == '"+pass+"'";
 		
 		try {
-			List<SimpleUser> user = (List<SimpleUser>) pm.newQuery(query).execute();
+			List<MyUser> user = (List<MyUser>) pm.newQuery(query).execute();
 			if(!user.isEmpty()){
 				return user.get(0);
 			}

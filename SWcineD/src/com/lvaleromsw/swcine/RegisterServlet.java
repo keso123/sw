@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lvaleromsw.swcine.dao.UserDAO;
+import com.lvaleromsw.swcine.persistence.MyUser;
 import com.lvaleromsw.swcine.persistence.SimpleUser;
 
 @SuppressWarnings("serial")
@@ -23,7 +24,8 @@ public class RegisterServlet extends HttpServlet {
 		
 		if(checkPass(passwd,repasswd)){
 		
-			SimpleUser user = new SimpleUser(name, passwd, email);
+			//SimpleUser user = new SimpleUser(name, passwd, email);
+			MyUser user = new SimpleUser(name, passwd, email);
 			
 			UserDAO dao = UserDAO.getInstance();
 			

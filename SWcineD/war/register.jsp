@@ -43,7 +43,7 @@
 				
 				<div class="cine_login_frame_row">
 					<div class="cine_login_frame_colum">
-						<h1>Contraseña:</h1>
+						<h1>Contrase&ntildea:</h1>
 					</div>
 					<div class="cine_login_frame_colum">
 						<input type="password" name="passwd" size="20" value="">
@@ -53,7 +53,7 @@
 				
 				<div class="cine_login_frame_row">
 					<div class="cine_login_frame_colum">
-						<h1>Repetir Contraseña:</h1>
+						<h1>Repetir Contrase&ntildea:</h1>
 					</div>
 					<div class="cine_login_frame_colum">
 						<input type="password" name="repasswd" size="20" value="">

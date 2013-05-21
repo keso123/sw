@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.lvaleromsw.swcine.dao.UserDAO;
+import com.lvaleromsw.swcine.persistence.MyUser;
 import com.lvaleromsw.swcine.persistence.SimpleUser;
 
 @SuppressWarnings("serial")
@@ -23,7 +24,8 @@ public class LoginServlet extends HttpServlet {
 		String passwd = request.getParameter("passwd");
 			
 			UserDAO dao = UserDAO.getInstance();
-			SimpleUser user = dao.getUser(name,passwd);
+			//SimpleUser user = dao.getUser(name,passwd);
+			MyUser user = dao.getUser(name,passwd);
 			if(user == null){
 				System.out.println("usuario no valido");
 			}else{
