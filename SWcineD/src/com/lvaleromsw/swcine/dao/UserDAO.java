@@ -53,6 +53,7 @@ public class UserDAO {
 		String query = "select from "+MyUser.class.getName()+" where name == '"+username+"' && pass == '"+pass+"'";
 		
 		try {
+			//List<SimpleUser> user = (List<SimpleUser>) pm.newQuery(query).execute();
 			List<MyUser> user = (List<MyUser>) pm.newQuery(query).execute();
 			if(!user.isEmpty()){
 				return user.get(0);

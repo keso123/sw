@@ -17,26 +17,35 @@ public class RegisterServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		
-		String name = request.getParameter("username");
-		String passwd = request.getParameter("passwd");
-		String repasswd = request.getParameter("repasswd");
-		String email = request.getParameter("email");
-		
-		if(checkPass(passwd,repasswd)){
-		
-			//SimpleUser user = new SimpleUser(name, passwd, email);
-			MyUser user = new SimpleUser(name, passwd, email);
+		try
+		{
+			String name = request.getParameter("username");
+			String passwd = request.getParameter("passwd");
+			String repasswd = request.getParameter("repasswd");
+			String email = request.getParameter("email");
 			
-			UserDAO dao = UserDAO.getInstance();
+			if(checkPass(passwd,repasswd)){
 			
-			if(dao.createUser(user)){
-				System.out.println("usuario creado");
-			}else{
-				System.out.println("el usuario ya existe");
+				//SimpleUser user = new SimpleUser(name, passwd, email);
+				MyUser user = new MyUser(name, passwd, email);
+				
+				if(name.equals("kesoroot")) user.setAdmin(true);
+				
+				UserDAO dao = UserDAO.getInstance();
+				
+				if(dao.createUser(user)){
+					System.out.println("usuario creado");
+				}else{
+					System.out.println("el usuario ya existe");
+				}
 			}
-		}
+		}catch(Exception e){
+			System.out.println("error al crear");
+			e.printStackTrace();
+		}finally{
 		
-		response.sendRedirect("/index.jsp");
+			response.sendRedirect("/index.jsp");
+		}
 	}
 	
 	private boolean checkPass(String pass, String repass){

@@ -23,6 +23,9 @@ public class MyUser {
 	@Persistent
 	private String email;
 	
+	@Persistent
+	private boolean admin = false;
+
 	public MyUser(String name,String pass,String email){
 		this.name = name;
 		this.pass = pass;
@@ -59,5 +62,13 @@ public class MyUser {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 }

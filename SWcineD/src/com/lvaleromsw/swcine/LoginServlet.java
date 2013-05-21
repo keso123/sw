@@ -32,6 +32,8 @@ public class LoginServlet extends HttpServlet {
 				HttpSession sesion = request.getSession(true);
 				sesion.setAttribute("username",user.getName());
 				
+				if(user.isAdmin()) sesion.setAttribute("admin","true");
+				
 				System.out.println("login correcto");
 			}
 		}catch(Exception e){

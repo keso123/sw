@@ -29,6 +29,7 @@ public class LogoutServlet extends HttpServlet {
 		
 		if(username != null){
 			request.getSession(true).setAttribute("username", null);
+			request.getSession(true).setAttribute("admin",null);
 		}
 		
 		response.sendRedirect("index.jsp");
