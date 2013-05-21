@@ -12,6 +12,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>loginservlet</servlet-name>
 		<servlet-class>com.lvaleromsw.swcine.LoginServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>logoutservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.LogoutServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>registerservlet</servlet-name>
@@ -20,6 +24,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>loginservlet</servlet-name>
 		<url-pattern>/loginservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>logoutservlet</servlet-name>
+		<url-pattern>/logoutservlet</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>

@@ -8,10 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.google.appengine.api.users.UserServiceFactory;
-import com.google.appengine.api.users.UserService;
-import com.google.appengine.api.users.User;
-
 import com.lvaleromsw.swcine.dao.UserDAO;
 import com.lvaleromsw.swcine.persistence.SimpleUser;
 
@@ -20,6 +16,8 @@ public class LoginServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+		
+		try{
 		
 		String name = request.getParameter("username");
 		String passwd = request.getParameter("passwd");
@@ -34,7 +32,10 @@ public class LoginServlet extends HttpServlet {
 				
 				System.out.println("login correcto");
 			}
-		
-		response.sendRedirect("/index.jsp");
+		}catch(Exception e){
+			
+		}finally{
+			response.sendRedirect("/index.jsp");
+		}
 	}
 }

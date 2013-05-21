@@ -43,7 +43,7 @@
 				<%
 					    }else{
 				%>
-				<p><a href="#">Salir</a></p>
+				<p><a href=<%= request.getContextPath()+"logoutservlet"%>>Salir</a></p>
 				<%
 					    }
 				%>
@@ -166,7 +166,7 @@ reparto, a&ntildeo, premios, etc).
 	
 	<p>
 Parte p&uacuteblica y privada: 
-Cualquier persona podrï¿½ ver todos los contenidos de la p&aacutegina web. S&oacutelo usuarios registrados podr&aacuten comentar y puntuar las entradas de la web. 
+Cualquier persona podr&aacute ver todos los contenidos de la p&aacutegina web. S&oacutelo usuarios registrados podr&aacuten comentar y puntuar las entradas de la web. 
 Los &uacutenicos que puede editar los contenidos de las entradas ser&aacuten los administradores de la web.
 	</p>
 	
