@@ -36,7 +36,7 @@
 						<h1>Usuario:</h1>
 					</div>
 					<div class="cine_login_frame_colum">
-						<input type="text" name="username" size="20" value=" ">
+						<input type="text" name="username" size="20" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>

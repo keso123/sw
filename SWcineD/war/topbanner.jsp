@@ -20,7 +20,7 @@
 			</div>
 			<div class="cine_top_banner_title_content_search">
 					<form action="#">
-						<input type="text" name="stext" size="20" value=" ">
+						<input type="text" name="stext" size="20" value="">
 						<select name="stype">
 							<option value="all">Todos</option>
 							<option value="title">T&iacutetulo</option>
