@@ -26,6 +26,7 @@ public class RegisterServlet extends HttpServlet {
 			SimpleUser user = new SimpleUser(name, passwd, email);
 			
 			UserDAO dao = UserDAO.getInstance();
+			
 			if(dao.createUser(user)){
 				System.out.println("usuario creado");
 			}else{

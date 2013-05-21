@@ -25,6 +25,7 @@ public class UserDAO {
 		String query = "select from "+SimpleUser.class.getName()+" where name == '"+user.getName()+"' && email == '"+user.getEmail()+"'";
 		
 		try{
+			
 			List<SimpleUser> list = (List<SimpleUser>) pm.newQuery(query).execute();
 			if(list.isEmpty()){
 				pm.makePersistent(user);
