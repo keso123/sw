@@ -28,13 +28,13 @@
 			<h1>Editar</h1>
 		</div>
 		<div class="cine_edit_frame">
-			<form action="#">
+			<form action="movieaddservlet" method="post">
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
 						<h1>T&iacutetulo:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="title" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -44,7 +44,7 @@
 						<h1>T&iacutetulo pel&iacutecula:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="movieTitle" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -54,7 +54,7 @@
 						<h1>T&iacutetulo original:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="realMovieTitle" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -64,7 +64,7 @@
 						<h1>A&ntildeo:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="date" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -74,7 +74,7 @@
 						<h1>Pa&iacutes:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="country" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -84,7 +84,7 @@
 						<h1>Director:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="director" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -94,7 +94,7 @@
 						<h1>Reparto:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="casting" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -104,7 +104,7 @@
 						<h1>G&eacutenero:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="genre" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -114,7 +114,7 @@
 						<h1>Sinopsis:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="stext" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
