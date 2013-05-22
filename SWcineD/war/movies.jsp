@@ -75,7 +75,7 @@
 				for(int i = 0; i < list.size(); i++) { %>
 			<div class="cine_list_content_box">
 				<div class="cine_list_content_box_pic">
-					<img alt="" src="../images/Iron_Man_3-972235216-large.jpg" width="50" height="75">
+					<img alt="" src="../images/Delete.png" width="50" height="75">
 				</div>
 				<div class="cine_list_content_box_text">
 					<h1><a href="../html/movie.html"><% out.println(list.get(i).getRealMovieTitle()); %></a></h1>
