@@ -76,7 +76,7 @@
 					<li class="cine_top_banner_menu_content_parent">
 						<a href="#">Secciones</a>
 						<ul>
-							<li><a href="../html/movielist.html">Pel&iacuteculas</a></li>
+							<li><a href="../movies.jsp">Pel&iacuteculas</a></li>
 							<li><a href="../html/directorlist.html">Directores</a></li>
 							<li><a href="../html/actorlist.html">Actores</a></li>
 						</ul>
