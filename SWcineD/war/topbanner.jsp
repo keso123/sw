@@ -38,7 +38,7 @@
 			</div>
 			<div class="cine_top_banner_title_content_login">
 				<% 
-					    if (user == null) {
+					    if (session.getAttribute("username") == null) {
 				%>
 				<p><a href="../login.jsp">Entrar</a>/<a href="../register.jsp">Registro</a></p>
 				<%
@@ -86,7 +86,7 @@
 						<a href="#">Usuarios</a>
 						<ul>
 							<% 
-					    		if (user == null) {
+					    		if (session.getAttribute("username") == null) {
 							%>
 							<li><a href="../login.jsp">Entrar</a></li>
 							<li><a href="../register.jsp">Registro</a></li>
@@ -101,7 +101,7 @@
 					</li>
 					
 					<% 
-					    if (admin != null) {
+					    if (session.getAttribute("admin") != null) {
 					%>
 					<li class="cine_top_banner_menu_content_parent">
 						<a href="#">A&ntildeadir</a>

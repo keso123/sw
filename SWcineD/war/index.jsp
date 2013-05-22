@@ -15,8 +15,8 @@
 <body>
 
 <% 
-	Object user = session.getAttribute("username");
-	Object admin = session.getAttribute("admin");
+	//Object user = session.getAttribute("username");
+	//Object admin = session.getAttribute("admin");
 %>
 
 <%@ include file="topbanner.jsp" %>

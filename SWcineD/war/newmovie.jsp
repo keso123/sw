@@ -12,11 +12,11 @@
 <body>
 
 <% 
-	Object user = session.getAttribute("username");
-	Object admin = session.getAttribute("admin");
+	//Object user = session.getAttribute("username");
+	//Object admin = session.getAttribute("admin");
 %>
 
-<% if(admin == null) response.sendRedirect("../index.jsp");%>
+<% if(session.getAttribute("admin") == null) response.sendRedirect("../index.jsp");%>
 
 <%@ include file="topbanner.jsp" %>
 
