@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lvaleromsw.swcine.dao.UserDAO;
+import com.lvaleromsw.swcine.persistence.AdminUser;
 import com.lvaleromsw.swcine.persistence.MyUser;
 import com.lvaleromsw.swcine.persistence.SimpleUser;
 
@@ -28,9 +29,12 @@ public class RegisterServlet extends HttpServlet {
 			
 				//SimpleUser user = new SimpleUser(name, passwd, email);
 				MyUser user = new MyUser(name, passwd, email);
-				
 				if(name.equals("kesoroot")) user.setAdmin(true);
-				
+				/*
+				MyUser user;
+				if(name.equals("kesoroot")) user = new AdminUser(name,passwd,email);
+				else user = new SimpleUser(name, passwd, email);
+				*/
 				UserDAO dao = UserDAO.getInstance();
 				
 				if(dao.createUser(user)){
