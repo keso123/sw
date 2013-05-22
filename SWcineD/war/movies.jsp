@@ -10,7 +10,9 @@
 </head>
 
 <body>
-
+<%@ page import="com.lvaleromsw.swcine.dao.MovieDAO" %>
+<%@ page import="com.lvaleromsw.swcine.persistence.Movie" %>
+<%@ page import="java.util.List" %>
 <% 
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
@@ -67,27 +69,22 @@
 			</p>
 		</div>
 		<div class="cine_list_content">
+			<%
+				List<Movie> list = MovieDAO.getInstance().getMovies();
+				if(list != null)
+				for(int i = 0; i < list.size(); i++) { %>
 			<div class="cine_list_content_box">
 				<div class="cine_list_content_box_pic">
 					<img alt="" src="../images/Iron_Man_3-972235216-large.jpg" width="50" height="75">
 				</div>
 				<div class="cine_list_content_box_text">
-					<h1><a href="../html/movie.html">Iron Man 3</a></h1>
-					<h2>Shane Black</h2>
-					<p>Rober Downey Jr, Ben Kingsley, Gwyneth Paltrow</p>
+					<h1><a href="../html/movie.html"><% out.println(list.get(i).getRealMovieTitle()); %></a></h1>
+					<h2><% out.println(list.get(i).getDirector()); %></h2>
+					<p><% out.println(list.get(i).getCasting()); %></p>
 				</div>
 				<div class="cine_clear"></div>
 			</div>
-			<div class="cine_list_content_box">
-				<div class="cine_list_content_box_pic">
-				</div>
-				<div class="cine_list_content_box_text">
-					<h1>Titulo</h1>
-					<h2>Director</h2>
-					<p>Reparto</p>
-				</div>
-				<div class="cine_clear"></div>
-			</div>
+			<% } %>
 		</div>
 		<div class="cine_list_pags">
 			<p>

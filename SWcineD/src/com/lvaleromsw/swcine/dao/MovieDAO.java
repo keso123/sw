@@ -40,4 +40,24 @@ public class MovieDAO {
 		}
 		return false;
 	}
+	
+	public List<Movie> getMovies(){
+		
+		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
+		
+		String query = "select from "+Movie.class.getName();
+		
+		try{
+			
+			List<Movie> list = (List<Movie>) pm.newQuery(query).execute();
+			
+			if(list.isEmpty())
+				return null;
+			else
+				return list;
+			
+		}finally{
+			pm.close();
+		}
+	}
 }
