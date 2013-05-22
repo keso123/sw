@@ -45,7 +45,7 @@ public class MovieDAO {
 		
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
-		String query = "select from "+Movie.class.getName();
+		String query = "select from "+Movie.class.getName()+" order by realMovieTitle";
 		
 		try{
 			
