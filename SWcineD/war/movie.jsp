@@ -83,7 +83,6 @@
 										<input type="text" name="comment" size="63" value="">
 										<input type="submit" id="button-coment" value="Comentar">
 									</form>
-									<%out.println(mov.getKey().getId());%>
 								</div>
 								<% } %>
 							</div>
