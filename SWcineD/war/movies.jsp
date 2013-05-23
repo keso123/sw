@@ -78,7 +78,7 @@
 					<img alt="" src="../images/Delete.png" width="50" height="75">
 				</div>
 				<div class="cine_list_content_box_text">
-					<h1><a href="../html/movie.html"><% out.println(list.get(i).getRealMovieTitle()); %></a></h1>
+					<h1><a href="../movie.jsp?movie=<%out.println(list.get(i).getKey().getId());%>"><% out.println(list.get(i).getRealMovieTitle()); %></a></h1>
 					<h2><% out.println(list.get(i).getDirector()); %></h2>
 					<p><% out.println(list.get(i).getCasting()); %></p>
 				</div>
