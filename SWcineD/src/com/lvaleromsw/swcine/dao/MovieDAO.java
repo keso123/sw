@@ -116,6 +116,7 @@ public class MovieDAO {
 				mov.setComments(comments);
 				
 				//pm.makePersistent(mov);
+				//pm.flush();
 				
 				return true;
 			}
