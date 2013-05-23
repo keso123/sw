@@ -114,7 +114,7 @@
 						<h1>Sinopsis:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value="">
+						<input type="text" name="synopsis" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>

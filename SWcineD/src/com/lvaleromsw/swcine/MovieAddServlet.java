@@ -26,9 +26,10 @@ public class MovieAddServlet extends HttpServlet {
 			String director = request.getParameter("director");
 			String casting = request.getParameter("casting");
 			String genre = request.getParameter("genre");
+			String synopsis = request.getParameter("synopsis");
 			//String url = request.getParameter("url");
 			
-			Movie mov = new Movie(title, movieTitle, realMovieTitle, date, country, director, casting, genre);
+			Movie mov = new Movie(title, movieTitle, realMovieTitle, date, country, director, casting, genre, synopsis);
 			
 			MovieDAO dao = MovieDAO.getInstance();
 			

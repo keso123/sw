@@ -1,5 +1,7 @@
 package com.lvaleromsw.swcine.persistence;
 
+import java.util.Vector;
+
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -30,8 +32,20 @@ public class Movie {
 	private String casting;
 	@Persistent
 	private String genre;
+	@Persistent
+	private String synopsis;
+	@Persistent 
+	private Vector<String> comments;
 	
-	public Movie(String title,String movieTitle,String realMovieTitle,String date,String country,String director,String casting,String genre){
+	public Movie(String title,
+				 String movieTitle,
+				 String realMovieTitle,
+				 String date,
+				 String country,
+				 String director,
+				 String casting,
+				 String genre,
+				 String synopsis){
 		this.title = title;
 		this.movieTitle = movieTitle;
 		this.realMovieTitle = realMovieTitle;
@@ -40,6 +54,8 @@ public class Movie {
 		this.director = director;
 		this.casting = casting;
 		this.genre = genre;
+		this.synopsis = synopsis;
+		this.comments = new Vector<String>();
 	}
 
 	public Key getKey() {
@@ -112,6 +128,22 @@ public class Movie {
 
 	public void setGenre(String genre) {
 		this.genre = genre;
+	}
+
+	public String getSynopsis() {
+		return synopsis;
+	}
+
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
+	}
+
+	public Vector<String> getComments() {
+		return comments;
+	}
+
+	public void setComments(Vector<String> comments) {
+		this.comments = comments;
 	}
 	
 }

@@ -1,6 +1,7 @@
 package com.lvaleromsw.swcine.dao;
 
 import java.util.List;
+import java.util.Vector;
 
 import javax.jdo.PersistenceManager;
 
@@ -90,6 +91,37 @@ public class MovieDAO {
 			pm.close();
 		}
 		return mov;
+	}
+	
+	public boolean addComment(String comment,String username,long key){
 		
+		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
+		
+		Key k = KeyFactory.createKey(Movie.class.getSimpleName(),key);
+		
+		Movie mov = null;
+		
+		try{
+			
+			mov = pm.getObjectById(Movie.class,k);
+			
+			if(mov == null)
+				return false;
+			else{
+				//pm.deletePersistent(mov);
+				
+				Vector<String> comments = mov.getComments();
+				comments.add(comment);
+				comments.add(username);
+				mov.setComments(comments);
+				
+				//pm.makePersistent(mov);
+				
+				return true;
+			}
+			
+		}finally{
+			pm.close();
+		}
 	}
 }

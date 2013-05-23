@@ -21,6 +21,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>movieaddservlet</servlet-name>
 		<servlet-class>com.lvaleromsw.swcine.MovieAddServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>moviecommentaddservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.MovieCommentAddServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>registerservlet</servlet-name>
@@ -35,6 +39,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/logoutservlet</url-pattern>
 	</servlet-mapping>
 	
+	<servlet-mapping>
+		<servlet-name>moviecommentaddservlet</servlet-name>
+		<url-pattern>/moviecommentaddservlet</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>movieaddservlet</servlet-name>
 		<url-pattern>/movieaddservlet</url-pattern>

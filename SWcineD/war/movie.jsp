@@ -14,6 +14,7 @@
 <%@ page import="com.lvaleromsw.swcine.persistence.Movie" %>
 <%@ page import="com.lvaleromsw.swcine.dao.MovieDAO"%>
 <%@ page import="com.google.appengine.api.datastore.Key"%>
+<%@ page import="java.util.Vector" %>
 
 <%
 	Movie mov = MovieDAO.getInstance().getMovie(Long.valueOf(request.getParameter("movie")));
@@ -56,40 +57,33 @@
 						<dt>G&eacutenero</dt>
 						<dd><% out.println(mov.getGenre()); %></dd>
 						<dt>Sinopsis</dt>
-						<dd><% out.println(mov.getRealMovieTitle()); %></dd>
+						<dd><% out.println(mov.getSynopsis()); %></dd>
 						<dt>Comentarios</dt>
 						<dd>
 							<div class="cine_moviecard_comments">
+								<% 
+									Vector<String> comments = mov.getComments();
+									for(int i = 0; i < comments.size(); i++) { %>
 								<div class="cine_moviecard_comment">
 									<div class="cine_moviecard_comment_text">
 										<p>
-										comentarios...
+										<%out.println(comments.get(i)); %>
 										</p>
 									</div>
 									<div class="cine_moviecard_comment_author">
 										<p>
-										autor
+										<% i = i + 1; out.println(comments.get(i));%>
 										</p>
 									</div>
 								</div>
-								<div class="cine_moviecard_comment">
-									<div class="cine_moviecard_comment_text">
-										<p>
-										comentarios comentarios comentarios comentarios comentarios comentarios comentarios comentarios comentarios comentarios comentarios...
-										</p>
-									</div>
-									<div class="cine_moviecard_comment_author">
-										<p>
-										autor
-										</p>
-									</div>
-								</div>
+								<% } %>
 								<% if(session.getAttribute("username") != null){ %>
 								<div class="cine_moviecard_comment_frame">
-									<form action="#">
-										<input type="text" name="stext" size="63" value=" ">
+									<form action="moviecommentaddservlet?movie=<%out.println(mov.getKey().getId());%>" method="post">
+										<input type="text" name="comment" size="63" value="">
 										<input type="submit" id="button-coment" value="Comentar">
 									</form>
+									<%out.println(mov.getKey().getId());%>
 								</div>
 								<% } %>
 							</div>
