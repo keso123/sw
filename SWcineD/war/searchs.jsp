@@ -17,6 +17,7 @@
 	String searchtext = request.getParameter("s");
 	String type = request.getParameter("stype");
 	List<Movie> movies = MovieDAO.getInstance().searchMovies(searchtext);
+	session.setAttribute("url","/searchs.jsp?s="+searchtext);
 %>
 
 <%@ include file="topbanner.jsp" %>

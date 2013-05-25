@@ -14,7 +14,7 @@ public class MovieCommentAddServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		
+		String redirect = "/index.jsp";
 		String str = request.getParameter("movie");
 		
 		try{
@@ -36,7 +36,7 @@ public class MovieCommentAddServlet extends HttpServlet {
 			MovieDAO dao = MovieDAO.getInstance();
 			
 			if(dao.addComment(comment, username, key)){
-				
+				redirect = (String) request.getSession(true).getAttribute("url");
 			}else{
 				System.out.println("la pelicula no existe");
 			}
@@ -45,7 +45,7 @@ public class MovieCommentAddServlet extends HttpServlet {
 			System.out.println("error al añadir comentario");
 		}finally{
 			//request.setAttribute("movie",str);
-			response.sendRedirect("/index.jsp");
+			response.sendRedirect(redirect);
 		}
 	}
 

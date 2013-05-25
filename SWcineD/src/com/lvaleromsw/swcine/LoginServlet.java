@@ -17,11 +17,12 @@ public class LoginServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		
+		String redirect = "/index.jsp";
 		try{
-		
+		HttpSession sesion = request.getSession(true);
 		String name = request.getParameter("username");
 		String passwd = request.getParameter("passwd");
+		String url = (String) sesion.getAttribute("url");
 			
 			UserDAO dao = UserDAO.getInstance();
 			//SimpleUser user = dao.getUser(name,passwd);
@@ -29,17 +30,19 @@ public class LoginServlet extends HttpServlet {
 			if(user == null){
 				System.out.println("usuario no valido");
 			}else{
-				HttpSession sesion = request.getSession(true);
+				sesion = request.getSession(true);
 				sesion.setAttribute("username",user.getName());
 				
 				if(user.isAdmin()) sesion.setAttribute("admin","true");
 				
 				System.out.println("login correcto");
+				//System.out.println(url);
+				redirect = url;
 			}
 		}catch(Exception e){
 			System.out.println("Error login");
 		}finally{
-			response.sendRedirect("/index.jsp");
+			response.sendRedirect(redirect);
 		}
 	}
 }

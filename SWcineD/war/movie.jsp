@@ -19,6 +19,7 @@
 <%
 	Movie mov = MovieDAO.getInstance().getMovie(Long.valueOf(request.getParameter("movie")));
 	if(mov == null) response.sendRedirect("../index.jsp");
+	session.setAttribute("url","/movie.jsp?movie="+request.getParameter("movie"));
 %>
 
 <%@ include file="topbanner.jsp" %>

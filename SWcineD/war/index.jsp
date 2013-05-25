@@ -17,6 +17,7 @@
 <% 
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
+	session.setAttribute("url","/index.jsp");
 %>
 
 <%@ include file="topbanner.jsp" %>

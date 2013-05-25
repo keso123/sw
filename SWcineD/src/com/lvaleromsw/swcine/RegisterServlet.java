@@ -17,7 +17,7 @@ public class RegisterServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		
+		String redirect = "/index.jsp";
 		try
 		{
 			String name = request.getParameter("username");
@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
 			e.printStackTrace();
 		}finally{
 		
-			response.sendRedirect("/index.jsp");
+			response.sendRedirect(redirect);
 		}
 	}
 	

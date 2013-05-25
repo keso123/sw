@@ -14,6 +14,9 @@
 <% 
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
+	//String redirect = request.getRequestURI();
+	//System.out.print(redirect);
+	//request.setAttribute("url",redirect);
 %>
 
 <%@ include file="topbanner.jsp" %>

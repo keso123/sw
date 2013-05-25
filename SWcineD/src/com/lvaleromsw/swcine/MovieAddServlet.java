@@ -15,7 +15,7 @@ public class MovieAddServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		
+		String redirect = "/index.jsp";
 		try{
 			
 			String title = request.getParameter("title");
@@ -42,7 +42,7 @@ public class MovieAddServlet extends HttpServlet {
 		}catch(Exception e){
 			System.out.println("error al crear pelicula");
 		}finally{
-			response.sendRedirect("/index.jsp");
+			response.sendRedirect(redirect);
 		}
 	}
 	

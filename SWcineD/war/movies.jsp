@@ -16,6 +16,7 @@
 <% 
 	String letter = request.getParameter("letter");
 	List<Movie> movies = MovieDAO.getInstance().getMovies(letter);
+	session.setAttribute("url","/movies.jsp?letter="+letter);
 %>
 
 <%@ include file="topbanner.jsp" %>
