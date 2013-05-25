@@ -40,7 +40,7 @@
 				for(int i = 0; i < movies.size(); i++) { %>
 			<div class="cine_list_content_box">
 				<div class="cine_list_content_box_pic">
-					<img alt="" src="../images/Delete.png" width="50" height="75">
+					<img alt="" src="showimageservlet?movie=<%= movies.get(i).getKey().getId() %>" width="50" height="75">
 				</div>
 				<div class="cine_list_content_box_text">
 					<h1><a href="../movie.jsp?movie=<%out.println(movies.get(i).getKey().getId());%>"><% out.println(movies.get(i).getRealMovieTitle()); %></a></h1>
