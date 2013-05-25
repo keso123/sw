@@ -1,5 +1,6 @@
 package com.lvaleromsw.swcine.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -8,6 +9,7 @@ import javax.jdo.PersistenceManager;
 import com.lvaleromsw.swcine.persistence.Movie;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
+import com.google.apphosting.api.DatastorePb.Query;
 
 public class MovieDAO {
 
@@ -32,6 +34,7 @@ public class MovieDAO {
 					+"' && date == '"+mov.getDate()+"'";
 		try{
 			
+			@SuppressWarnings("unchecked")
 			List<Movie> list = (List<Movie>) pm.newQuery(query).execute();
 			if(list.isEmpty()){
 				pm.makePersistent(mov);
@@ -52,12 +55,45 @@ public class MovieDAO {
 		
 		try{
 			
+			@SuppressWarnings("unchecked")
 			List<Movie> list = (List<Movie>) pm.newQuery(query).execute();
 			
 			if(list.isEmpty())
 				return null;
 			else
 				return list;
+			
+		}finally{
+			pm.close();
+		}
+	}
+
+	public List<Movie> getMovies(String letter){
+		
+		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
+		
+		//String filter = "realMovieTitle >= '"+letter+"' && realMovieTitle < '"+letter+"' \uFFFD";
+		
+		String query = "select from "+Movie.class.getName()+
+				//" where "+filter+
+				" order by realMovieTitle" ;
+		try{
+			
+			@SuppressWarnings("unchecked")
+			List<Movie> list = (List<Movie>) pm.newQuery(query).execute();
+			
+			if(list.isEmpty())
+				return null;
+			else{
+				List<Movie> result = new ArrayList<Movie>();
+				for(int i = 0; i < list.size(); i++){
+					if(list.get(i).getRealMovieTitle().startsWith(letter)){
+						result.add(list.get(i));
+					}
+				}
+				if(result.isEmpty()) return null;
+				return result;
+			}
 			
 		}finally{
 			pm.close();
