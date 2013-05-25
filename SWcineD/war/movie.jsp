@@ -15,11 +15,14 @@
 <%@ page import="com.lvaleromsw.swcine.dao.MovieDAO"%>
 <%@ page import="com.google.appengine.api.datastore.Key"%>
 <%@ page import="java.util.Vector" %>
+<%@ page import="java.io.OutputStream" %>
 
 <%
-	Movie mov = MovieDAO.getInstance().getMovie(Long.valueOf(request.getParameter("movie")));
+	String m = request.getParameter("movie");
+	if(m == null) response.sendRedirect("/index.jsp");
+	Movie mov = MovieDAO.getInstance().getMovie(Long.valueOf(m));
 	if(mov == null) response.sendRedirect("../index.jsp");
-	session.setAttribute("url","/movie.jsp?movie="+request.getParameter("movie"));
+	session.setAttribute("url","/movie.jsp?movie="+m);
 %>
 
 <%@ include file="topbanner.jsp" %>
@@ -91,7 +94,7 @@
 					</dl>
 				</div>
 				<div class="cine_moviecard_content_info_pic">
-					<img alt="" src="../images/Delete.png" width="100" height="150">
+					<img alt="" src="showimageservlet?movie=<%=m %>" width="100" height="150">
 				</div>
 				<div class="cine_clear"></div>
 			</div>

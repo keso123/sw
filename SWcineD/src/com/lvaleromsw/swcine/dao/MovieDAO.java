@@ -137,11 +137,11 @@ PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
 		//String query = "select from "+Movie.class.getName()+" where key == '"+KeyFactory.createKey(Movie.class.getName(),key)+"'";
 		
-		Key k = KeyFactory.createKey(Movie.class.getSimpleName(), key);
-		
 		Movie mov = null;
 		
 		try{
+			
+			Key k = KeyFactory.createKey(Movie.class.getSimpleName(), key);
 			
 			mov = pm.getObjectById(Movie.class,k);
 			/*List<Movie> list = (List<Movie>) pm.newQuery(query).execute();
@@ -153,6 +153,8 @@ PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 			}else{
 				return null;
 			}*/
+			
+		}catch(Exception e){
 			
 		}finally{
 			pm.close();

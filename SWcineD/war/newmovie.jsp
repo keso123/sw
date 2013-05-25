@@ -28,7 +28,7 @@
 			<h1>Editar</h1>
 		</div>
 		<div class="cine_edit_frame">
-			<form action="movieaddservlet" method="post">
+			<form action="movieaddservlet" method="post" enctype="mulipart/form-data">
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
 						<h1>T&iacutetulo:</h1>
@@ -117,6 +117,17 @@
 						<input type="text" name="synopsis" size="60" value="">
 					</div>
 				</div>
+				
+				<div class="cine_edit_frame_row">
+					<div class="cine_edit_frame_colum_left">
+						<h1>Imagen:</h1>
+					</div>
+					<div class="cine_edit_frame_colum_right">
+						<!-- <input type="file" name="imagefile"> -->
+						<input type="text" name="imagefile" size="60" value="">
+					</div>
+				</div>
+				
 				<div class="cine_clear"></div>
 				
 				<div class="cine_edit_frame_row">

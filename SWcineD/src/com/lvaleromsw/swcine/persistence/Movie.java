@@ -2,11 +2,13 @@ package com.lvaleromsw.swcine.persistence;
 
 import java.util.Vector;
 
+import javax.jdo.annotations.Extension;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.google.appengine.api.datastore.Blob;
 import com.google.appengine.api.datastore.Key;
 
 @PersistenceCapable
@@ -36,7 +38,12 @@ public class Movie {
 	private String synopsis;
 	@Persistent 
 	private Vector<String> comments;
-	
+	@Persistent
+	@Extension(vendorName="datanucleus", key="gae.unidexed", value="true")
+	private String imageType;
+	@Persistent
+	private Blob image;
+
 	public Movie(String title,
 				 String movieTitle,
 				 String realMovieTitle,
@@ -56,6 +63,8 @@ public class Movie {
 		this.genre = genre;
 		this.synopsis = synopsis;
 		this.comments = new Vector<String>();
+		this.image = null;
+		this.imageType = null;
 	}
 
 	public Key getKey() {
@@ -144,6 +153,23 @@ public class Movie {
 
 	public void setComments(Vector<String> comments) {
 		this.comments = comments;
+	}
+	
+	public String getImageType() {
+		return imageType;
+	}
+
+	public void setImageType(String imageType) {
+		this.imageType = imageType;
+	}
+	
+	public byte[] getImage(){
+		if(image == null) return null;
+		return image.getBytes();
+	}
+	
+	public void setImage(byte[] bytes){
+		this.image = new Blob(bytes);
 	}
 	
 }
