@@ -25,8 +25,8 @@
 			<h1><a href="../index.jsp">SW Cine</a></h1>
 			</div>
 			<div class="cine_top_banner_title_content_search">
-					<form action="#">
-						<input type="text" name="stext" size="20" value="">
+					<form action="searchservlet" method="post">
+						<input type="text" name="searchtext" size="20" value="">
 						<select name="stype">
 							<option value="all">Todos</option>
 							<option value="title">T&iacutetulo</option>
@@ -76,7 +76,7 @@
 					<li class="cine_top_banner_menu_content_parent">
 						<a href="#">Secciones</a>
 						<ul>
-							<li><a href="../movies.jsp">Pel&iacuteculas</a></li>
+							<li><a href="../movies.jsp?letter=a">Pel&iacuteculas</a></li>
 							<li><a href="../html/directorlist.html">Directores</a></li>
 							<li><a href="../html/actorlist.html">Actores</a></li>
 						</ul>

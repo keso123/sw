@@ -100,6 +100,37 @@ public class MovieDAO {
 		}
 	}
 	
+	public List<Movie> searchMovies(String s){
+PersistenceManager pm = PMF.getInstance().getPersistenceManager();
+		
+		//String filter = "realMovieTitle >= '"+letter+"' && realMovieTitle < '"+letter+"' \uFFFD";
+		
+		String query = "select from "+Movie.class.getName()+
+				//" where "+filter+
+				" order by realMovieTitle" ;
+		try{
+			
+			@SuppressWarnings("unchecked")
+			List<Movie> list = (List<Movie>) pm.newQuery(query).execute();
+			
+			if(list.isEmpty())
+				return null;
+			else{
+				List<Movie> result = new ArrayList<Movie>();
+				for(int i = 0; i < list.size(); i++){
+					if(list.get(i).getRealMovieTitle().contains(s)){
+						result.add(list.get(i));
+					}
+				}
+				if(result.isEmpty()) return null;
+				return result;
+			}
+			
+		}finally{
+			pm.close();
+		}
+	}
+	
 	public Movie getMovie(long key){
 		
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
