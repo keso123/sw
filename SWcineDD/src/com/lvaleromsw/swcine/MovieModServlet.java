@@ -77,7 +77,7 @@ public class MovieModServlet extends HttpServlet {
 			
 			MovieDAO dao = MovieDAO.getInstance();
 			
-			if(dao.modMovie(mov,key)){
+			if(dao.updateMovie(mov,key)){
 				System.out.println("Pelicula modificada");
 			}else{
 				System.out.println("Error al modificar pelicula");

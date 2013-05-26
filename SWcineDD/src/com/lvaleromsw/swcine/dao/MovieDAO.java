@@ -195,7 +195,7 @@ PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		}
 	}
 
-	public boolean modMovie(Movie m,long key) {
+	public boolean updateMovie(Movie m,long key) {
 		
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
