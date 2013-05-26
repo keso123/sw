@@ -13,29 +13,41 @@ public class LogoutServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		
-		Object username = request.getSession(true).getAttribute("username");
-		
-		if(username != null){
-			request.getSession(true).setAttribute("username", null);
+		String redirect = "/index.jsp";
+		try{
+			HttpSession sesion = request.getSession(true);
+			Object username = request.getSession(true).getAttribute("username");
+			String url = (String) sesion.getAttribute("url");
+			
+			if(username != null){
+				request.getSession(true).setAttribute("username", null);
+				request.getSession(true).setAttribute("admin",null);
+				redirect = url;
+			}
+		}catch(Exception e){
+			System.out.println("Error la desconectar");
+		}finally{
+			response.sendRedirect(redirect);
 		}
-		
-		response.sendRedirect("index.jsp");
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
-		HttpSession sesion = request.getSession(true);
-		Object username = request.getSession(true).getAttribute("username");
-		String url = (String) sesion.getAttribute("url");
-		
-		if(username != null){
-			request.getSession(true).setAttribute("username", null);
-			request.getSession(true).setAttribute("admin",null);
-			redirect = url;
+		try{
+			HttpSession sesion = request.getSession(true);
+			Object username = request.getSession(true).getAttribute("username");
+			String url = (String) sesion.getAttribute("url");
+			
+			if(username != null){
+				request.getSession(true).setAttribute("username", null);
+				request.getSession(true).setAttribute("admin",null);
+				redirect = url;
+			}
+		}catch(Exception e){
+			System.out.println("Error la desconectar");
+		}finally{
+			response.sendRedirect(redirect);
 		}
-		
-		response.sendRedirect(redirect);
 	}
 }
