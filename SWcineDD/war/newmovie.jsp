@@ -6,7 +6,7 @@
 <link type="text/css" rel="stylesheet" href="../css/index.css">
 
 <script type="text/javascript" src="../js/jquery-2.0.1.min.js"></script>
-<script type="text/javascript" src="/js/check.js"></script>
+<script type="text/javascript" src="/js/checkmovie.js"></script>
 
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
 
@@ -22,12 +22,20 @@
 	String mov  = request.getParameter("movie");
 	String mode = request.getParameter("c");
 	String servlet = "movieaddservlet";
-	if(mov != null) servlet = "moviemodservlet?movie="+mov;
-	else if(mode != null) servlet = "movieaddservlet";
-	if(mode == null) mode="edit";
-	System.out.println(mode);
-	System.out.println(mov);
-	System.out.println(servlet);
+	
+	if(mov != null) {
+		servlet = "moviemodservlet?movie="+mov;
+	}else if(mode != null){ 
+		servlet = "movieaddservlet";
+	}
+	if(mode == null){
+		mode="edit";
+	}
+	
+	//System.out.println(mode);
+	//System.out.println(mov);
+	//System.out.println(servlet);
+	
 	String type = "";
 	String onclick = "";
 	if(mov != null){
@@ -53,9 +61,11 @@
 			<% } %>
 		</div>
 		<div class="cine_edit_frame">
+		
 			<form name="check_movie" id="check_movie"
 			action="<%out.println(servlet);%>" 
 			method="post" enctype="mulipart/form-data">
+			
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
 						<h1>T&iacutetulo:</h1>
@@ -71,7 +81,7 @@
 						<h1>T&iacutetulo pel&iacutecula:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="movieTitle" size="60" value="">
+						<input id="movieTitle" type="text" name="movieTitle" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -81,7 +91,7 @@
 						<h1>T&iacutetulo original:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="realMovieTitle" size="60" value="">
+						<input id="realMovieTitle" type="text" name="realMovieTitle" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -91,7 +101,7 @@
 						<h1>A&ntildeo:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="date" size="60" value="">
+						<input id="date" type="text" name="date" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -101,7 +111,7 @@
 						<h1>Pa&iacutes:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="country" size="60" value="">
+						<input id="country" type="text" name="country" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -111,7 +121,7 @@
 						<h1>Director:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="director" size="60" value="">
+						<input id="director" type="text" name="director" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -121,7 +131,7 @@
 						<h1>Reparto:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="casting" size="60" value="">
+						<input id="casting" type="text" name="casting" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -131,7 +141,7 @@
 						<h1>G&eacutenero:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="genre" size="60" value="">
+						<input id="genre" type="text" name="genre" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -141,7 +151,7 @@
 						<h1>Sinopsis:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="synopsis" size="60" value="">
+						<input id="synopsis" type="text" name="synopsis" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -151,7 +161,7 @@
 						<h1>Imagen:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="imagefile" size="60" value="">
+						<input id="imagefile" type="text" name="imagefile" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>

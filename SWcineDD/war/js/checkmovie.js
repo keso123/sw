@@ -32,11 +32,11 @@ function checkMovie(){
 		return;
 	}
 	if($.trim(check_movie.synopsis.value) == ""){
-		alert("La sinopsis no puede ser vacio");
+		alert("La sinopsis no puede ser vacia");
 		return;
 	}
 	if($.trim(check_movie.imagefile.value) == ""){
-		alert("La imagen no puede ser vacio");
+		alert("La imagen no puede ser vacia");
 		return;
 	}
 	
