@@ -14,6 +14,15 @@
 <% 
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
+	String mov  = request.getParameter("movie");
+	String mode = request.getParameter("c");
+	String servlet = "movieaddservlet";
+	if(mov != null) servlet = "moviemodservlet?movie="+mov;
+	else if(mode != null) servlet = "movieaddservlet";
+	if(mode == null) mode="edit";
+	System.out.println(mode);
+	System.out.println(mov);
+	System.out.println(servlet);
 %>
 
 <% if(session.getAttribute("admin") == null) response.sendRedirect("../index.jsp");%>
@@ -25,10 +34,13 @@
 	
 	<div class="cine_main_wrapper">
 		<div class="cine_edit_title">
-			<h1>Editar</h1>
+			<% if(!mode.equals("add")) {%><h1>Editar</h1>
+			<% }else{ %><h1>A&ntildeadir</h1>
+			<% } %>
 		</div>
 		<div class="cine_edit_frame">
-			<form action="movieaddservlet" method="post" enctype="mulipart/form-data">
+			<form action="<%out.println(servlet);%>" 
+			method="post" enctype="mulipart/form-data">
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
 						<h1>T&iacutetulo:</h1>

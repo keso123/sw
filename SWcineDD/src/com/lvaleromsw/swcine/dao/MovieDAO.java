@@ -194,4 +194,75 @@ PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 			pm.close();
 		}
 	}
+
+	public boolean modMovie(Movie m,long key) {
+		
+		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
+		
+		Key k = KeyFactory.createKey(Movie.class.getSimpleName(),key);
+		
+		Movie mov = null;
+		
+		try{
+			
+			mov = pm.getObjectById(Movie.class,k);
+			
+			if(mov == null)
+				return false;
+			else{
+				//pm.deletePersistent(mov);
+				//System.out.println(m.getTitle());
+				if(m.getTitle() != null && !m.getTitle().equals("")) 
+					mov.setTitle(m.getTitle());
+				
+				//System.out.println(m.getMovieTitle());
+				if(m.getMovieTitle() != null && !m.getMovieTitle().equals("")) 
+					mov.setMovieTitle(m.getMovieTitle());
+				
+				//System.out.println(m.getRealMovieTitle());
+				if(m.getRealMovieTitle() != null && !m.getRealMovieTitle().equals("")) 
+					mov.setRealMovieTitle(m.getRealMovieTitle());
+				
+				//System.out.println(m.getDate());
+				if(m.getDate() != null && !m.getDate().equals("")) 
+					mov.setDate(m.getDate());
+				
+				//System.out.println(m.getCountry());
+				if(m.getCountry() != null && !m.getCountry().equals("")) 
+					mov.setCountry(m.getCountry());
+				
+				//System.out.println(m.getDirector());
+				if(m.getDirector() != null && !m.getDirector().equals("")) 
+					mov.setDirector(m.getDirector());
+				
+				//System.out.println(m.getCasting());
+				if(m.getCasting() != null && !m.getCasting().equals("")) 
+					mov.setCasting(m.getCasting());
+				
+				//System.out.println(m.getGenre());
+				if(m.getGenre() != null && !m.getGenre().equals("")) 
+					mov.setGenre(m.getGenre());
+				
+				//System.out.println(m.getSynopsis());
+				if(m.getSynopsis() != null && !m.getSynopsis().equals("")) 
+					mov.setSynopsis(m.getSynopsis());
+				
+				//System.out.println(m.getImageType());
+				if(m.getImageType() != null) 
+					mov.setImageType(m.getImageType());
+				
+				//System.out.println(m.getImage());
+				if(m.getImage() != null) 
+					mov.setImage(m.getImage());
+				
+				//pm.makePersistent(mov);
+				//pm.flush();
+				
+				return true;
+			}
+			
+		}finally{
+			pm.close();
+		}
+	}
 }

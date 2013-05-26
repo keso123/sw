@@ -106,7 +106,7 @@
 					<li class="cine_top_banner_menu_content_parent">
 						<a href="#">A&ntildeadir</a>
 						<ul>
-							<li><a href="../newmovie.jsp">Pel&iacutecula</a></li>
+							<li><a href="../newmovie.jsp?c=add">Pel&iacutecula</a></li>
 							<li><a href="../html/adddirector.html">Director</a></li>
 							<li><a href="../html/addactor.html">Actor</a></li>
 						</ul>

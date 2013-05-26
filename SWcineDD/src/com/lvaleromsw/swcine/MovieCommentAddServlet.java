@@ -23,13 +23,13 @@ public class MovieCommentAddServlet extends HttpServlet {
 			String username = (String) request.getSession(true).getAttribute("username");
 			//String str = request.getParameter("movie");
 			
-			if(comment == null)System.out.println("comentario nulo");
-			if(username == null)System.out.println("usuario nulo");
-			if(str == null)System.out.println("key nulo");
+			//if(comment == null)System.out.println("comentario nulo");
+			//if(username == null)System.out.println("usuario nulo");
+			//if(str == null)System.out.println("key nulo");
 			
-			System.out.println(comment);
-			System.out.println(username);
-			System.out.println(str);
+			//System.out.println(comment);
+			//System.out.println(username);
+			//System.out.println(str);
 			
 			long key = Long.valueOf(str);
 			

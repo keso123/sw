@@ -25,6 +25,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>moviecommentaddservlet</servlet-name>
 		<servlet-class>com.lvaleromsw.swcine.MovieCommentAddServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>moviemodservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.MovieModServlet</servlet-class>
+	</servlet>
 	
 	<servlet>
 		<servlet-name>searchservlet</servlet-name>
@@ -56,6 +60,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>movieaddservlet</servlet-name>
 		<url-pattern>/movieaddservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>moviemodservlet</servlet-name>
+		<url-pattern>/moviemodservlet</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>

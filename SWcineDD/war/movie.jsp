@@ -37,7 +37,7 @@
 			<form action="#"><input type="button" onClick="openEditMovie()" id="button-edit" value="Editar"></form>
 			<script>
 				function openEditMovie() {
-					location.href="../newmovie.jsp";
+					location.href="../newmovie.jsp?movie=<%=mov.getKey().getId()%>";
 				}
 			</script>
 			<% } %>
