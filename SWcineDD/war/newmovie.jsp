@@ -5,6 +5,11 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link type="text/css" rel="stylesheet" href="../css/index.css">
 
+<script type="text/javascript" src="../js/jquery-2.0.1.min.js"></script>
+<script type="text/javascript" src="/js/check.js"></script>
+
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+
 <title>CINE</title>
 
 </head>
@@ -23,6 +28,15 @@
 	System.out.println(mode);
 	System.out.println(mov);
 	System.out.println(servlet);
+	String type = "";
+	String onclick = "";
+	if(mov != null){
+		type = "submit";
+		onclick = "";
+	}else {
+		type = "button";
+		onclick = "checkMovie()";
+	}
 %>
 
 <% if(session.getAttribute("admin") == null) response.sendRedirect("../index.jsp");%>
@@ -39,14 +53,15 @@
 			<% } %>
 		</div>
 		<div class="cine_edit_frame">
-			<form action="<%out.println(servlet);%>" 
+			<form name="check_movie" id="check_movie"
+			action="<%out.println(servlet);%>" 
 			method="post" enctype="mulipart/form-data">
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
 						<h1>T&iacutetulo:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="title" size="60" value="">
+						<input id="title" type="text" name="title" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -129,21 +144,20 @@
 						<input type="text" name="synopsis" size="60" value="">
 					</div>
 				</div>
+				<div class="cine_clear"></div>
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
 						<h1>Imagen:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<!-- <input type="file" name="imagefile"> -->
 						<input type="text" name="imagefile" size="60" value="">
 					</div>
 				</div>
-				
 				<div class="cine_clear"></div>
 				
 				<div class="cine_edit_frame_row">
-					<input type="submit" id="button-edit" value="Editar">
+					<input type=<%=type %> id="button-edit"<% if(mode.equals("add"))out.println("onclick="+onclick); %> value="Aceptar">
 				</div>
 			</form>
 		</div>

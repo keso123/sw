@@ -87,7 +87,11 @@ public class MovieDAO {
 			else{
 				List<Movie> result = new ArrayList<Movie>();
 				for(int i = 0; i < list.size(); i++){
-					if(list.get(i).getRealMovieTitle().startsWith(letter)){
+					//if(list.get(i).getRealMovieTitle().startsWith(letter)){
+						//result.add(list.get(i));
+					//}
+					if(Character.toLowerCase(list.get(i).getRealMovieTitle().charAt(0)) == 
+					   Character.toLowerCase(letter.charAt(0))){
 						result.add(list.get(i));
 					}
 				}
