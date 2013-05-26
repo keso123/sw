@@ -66,7 +66,7 @@
 				<div class="cine_clear"></div>
 				
 				<div class="cine_login_frame_row">
-					<input type="button" id="button-send" onclick="checkLogin()" value="Enviar">
+					<input type="submit" id="button-send" value="Enviar">
 				</div>
 				<div class="cine_clear"></div>
 				

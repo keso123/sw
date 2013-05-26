@@ -21,6 +21,7 @@ public class UserDAO {
 	}
 	
 	//public boolean createUser(SimpleUser user){
+	@SuppressWarnings("unchecked")
 	public boolean createUser(MyUser user){
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
@@ -45,6 +46,7 @@ public class UserDAO {
 	}
 	
 	//public SimpleUser getUser(String username,String pass){
+	@SuppressWarnings("unchecked")
 	public MyUser getUser(String username,String pass){
 		
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();

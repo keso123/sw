@@ -9,7 +9,6 @@ import javax.jdo.PersistenceManager;
 import com.lvaleromsw.swcine.persistence.Movie;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
-import com.google.apphosting.api.DatastorePb.Query;
 
 public class MovieDAO {
 
