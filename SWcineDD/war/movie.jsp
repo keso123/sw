@@ -40,6 +40,12 @@
 					location.href="../newmovie.jsp?movie=<%=mov.getKey().getId()%>";
 				}
 			</script>
+			<form action="#"><input type="button" onClick="openDelMovie()" id="button-del" value="Eliminar"></form>
+			<script>
+				function openDelMovie() {
+					location.href="../moviedelservlet?movie=<%=mov.getKey().getId()%>";
+				}
+			</script>
 			<% } %>
 		</div>
 		<div class="cine_moviecard_content">

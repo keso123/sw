@@ -265,4 +265,33 @@ PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 			pm.close();
 		}
 	}
+	
+	public boolean deleteMovie(long key){
+		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
+		
+		Key k = KeyFactory.createKey(Movie.class.getSimpleName(),key);
+		
+		Movie mov = null;
+		
+		try{
+			
+			mov = pm.getObjectById(Movie.class,k);
+			
+			if(mov == null)
+				return false;
+			else{
+				//pm.deletePersistent(mov);
+				
+				pm.deletePersistent(mov);
+				
+				//pm.makePersistent(mov);
+				//pm.flush();
+				
+				return true;
+			}
+			
+		}finally{
+			pm.close();
+		}
+	}
 }
