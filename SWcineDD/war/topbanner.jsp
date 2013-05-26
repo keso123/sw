@@ -77,8 +77,8 @@
 						<a href="#">Secciones</a>
 						<ul>
 							<li><a href="../movies.jsp?letter=a">Pel&iacuteculas</a></li>
-							<li><a href="../html/directorlist.html">Directores</a></li>
-							<li><a href="../html/actorlist.html">Actores</a></li>
+							<li><a href="#">Directores</a></li>
+							<li><a href="#">Actores</a></li>
 						</ul>
 					</li>
 					
@@ -107,8 +107,8 @@
 						<a href="#">A&ntildeadir</a>
 						<ul>
 							<li><a href="../newmovie.jsp?c=add">Pel&iacutecula</a></li>
-							<li><a href="../html/adddirector.html">Director</a></li>
-							<li><a href="../html/addactor.html">Actor</a></li>
+							<li><a href="#">Director</a></li>
+							<li><a href="#">Actor</a></li>
 						</ul>
 					</li>
 					<%
