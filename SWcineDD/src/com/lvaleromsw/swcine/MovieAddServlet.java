@@ -128,6 +128,9 @@ public class MovieAddServlet extends HttpServlet {
 			//request.getRequestDispatcher("../index.jsp").forward(request, response);
 		}
 	}
-	
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		response.sendRedirect("../index.jsp");
+	}
 	
 }

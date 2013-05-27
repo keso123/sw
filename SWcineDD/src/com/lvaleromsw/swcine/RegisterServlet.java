@@ -84,4 +84,8 @@ public class RegisterServlet extends HttpServlet {
 		
 		return pass.equals(repass);
 	}
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		response.sendRedirect("../index.jsp");
+	}
 }

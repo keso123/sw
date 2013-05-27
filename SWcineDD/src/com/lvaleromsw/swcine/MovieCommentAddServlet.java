@@ -59,5 +59,9 @@ public class MovieCommentAddServlet extends HttpServlet {
 			response.sendRedirect(redirect);
 		}
 	}
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		response.sendRedirect("../index.jsp");
+	}
 
 }
