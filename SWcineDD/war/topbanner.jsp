@@ -107,7 +107,7 @@
 						<a href="#">A&ntildeadir</a>
 						<ul>
 							<li><a href="../newmovie.jsp?c=add">Pel&iacutecula</a></li>
-							<li><a href="#">Director</a></li>
+							<li><a href="../newdirector.jsp?c=add">Director</a></li>
 							<li><a href="#">Actor</a></li>
 						</ul>
 					</li>

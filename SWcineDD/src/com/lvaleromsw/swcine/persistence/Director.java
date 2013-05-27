@@ -19,6 +19,8 @@ public class Director {
 	private Key key;
 	
 	@Persistent
+	private String title;
+	@Persistent
 	private String name;
 	@Persistent
 	private String realName;
@@ -44,7 +46,8 @@ public class Director {
 	@Persistent
 	private Blob image;
 	
-	public Director(String name,
+	public Director(String title,
+					String name,
 					String realName,
 					String birth,
 					String death,
@@ -53,6 +56,7 @@ public class Director {
 					String debut,
 					String awards,
 					String filmography){
+		this.title = title;
 		this.name = name;
 		this.realName = realName;
 		this.birth = birth;
@@ -65,6 +69,16 @@ public class Director {
 		this.comments = new Vector<String>();
 		this.imageType = null;
 		this.image = null;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public Key getKey() {
@@ -163,12 +177,13 @@ public class Director {
 		this.imageType = imageType;
 	}
 
-	public Blob getImage() {
-		return image;
+	public byte[] getImage() {
+		if(image == null) return null;
+		return image.getBytes();
 	}
 
-	public void setImage(Blob image) {
-		this.image = image;
+	public void setImage(byte[] bytes) {
+		this.image = new Blob(bytes);
 	}
 	
 }

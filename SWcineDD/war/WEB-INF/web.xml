@@ -35,6 +35,23 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet>
 	
 	<servlet>
+		<servlet-name>directoraddservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.DirectorAddServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>directorcommentaddservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.DirectorCommentAddServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>directormodservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.DirectorModServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>directordelservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.DirectorDelServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
 		<servlet-name>searchservlet</servlet-name>
 		<servlet-class>com.lvaleromsw.swcine.SearchServlet</servlet-class>
 	</servlet>
@@ -72,6 +89,23 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>moviedelservlet</servlet-name>
 		<url-pattern>/moviedelservlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>directorcommentaddservlet</servlet-name>
+		<url-pattern>/directorcommentaddservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>directoraddservlet</servlet-name>
+		<url-pattern>/directoraddservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>directormodservlet</servlet-name>
+		<url-pattern>/directormodservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>directordelservlet</servlet-name>
+		<url-pattern>/directordelservlet</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>

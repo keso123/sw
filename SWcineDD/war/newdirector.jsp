@@ -19,14 +19,14 @@
 <% 
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
-	String mov  = request.getParameter("movie");
+	String dir  = request.getParameter("director");
 	String mode = request.getParameter("c");
-	String servlet = "movieaddservlet";
+	String servlet = "directoraddservlet";
 	
-	if(mov != null) {
-		servlet = "moviemodservlet?movie="+mov;
+	if(dir != null) {
+		servlet = "directormodservlet?movie="+dir;
 	}else if(mode != null){ 
-		servlet = "movieaddservlet";
+		servlet = "directoraddservlet";
 	}
 	if(mode == null){
 		mode="edit";
@@ -38,7 +38,7 @@
 	
 	String type = "";
 	String onclick = "";
-	if(mov != null){
+	if(dir != null){
 		type = "submit";
 		onclick = "";
 	}else {
@@ -56,16 +56,21 @@
 	
 	<div class="cine_main_wrapper">
 		<div class="cine_edit_title">
-			<h1>Editar</h1>
+			<% if(!mode.equals("add")) { %>
+				<h1>Editar</h1>
+			<% }else{ %>
+				<h1>A&ntildeadir</h1>
+			<% } %>
 		</div>
 		<div class="cine_edit_frame">
-			<form action="#">
+			<form name="cheack_director" id="check_director"
+			action="<%=servlet %>" method="post" >
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>Título:</h1>
+						<h1>T&iacutetulo:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="title" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -75,7 +80,7 @@
 						<h1>Nombre:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="name" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -85,7 +90,7 @@
 						<h1>Nombre real:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="realName" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -95,7 +100,7 @@
 						<h1>Nacimiento:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="birth" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -105,7 +110,7 @@
 						<h1>Fallecimiento:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="death" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -115,17 +120,17 @@
 						<h1>Edad:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="age" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>Ocupación:</h1>
+						<h1>Ocupaci&oacuten:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="ocupation" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -135,7 +140,7 @@
 						<h1>Debut:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="debut" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -145,21 +150,21 @@
 						<h1>Premios:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="awards" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>Filmografía:</h1>
+						<h1>Filmograf&iacutea:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
-						<input type="text" name="stext" size="60" value=" ">
+						<input type="text" name="filmography" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
 				
 				<div class="cine_edit_frame_row">
-					<input type="submit" id="button-edit" value="Editar">
+					<input type="submit" id="button-edit" value="Aceptar">
 				</div>
 			</form>
 		</div>
