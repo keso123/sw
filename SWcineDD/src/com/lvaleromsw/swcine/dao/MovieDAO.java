@@ -104,7 +104,7 @@ public class MovieDAO {
 	}
 	
 	public List<Movie> searchMovies(String s){
-PersistenceManager pm = PMF.getInstance().getPersistenceManager();
+		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
 		//String filter = "realMovieTitle >= '"+letter+"' && realMovieTitle < '"+letter+"' \uFFFD";
 		

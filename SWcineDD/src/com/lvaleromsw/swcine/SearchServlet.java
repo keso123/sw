@@ -16,20 +16,10 @@ public class SearchServlet extends HttpServlet {
 		try{
 			String searchtext = request.getParameter("searchtext");
 			String type = request.getParameter("stype");
+			//request.setAttribute("stype",type);
 			
-			if(type.equals("all")){
-				//MovieDAO dao = MovieDAO.getInstance();
-			}else if(type.equals("title")){
-				//response.sendRedirect("/movies.jsp?letter="+searchtext);
-				request.setAttribute("stype",type);
-				redirect = "/searchs.jsp?s="+searchtext;
-			}else if(type.equals("director")){
-				
-			}else if(type.equals("cast")){
-				
-			}else{
-				
-			}
+			System.out.println(type);
+			redirect = "/searchs.jsp?stype="+type+"&s="+searchtext;
 			
 		}catch(Exception e){
 			

@@ -41,7 +41,7 @@
 						<h1>Usuario:</h1>
 					</div>
 					<div class="cine_login_frame_colum">
-						<input type="text" name="username" size="20" value="kesoroot">
+						<input type="text" name="username" size="20" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -51,7 +51,7 @@
 						<h1>Contrase&ntildea:</h1>
 					</div>
 					<div class="cine_login_frame_colum">
-						<input type="password" name="passwd" size="20" value="1234">
+						<input type="password" name="passwd" size="20" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -61,7 +61,7 @@
 						<h1>Repetir Contrase&ntildea:</h1>
 					</div>
 					<div class="cine_login_frame_colum">
-						<input type="password" name="repasswd" size="20" value="1234">
+						<input type="password" name="repasswd" size="20" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>

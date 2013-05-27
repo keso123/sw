@@ -132,8 +132,6 @@ public class DirectorDAO {
 	public Director getDirector(long key){
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
-		//String query = "select from "+Movie.class.getName()+" where key == '"+KeyFactory.createKey(Movie.class.getName(),key)+"'";
-		
 		Director dir = null;
 		
 		try{
@@ -141,15 +139,6 @@ public class DirectorDAO {
 			Key k = KeyFactory.createKey(Director.class.getSimpleName(), key);
 			
 			dir = pm.getObjectById(Director.class,k);
-			/*List<Movie> list = (List<Movie>) pm.newQuery(query).execute();
-			
-			System.out.println("despues de la query");
-			
-			if(list.size() == 1){
-				return list.get(0);
-			}else{
-				return null;
-			}*/
 			
 		}catch(Exception e){
 			
@@ -166,10 +155,8 @@ public class DirectorDAO {
 	public List<Director> getDirectors(String letter){
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
-		//String filter = "realMovieTitle >= '"+letter+"' && realMovieTitle < '"+letter+"' \uFFFD";
 		
 		String query = "select from "+Director.class.getName()+
-				//" where "+filter+
 				" order by realName" ;
 		try{
 			
@@ -181,9 +168,7 @@ public class DirectorDAO {
 			else{
 				List<Director> result = new ArrayList<Director>();
 				for(int i = 0; i < list.size(); i++){
-					//if(list.get(i).getRealMovieTitle().startsWith(letter)){
-						//result.add(list.get(i));
-					//}
+					
 					if(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 
 					   Character.toLowerCase(letter.charAt(0))){
 						result.add(list.get(i));
@@ -199,7 +184,31 @@ public class DirectorDAO {
 	}
 	
 	public List<Director> searchDirectors(String s){
-		return null;
+		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
+		
+		String query = "select from "+Director.class.getName()+
+					   " order by realName";
+		try{
+			
+			@SuppressWarnings("unchecked")
+			List<Director> list = (List<Director>) pm.newQuery(query).execute();
+			
+			if(list.isEmpty())
+				return null;
+			else{
+				List<Director> result = new ArrayList<Director>();
+				for(int i = 0; i < list.size(); i++){
+					if(list.get(i).getRealName().contains(s)){
+						result.add(list.get(i));
+					}
+				}
+				if(result.isEmpty()) return null;
+				return result;
+			}
+			
+		}finally{
+			pm.close();
+		}
 	}
 	
 	public boolean addComment(String comment,String username,long key){
