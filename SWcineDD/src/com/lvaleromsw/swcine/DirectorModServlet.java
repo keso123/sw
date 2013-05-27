@@ -53,7 +53,7 @@ public class DirectorModServlet extends HttpServlet {
 			
 			long key = Long.valueOf(str);
 			
-			Director dir = new Director(title, name, realName, birth, death, imagefile, ocupation, debut, awards, filmography);
+			Director dir = new Director(title, name, realName, birth, death, age, ocupation, debut, awards, filmography);
 
 			if(imagefile != null && !imagefile.equals("")){
 				URLFetchService fetchService = URLFetchServiceFactory.getURLFetchService();

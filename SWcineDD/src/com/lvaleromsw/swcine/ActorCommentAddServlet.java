@@ -15,36 +15,49 @@ public class ActorCommentAddServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
-		String str = request.getParameter("actor");
+		String error ="";
+		boolean err = false;
 		
 		try{
-			
+			String str = request.getParameter("actor");
 			String comment = request.getParameter("comment");
 			String username = (String) request.getSession(true).getAttribute("username");
-			//String str = request.getParameter("movie");
 			
-			//if(comment == null)System.out.println("comentario nulo");
-			//if(username == null)System.out.println("usuario nulo");
-			//if(str == null)System.out.println("key nulo");
-			
-			//System.out.println(comment);
-			//System.out.println(username);
-			//System.out.println(str);
-			
-			long key = Long.valueOf(str);
-			
-			ActorDAO dao = ActorDAO.getInstance();
-			
-			if(dao.addComment(comment, username, key)){
-				redirect = (String) request.getSession(true).getAttribute("url");
-			}else{
-				System.out.println("el actor no existe");
+			if(comment == null || comment.equals("")){
+				err = true;
+				error = "El comentario no puede ser vacio";
+				redirect = "../error.jsp";
+			}
+			if(str == null || str.equals("")){
+				err = true;
+				error = "";
+				redirect = "../index.jsp";
+			}
+			if(username == null || username.equals("")){
+				err = true;
+				error = "";
+				redirect = "../index.jsp";
+			}
+			if(!err){
+				long key = Long.valueOf(str);
+				
+				ActorDAO dao = ActorDAO.getInstance();
+				
+				if(dao.addComment(comment, username, key)){
+					redirect = (String) request.getSession(true).getAttribute("url");
+				}else{
+					//System.out.println("el actor no existe");
+					err = true;
+					error ="El actor no existe";
+					redirect ="../error.jsp";
+				}
 			}
 			
 		}catch(Exception e){
-			System.out.println("error al añadir comentario");
+			error = "Error interno al a&ntildeadir comentario";
+			redirect = "../error.jsp";
 		}finally{
-			//request.setAttribute("movie",str);
+			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}
