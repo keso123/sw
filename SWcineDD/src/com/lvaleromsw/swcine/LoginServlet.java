@@ -18,30 +18,61 @@ public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
+		String error = "";
+		boolean err = false;
+		
 		try{
 		HttpSession sesion = request.getSession(true);
 		String name = request.getParameter("username");
 		String passwd = request.getParameter("passwd");
 		String url = (String) sesion.getAttribute("url");
+		
+		if(name == null || name.equals("")){
+			redirect = "../error.jsp";
+			error = "El nombre de usuario no puede ser vacio";
+			err = true;
+			//response.sendRedirect("../error.jsp?error=El%usuario%o%la%password%no%son%validos");
+		}
+		
+		if(passwd == null || passwd.equals("")){
+			redirect = "../error.jsp";
+			error = "La password no puede ser vacia";
+			err = true;
+		}
 			
+		if(!err){
 			UserDAO dao = UserDAO.getInstance();
 			//SimpleUser user = dao.getUser(name,passwd);
 			MyUser user = dao.getUser(name,passwd);
 			if(user == null){
-				System.out.println("usuario no valido");
+				//System.out.println("usuario no valido");
+				redirect = "../error.jsp";
+				error = "El usuario o la contraseña no son validos";
+				//if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+				//response.sendRedirect("../error.jsp?error=El%usuario%o%la%password%no%son%validos");
 			}else{
 				sesion = request.getSession(true);
 				sesion.setAttribute("username",user.getName());
 				
 				if(user.isAdmin()) sesion.setAttribute("admin","true");
 				
-				System.out.println("login correcto");
+				//System.out.println("login correcto");
 				//System.out.println(url);
-				redirect = url;
+				if(url != null && !url.equals("") )
+					redirect = url;
+				//response.sendRedirect(redirect);
 			}
+		}
+		
 		}catch(Exception e){
-			System.out.println("Error login");
+			//System.out.println("Error login");
+			error = "Error interno al hacer login";
+			redirect = "../error.jsp";
+			
+			//if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			//response.sendRedirect("../error.jsp?error=Error%interno%al%hacer%login");
 		}finally{
+			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}
