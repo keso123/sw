@@ -20,6 +20,8 @@ public class MovieModServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
+		String error = "";
+		boolean err = false;
 		
 		try{
 			String str = request.getParameter("movie");
@@ -36,57 +38,62 @@ public class MovieModServlet extends HttpServlet {
 			String synopsis = request.getParameter("synopsis");
 			String imagefile = request.getParameter("imagefile");
 			
-			System.out.println(title);
-			System.out.println(movieTitle);
-			System.out.println(realMovieTitle);
-			System.out.println(date);
-			System.out.println(country);
-			System.out.println(director);
-			System.out.println(casting);
-			System.out.println(genre);
-			System.out.println(synopsis);
-			System.out.println(imagefile);
-			
-			long key = Long.valueOf(str);
-			
-			Movie mov = new Movie(title,
-								  movieTitle,
-								  realMovieTitle,
-								  date,
-								  country,
-								  director,
-								  casting,
-								  genre,
-								  synopsis);
-			if(imagefile != null && !imagefile.equals("")){
-				URLFetchService fetchService = URLFetchServiceFactory.getURLFetchService();
-				
-				HTTPResponse fetchResponse = fetchService.fetch(new URL(request.getParameter("imagefile")));
-				
-				String fetchResponseContentType = null;
-				for(HTTPHeader header : fetchResponse.getHeaders()){
-					if(header.getName().equalsIgnoreCase("content-type")){
-						fetchResponseContentType = header.getValue();
-						break;
-					}
-				}
-				mov.setImageType(fetchResponseContentType);
-				mov.setImage(fetchResponse.getContent());
+			if(str == null || str.equals("")){
+				redirect = "/index.jsp";
+				error = "";
+				err = true;
+			}
+			if(redirect == null || redirect.equals("")){
+				redirect = "/index.jsp";
+				error = "";
+				//err = true;
 			}
 			
-			MovieDAO dao = MovieDAO.getInstance();
-			
-			if(dao.updateMovie(mov,key)){
-				System.out.println("Pelicula modificada");
-			}else{
-				System.out.println("Error al modificar pelicula");
+			if(!err){
+				long key = Long.valueOf(str);
+				
+				Movie mov = new Movie(title,
+									  movieTitle,
+									  realMovieTitle,
+									  date,
+									  country,
+									  director,
+									  casting,
+									  genre,
+									  synopsis);
+				if(imagefile != null && !imagefile.equals("")){
+					URLFetchService fetchService = URLFetchServiceFactory.getURLFetchService();
+					
+					HTTPResponse fetchResponse = fetchService.fetch(new URL(request.getParameter("imagefile")));
+					
+					String fetchResponseContentType = null;
+					for(HTTPHeader header : fetchResponse.getHeaders()){
+						if(header.getName().equalsIgnoreCase("content-type")){
+							fetchResponseContentType = header.getValue();
+							break;
+						}
+					}
+					mov.setImageType(fetchResponseContentType);
+					mov.setImage(fetchResponse.getContent());
+				}
+				
+				MovieDAO dao = MovieDAO.getInstance();
+				
+				if(dao.updateMovie(mov,key)){
+					//System.out.println("Pelicula modificada");
+				}else{
+					redirect = "../error.jsp";
+					error = "Error al modificar pelicula";
+					err = true;
+				}
 			}
 			
 		}catch(Exception e){
-			e.printStackTrace();
-			System.out.println("Error al modificar pelicula");
+			redirect = "../error.jsp";
+			error = "Error interno al modificar pelicula";
 		}finally{
 			//request.setAttribute("movie",str);
+			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}

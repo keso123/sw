@@ -42,7 +42,7 @@
 		type = "submit";
 		onclick = "";
 	}else {
-		type = "button";
+		type = "submit";//"button";
 		onclick = "checkMovie()";
 	}
 %>
@@ -167,7 +167,7 @@
 				<div class="cine_clear"></div>
 				
 				<div class="cine_edit_frame_row">
-					<input type=<%=type %> id="button-edit"<% if(mode.equals("add"))out.println("onclick="+onclick); %> value="Aceptar">
+					<input type=<%=type %> id="button-edit"<% //if(mode.equals("add"))out.println("onclick="+onclick); %> value="Aceptar">
 				</div>
 			</form>
 		</div>
