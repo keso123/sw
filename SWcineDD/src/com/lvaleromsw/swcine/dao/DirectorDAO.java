@@ -169,7 +169,59 @@ public class DirectorDAO {
 				List<Director> result = new ArrayList<Director>();
 				for(int i = 0; i < list.size(); i++){
 					
-					if(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 
+					if(letter.equals("*")){
+						if(!(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '0')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '1')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '2')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '3')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '4')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '5')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '6')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '7')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '8')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '9')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'a')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'b')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'c')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'd')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'e')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'f')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'g')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'h')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'i')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'j')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'k')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'l')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'm')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'n')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'o')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'p')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'q')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'r')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 's')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 't')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'u')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'v')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'w')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'x')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'y')||
+						   !(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 'z')){
+							result.add(list.get(i));
+						}
+					}else if(letter.equals("0")){
+						if(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '0'||
+						   Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '1'||
+						   Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '2'||
+						   Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '3'||
+						   Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '4'||
+						   Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '5'||
+						   Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '6'||
+						   Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '7'||
+						   Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '8'||
+						   Character.toLowerCase(list.get(i).getRealName().charAt(0)) == '9'){
+							result.add(list.get(i));
+						}
+					}else if(Character.toLowerCase(list.get(i).getRealName().charAt(0)) == 
 					   Character.toLowerCase(letter.charAt(0))){
 						result.add(list.get(i));
 					}
