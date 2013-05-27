@@ -62,10 +62,29 @@
 		</div>
 		<div class="cine_list_pags">
 			<p>
-				<a href="#">Inicio</a>
-				<a href="#">Anterior</a>
-				<a href="#">Siguiente</a>
-				<a href="#">Fin</a>
+			
+				<%
+					String prev = "";
+					String next = "";
+					if(letter.equals("a")){
+						prev = "0"; next = "b";
+					}else if(letter.equals("z")){
+						prev = "y"; next = "z";
+					}else if(letter.equals("0")){
+						prev = "*"; next = "a";
+					}else if(letter.equals("*")){
+						prev = "*"; next = "0";
+					}else{
+						int value = letter.charAt(0);
+						prev = String.valueOf((char) (value - 1));
+						next = String.valueOf((char) (value + 1));
+					}
+				%>
+			
+				<a href="../directors.jsp?letter=*">Inicio</a>
+				<a href="../directors.jsp?letter=<%= prev %>">Anterior</a>
+				<a href="../directors.jsp?letter=<%= next %>">Siguiente</a>
+				<a href="../directors.jsp?letter=z">Fin</a>
 			</p>
 		</div>
 		<div class="cine_list_content">
@@ -98,10 +117,10 @@
 		</div>
 		<div class="cine_list_pags">
 			<p>
-				<a href="#">Inicio</a>
-				<a href="#">Anterior</a>
-				<a href="#">Siguiente</a>
-				<a href="#">Fin</a>
+				<a href="../directors.jsp?letter=*">Inicio</a>
+				<a href="../directors.jsp?letter=<%= prev %>">Anterior</a>
+				<a href="../directors.jsp?letter=<%= next %>">Siguiente</a>
+				<a href="../directors.jsp?letter=z">Fin</a>
 			</p>
 		</div>
 	</div>
