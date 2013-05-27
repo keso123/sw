@@ -23,7 +23,7 @@ public class ActorModServlet extends HttpServlet {
 		
 		try{
 			
-			String str = request.getParameter("director");
+			String str = request.getParameter("actor");
 			redirect = (String) request.getSession(true).getAttribute("url");
 			
 			String title = request.getParameter("title");

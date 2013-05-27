@@ -15,7 +15,7 @@ public class ActorCommentAddServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
-		String str = request.getParameter("director");
+		String str = request.getParameter("actor");
 		
 		try{
 			

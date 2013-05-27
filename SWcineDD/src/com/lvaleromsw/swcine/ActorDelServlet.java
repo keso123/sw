@@ -15,12 +15,12 @@ public class ActorDelServlet extends HttpServlet {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
 		try{
-			String str = request.getParameter("director");
+			String str = request.getParameter("actor");
 			long key = Long.valueOf(str);
 			ActorDAO dao = ActorDAO.getInstance();
 			
 			if(dao.deleteActor(key)){
-				redirect = "/directors.jsp?letter=a";
+				redirect = "/actors.jsp?letter=a";
 			}else{
 				System.out.println("el actor no existe");
 			}
@@ -34,12 +34,12 @@ public class ActorDelServlet extends HttpServlet {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
 		try{
-			String str = request.getParameter("director");
+			String str = request.getParameter("actor");
 			long key = Long.valueOf(str);
 			ActorDAO dao = ActorDAO.getInstance();
 			
 			if(dao.deleteActor(key)){
-				redirect = "/directors.jsp?letter=a";
+				redirect = "/actors.jsp?letter=a";
 			}else{
 				System.out.println("el actor no existe");
 			}
