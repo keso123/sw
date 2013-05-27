@@ -24,13 +24,15 @@
 	String servlet = "directoraddservlet";
 	
 	if(dir != null) {
-		servlet = "directormodservlet?movie="+dir;
+		servlet = "directormodservlet?director="+dir;
 	}else if(mode != null){ 
 		servlet = "directoraddservlet";
 	}
 	if(mode == null){
 		mode="edit";
 	}
+	
+	System.out.println(servlet);
 	
 	//System.out.println(mode);
 	//System.out.println(mov);
@@ -153,12 +155,24 @@
 						<input type="text" name="awards" size="60" value="">
 					</div>
 				</div>
+				<div class="cine_clear"></div>
+				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
 						<h1>Filmograf&iacutea:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input type="text" name="filmography" size="60" value="">
+					</div>
+				</div>
+				<div class="cine_clear"></div>
+				
+				<div class="cine_edit_frame_row">
+					<div class="cine_edit_frame_colum_left">
+						<h1>Imagen:</h1>
+					</div>
+					<div class="cine_edit_frame_colum_right">
+						<input id="imagefile" type="text" name="imagefile" size="60" value="">
 					</div>
 				</div>
 				<div class="cine_clear"></div>

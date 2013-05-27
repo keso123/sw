@@ -24,7 +24,7 @@
 		<div class="cine_left_menu_box">
 			<h1>Secciones</h1>
 			<p><a href="../movies.jsp?letter=a">Peliculas</a></p>
-			<p><a href="#">Directores</a></p>
+			<p><a href="../directors.jsp?letter=a">Directores</a></p>
 			<p><a href="#">Actores</a></p>
 		</div>
 		<div class="cine_left_menu_box">

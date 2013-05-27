@@ -73,11 +73,26 @@
 				if(dir != null)
 				for(int i = 0; i < dir.size(); i++) { %>
 			<div class="cine_list_content_box">
-				<h1><a href="../director.jsp?director=<%out.println(dir.get(i).getKey().getId());%>"><%out.println(dir.get(i).getRealName()); %></a></h1>
+			
+				<div class="cine_list_content_box_pic">
+					<img alt="" src="showimageservlet?director=<%= dir.get(i).getKey().getId() %>" width="50" height="75">
+				</div>
+				<div class="cine_list_content_box_text">
+					<h1><a href="../director.jsp?director=<%out.println(dir.get(i).getKey().getId());%>"><%out.println(dir.get(i).getRealName()); %></a></h1>
+					<h2><%=dir.get(i).getOcupation() %></h2>
+					<p><%=dir.get(i).getAwards() %></p>
+				</div>
+				<div class="cine_clear"></div>
 			</div>
 			<% }else{ %>
 			<div class="cine_list_content_box">
-				<h1>NO HAY DIRECTORES</h1>
+				<div class="cine_list_content_box_pic">
+					<img alt="" src="../images/Delete.png" width="50" height="75">
+				</div>
+				<div class="cine_list_content_box_text">
+					<h1>NO HAY DIRECTORES</h1>
+				</div>
+				<div class="cine_clear"></div>
 			</div>
 			<% } %>
 		</div>
