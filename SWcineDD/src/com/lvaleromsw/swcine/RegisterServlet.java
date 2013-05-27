@@ -18,36 +18,64 @@ public class RegisterServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
+		String error = "";
+		boolean err = false;
+		
 		try
 		{
 			String name = request.getParameter("username");
 			String passwd = request.getParameter("passwd");
 			String repasswd = request.getParameter("repasswd");
-			String email = request.getParameter("email");
+			//String email = request.getParameter("email");
 			
-			if(checkPass(passwd,repasswd)){
-			
-				//SimpleUser user = new SimpleUser(name, passwd, email);
-				MyUser user = new MyUser(name, passwd, email);
-				if(name.equals("kesoroot")) user.setAdmin(true);
-				/*
-				MyUser user;
-				if(name.equals("kesoroot")) user = new AdminUser(name,passwd,email);
-				else user = new SimpleUser(name, passwd, email);
-				*/
-				UserDAO dao = UserDAO.getInstance();
+			if(name == null || name.equals("")){
+				redirect = "../error.jsp";
+				error = "El nombre no puede estar vacio";
+				err = true;
+			}
+			if(passwd == null || passwd.equals("")){
+				redirect = "../error.jsp";
+				error = "La password no puede estar vacia";
+				err = true;
+			}
+			if(repasswd == null || repasswd.equals("")){
+				redirect = "../error.jsp";
+				error = "La repasswd no puede estar vacia";
+				err = true;
+			}
+			if(!err){
+				if(checkPass(passwd,repasswd)){
 				
-				if(dao.createUser(user)){
-					System.out.println("usuario creado");
+					//SimpleUser user = new SimpleUser(name, passwd, email);
+					MyUser user = new MyUser(name, passwd, "");
+					if(name.equals("kesoroot")) user.setAdmin(true);
+					/*
+					MyUser user;
+					if(name.equals("kesoroot")) user = new AdminUser(name,passwd,email);
+					else user = new SimpleUser(name, passwd, email);
+					*/
+					UserDAO dao = UserDAO.getInstance();
+					
+					if(dao.createUser(user)){
+						//System.out.println("usuario creado");
+					}else{
+						//System.out.println("el usuario ya existe");
+						redirect = "../error.jsp";
+						error = "El usuario ya existe";
+						err = true;
+					}
 				}else{
-					System.out.println("el usuario ya existe");
+					redirect = "../error.jsp";
+					error = "Las password no coinciden";
+					err = true;
 				}
 			}
 		}catch(Exception e){
-			System.out.println("error al crear");
-			e.printStackTrace();
+			redirect = "../error.jsp";
+			error = "Error interno al crear usuario";
+			err = true;
 		}finally{
-		
+			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}

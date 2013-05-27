@@ -26,7 +26,8 @@ public class UserDAO {
 		PersistenceManager pm = PMF.getInstance().getPersistenceManager();
 		
 		//String query = "select from "+SimpleUser.class.getName()+" where name == '"+user.getName()+"' && email == '"+user.getEmail()+"'";
-		String query = "select from "+MyUser.class.getName()+" where name == '"+user.getName()+"' && email == '"+user.getEmail()+"'";
+		String query = "select from "+MyUser.class.getName()+" where name == '"+user.getName()+"'";
+				//" && email == '"+user.getEmail()+"'";
 		
 		try{
 			

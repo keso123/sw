@@ -66,7 +66,7 @@
 				</div>
 				<div class="cine_clear"></div>
 				
-				<div class="cine_login_frame_row">
+				<!--  <div class="cine_login_frame_row">
 					<div class="cine_login_frame_colum">
 						<h1>Email:</h1>
 					</div>
@@ -74,7 +74,7 @@
 						<input type="text" name="email" size="20" value="root@gmail.com">
 					</div>
 				</div>
-				<div class="cine_clear"></div>
+				<div class="cine_clear"></div>-->
 				
 				<div class="cine_login_frame_row">
 					<input type="submit" id="button-send" value="Enviar">
