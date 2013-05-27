@@ -29,11 +29,11 @@
 		</div>
 		<div class="cine_left_menu_box">
 			<h1>Mapa</h1>
-			<p><a href="#">Mapa del sitio</a></p>
+			<p><a href="../sitemap.jsp">Mapa del sitio</a></p>
 		</div>
 		<div class="cine_left_menu_box">
 			<h1>Tutoriales</h1>
-			<p><a href="#">html5</a></p>
+			<p><a href="../tutorial.html">html5</a></p>
 		</div>
 		<div class="cine_left_menu_box"></div>
 	</div>

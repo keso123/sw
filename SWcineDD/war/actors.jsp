@@ -109,7 +109,7 @@
 					<img alt="" src="../images/Delete.png" width="50" height="75">
 				</div>
 				<div class="cine_list_content_box_text">
-					<h1>NO HAY DIRECTORES</h1>
+					<h1>NO HAY ACTORES</h1>
 				</div>
 				<div class="cine_clear"></div>
 			</div>
