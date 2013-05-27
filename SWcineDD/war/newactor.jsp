@@ -33,7 +33,7 @@ try{
 		mode="edit";
 	}
 	
-	System.out.println(servlet);
+	//System.out.println(servlet);
 	
 	//System.out.println(mode);
 	//System.out.println(mov);
