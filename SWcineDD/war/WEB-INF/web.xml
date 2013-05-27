@@ -52,6 +52,23 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet>
 	
 	<servlet>
+		<servlet-name>actoraddservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.ActorAddServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>actorcommentaddservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.ActorCommentAddServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>actormodservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.ActorModServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>actordelservlet</servlet-name>
+		<servlet-class>com.lvaleromsw.swcine.ActorDelServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
 		<servlet-name>searchservlet</servlet-name>
 		<servlet-class>com.lvaleromsw.swcine.SearchServlet</servlet-class>
 	</servlet>
@@ -106,6 +123,23 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>directordelservlet</servlet-name>
 		<url-pattern>/directordelservlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>actorcommentaddservlet</servlet-name>
+		<url-pattern>/actorcommentaddservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>actoraddservlet</servlet-name>
+		<url-pattern>/actoraddservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>actormodservlet</servlet-name>
+		<url-pattern>/actormodservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>actordelservlet</servlet-name>
+		<url-pattern>/actordelservlet</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
