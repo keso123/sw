@@ -19,14 +19,14 @@
 <% 
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
-	String dir  = request.getParameter("director");
+	String dir  = request.getParameter("actor");
 	String mode = request.getParameter("c");
-	String servlet = "directoraddservlet";
+	String servlet = "actoraddservlet";
 	
 	if(dir != null) {
-		servlet = "directormodservlet?director="+dir;
+		servlet = "actormodservlet?actor="+dir;
 	}else if(mode != null){ 
-		servlet = "directoraddservlet";
+		servlet = "actoraddservlet";
 	}
 	if(mode == null){
 		mode="edit";

@@ -10,13 +10,13 @@
 </head>
 
 <body>
-<%@ page import="com.lvaleromsw.swcine.dao.DirectorDAO" %>
-<%@ page import="com.lvaleromsw.swcine.persistence.Director" %>
+<%@ page import="com.lvaleromsw.swcine.dao.ActorDAO" %>
+<%@ page import="com.lvaleromsw.swcine.persistence.Actor" %>
 <%@ page import="java.util.List" %>
 <% 
 	String letter = request.getParameter("letter");
-	List<Director> dir = DirectorDAO.getInstance().getDirectors(letter);
-	session.setAttribute("url","/directors.jsp?letter="+letter);
+	List<Actor> actor = ActorDAO.getInstance().getActors(letter);
+	session.setAttribute("url","/actors.jsp?letter="+letter);
 %>
 
 <%@ include file="topbanner.jsp" %>
@@ -26,38 +26,38 @@
 	
 	<div class="cine_main_wrapper">
 		<div class="cine_list_title">
-		<h1>Lista de directores</h1>
+		<h1>Lista de actores</h1>
 		</div>
 		<div class="cine_list_abc_wrapper">
 			<div class="cine_list_abc">
-			<p><a href="../directors.jsp?letter=*">*</a>
-			   <a href="../directors.jsp?letter=0">0-9</a>
-			   <a href="../directors.jsp?letter=a">A</a>
-			   <a href="../directors.jsp?letter=b">B</a>
-			   <a href="../directors.jsp?letter=c">C</a>
-			   <a href="../directors.jsp?letter=d">D</a>
-			   <a href="../directors.jsp?letter=e">E</a>
-			   <a href="../directors.jsp?letter=f">F</a>
-			   <a href="../directors.jsp?letter=g">G</a>
-			   <a href="../directors.jsp?letter=h">H</a>
-			   <a href="../directors.jsp?letter=i">I</a>
-			   <a href="../directors.jsp?letter=j">J</a>
-			   <a href="../directors.jsp?letter=k">K</a>
-			   <a href="../directors.jsp?letter=l">L</a>
-			   <a href="../directors.jsp?letter=m">M</a>
-			   <a href="../directors.jsp?letter=n">N</a>
-			   <a href="../directors.jsp?letter=o">O</a>
-			   <a href="../directors.jsp?letter=p">P</a>
-			   <a href="../directors.jsp?letter=q">Q</a>
-			   <a href="../directors.jsp?letter=r">R</a>
-			   <a href="../directors.jsp?letter=s">S</a>
-			   <a href="../directors.jsp?letter=t">T</a>
-			   <a href="../directors.jsp?letter=u">U</a>
-			   <a href="../directors.jsp?letter=v">V</a>
-			   <a href="../directors.jsp?letter=w">W</a>
-			   <a href="../directors.jsp?letter=x">X</a>
-			   <a href="../directors.jsp?letter=y">Y</a>
-			   <a href="../directors.jsp?letter=z">Z</a></p>
+			<p><a href="../actors.jsp?letter=*">*</a>
+			   <a href="../actors.jsp?letter=0">0-9</a>
+			   <a href="../actors.jsp?letter=a">A</a>
+			   <a href="../actors.jsp?letter=b">B</a>
+			   <a href="../actors.jsp?letter=c">C</a>
+			   <a href="../actors.jsp?letter=d">D</a>
+			   <a href="../actors.jsp?letter=e">E</a>
+			   <a href="../actors.jsp?letter=f">F</a>
+			   <a href="../actors.jsp?letter=g">G</a>
+			   <a href="../actors.jsp?letter=h">H</a>
+			   <a href="../actors.jsp?letter=i">I</a>
+			   <a href="../ctors.jsp?letter=j">J</a>
+			   <a href="../actors.jsp?letter=k">K</a>
+			   <a href="../actors.jsp?letter=l">L</a>
+			   <a href="../actors.jsp?letter=m">M</a>
+			   <a href="../actors.jsp?letter=n">N</a>
+			   <a href="../actors.jsp?letter=o">O</a>
+			   <a href="../actors.jsp?letter=p">P</a>
+			   <a href="../actors.jsp?letter=q">Q</a>
+			   <a href="../actors.jsp?letter=r">R</a>
+			   <a href="../actors.jsp?letter=s">S</a>
+			   <a href="../actors.jsp?letter=t">T</a>
+			   <a href="../actors.jsp?letter=u">U</a>
+			   <a href="../actors.jsp?letter=v">V</a>
+			   <a href="../actors.jsp?letter=w">W</a>
+			   <a href="../actors.jsp?letter=x">X</a>
+			   <a href="../actors.jsp?letter=y">Y</a>
+			   <a href="../actors.jsp?letter=z">Z</a></p>
 			</div>
 		</div>
 		<div class="cine_list_pags">
@@ -81,25 +81,25 @@
 					}
 				%>
 			
-				<a href="../directors.jsp?letter=*">Inicio</a>
-				<a href="../directors.jsp?letter=<%= prev %>">Anterior</a>
-				<a href="../directors.jsp?letter=<%= next %>">Siguiente</a>
-				<a href="../directors.jsp?letter=z">Fin</a>
+				<a href="../actors.jsp?letter=*">Inicio</a>
+				<a href="../actors.jsp?letter=<%= prev %>">Anterior</a>
+				<a href="../actors.jsp?letter=<%= next %>">Siguiente</a>
+				<a href="../actors.jsp?letter=z">Fin</a>
 			</p>
 		</div>
 		<div class="cine_list_content">
 			<%
-				if(dir != null)
-				for(int i = 0; i < dir.size(); i++) { %>
+				if(actor != null)
+				for(int i = 0; i < actor.size(); i++) { %>
 			<div class="cine_list_content_box">
 			
 				<div class="cine_list_content_box_pic">
-					<img alt="" src="showimageservlet?director=<%= dir.get(i).getKey().getId() %>" width="50" height="75">
+					<img alt="" src="showimageservlet?actor=<%= actor.get(i).getKey().getId() %>" width="50" height="75">
 				</div>
 				<div class="cine_list_content_box_text">
-					<h1><a href="../director.jsp?director=<%out.println(dir.get(i).getKey().getId());%>"><%out.println(dir.get(i).getRealName()); %></a></h1>
-					<h2><%=dir.get(i).getOcupation() %></h2>
-					<p><%=dir.get(i).getAwards() %></p>
+					<h1><a href="../actor.jsp?actor=<%out.println(actor.get(i).getKey().getId());%>"><%out.println(actor.get(i).getRealName()); %></a></h1>
+					<h2><%=actor.get(i).getOcupation() %></h2>
+					<p><%=actor.get(i).getAwards() %></p>
 				</div>
 				<div class="cine_clear"></div>
 			</div>
@@ -117,10 +117,10 @@
 		</div>
 		<div class="cine_list_pags">
 			<p>
-				<a href="../directors.jsp?letter=*">Inicio</a>
-				<a href="../directors.jsp?letter=<%= prev %>">Anterior</a>
-				<a href="../directors.jsp?letter=<%= next %>">Siguiente</a>
-				<a href="../directors.jsp?letter=z">Fin</a>
+				<a href="../actors.jsp?letter=*">Inicio</a>
+				<a href="../actors.jsp?letter=<%= prev %>">Anterior</a>
+				<a href="../actors.jsp?letter=<%= next %>">Siguiente</a>
+				<a href="../actors.jsp?letter=z">Fin</a>
 			</p>
 		</div>
 	</div>

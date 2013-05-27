@@ -11,18 +11,18 @@
 
 <body>
 
-<%@ page import="com.lvaleromsw.swcine.persistence.Director" %>
-<%@ page import="com.lvaleromsw.swcine.dao.DirectorDAO"%>
+<%@ page import="com.lvaleromsw.swcine.persistence.Actor" %>
+<%@ page import="com.lvaleromsw.swcine.dao.ActorDAO"%>
 <%@ page import="com.google.appengine.api.datastore.Key"%>
 <%@ page import="java.util.Vector" %>
 <%@ page import="java.io.OutputStream" %>
 
 <%
-	String d = request.getParameter("director");
-	if(d == null) response.sendRedirect("/index.jsp");
-	Director dir = DirectorDAO.getInstance().getDirector(Long.valueOf(d));
-	if(dir == null) response.sendRedirect("../index.jsp");
-	session.setAttribute("url","/director.jsp?director="+d);
+	String a = request.getParameter("actor");
+	if(a == null) response.sendRedirect("/index.jsp");
+	Actor actor = ActorDAO.getInstance().getActor(Long.valueOf(a));
+	if(actor == null) response.sendRedirect("../index.jsp");
+	session.setAttribute("url","/actor.jsp?director="+a);
 %>
 
 <%@ include file="topbanner.jsp" %>
@@ -32,19 +32,19 @@
 	
 	<div class="cine_main_wrapper">
 		<div class="cine_moviecard_title">
-			<h1><%=dir.getTitle() %></h1>
+			<h1><%=actor.getTitle() %></h1>
 			<% if(session.getAttribute("admin") != null) { %>
 			
-			<form action="#"><input type="button" onClick="openEditDirector()" id="button-edit" value="Editar"></form>
+			<form action="#"><input type="button" onClick="openEditActor()" id="button-edit" value="Editar"></form>
 			<script>
-				function openEditDirector() {
-					location.href="../newdirector.jsp?director=<%=dir.getKey().getId()%>";
+				function openEditActor() {
+					location.href="../newactor.jsp?actor=<%=actor.getKey().getId()%>";
 				}
 			</script>
-			<form action="#"><input type="button" onClick="openDelDirector()" id="button-del" value="Eliminar"></form>
+			<form action="#"><input type="button" onClick="openDelActor()" id="button-del" value="Eliminar"></form>
 			<script>
-				function openDelDirector() {
-					location.href="../directordelservlet?director=<%=dir.getKey().getId()%>";
+				function openDelActor() {
+					location.href="../actordelservlet?actor=<%=actor.getKey().getId()%>";
 				}
 			</script>
 			
@@ -56,29 +56,29 @@
 				<div class="cine_moviecard_content_info_text">
 					<dl>
 						<dt>Nombre</dt>
-						<dd><%=dir.getName() %></dd>
+						<dd><%=actor.getName() %></dd>
 						<dt>Nombre real</dt>
-						<dd><%=dir.getRealName() %></dd>
+						<dd><%=actor.getRealName() %></dd>
 						<dt>Nacimiento</dt>
-						<dd><%=dir.getBirth() %></dd>
+						<dd><%=actor.getBirth() %></dd>
 						<dt>Fallecimiento</dt>
-						<dd><%=dir.getDeath() %></dd>
+						<dd><%=actor.getDeath() %></dd>
 						<dt>Edad</dt>
-						<dd><%=dir.getAge() %></dd>
+						<dd><%=actor.getAge() %></dd>
 						<dt>Ocupaci&oacuten</dt>
-						<dd><%=dir.getOcupation() %></dd>
+						<dd><%=actor.getOcupation() %></dd>
 						<dt>Debut</dt>
-						<dd><%=dir.getDebut() %></dd>
+						<dd><%=actor.getDebut() %></dd>
 						<dt>Premios</dt>
-						<dd><%=dir.getAwards() %></dd>
+						<dd><%=actor.getAwards() %></dd>
 						<dt>Filmograf&iacutea</dt>
-						<dd><%=dir.getFilmography() %></dd>
+						<dd><%=actor.getFilmography() %></dd>
 						<dt>Comentarios</dt>
 						<dd>
 							<div class="cine_moviecard_comments">
 							
 								<% 
-									Vector<String> comments = dir.getComments();
+									Vector<String> comments = actor.getComments();
 									for(int i = 0; i < comments.size(); i++) {
 								%>
 							
@@ -99,7 +99,7 @@
 								<% if(session.getAttribute("username") != null){ %>
 								
 								<div class="cine_moviecard_comment_frame">
-									<form action="directorcommentaddservlet?director=<%= dir.getKey().getId()%>"
+									<form action="directorcommentaddservlet?director=<%= actor.getKey().getId()%>"
 									method="post">
 										<input type="text" name="comment" size="63" value="">
 										<input type="submit" id="button-coment" value="Comentar">
@@ -113,7 +113,7 @@
 					</dl>
 				</div>
 				<div class="cine_moviecard_content_info_pic">
-					<img alt="" src="showimageservlet?director=<%=d %>" width="100" height="150">
+					<img alt="" src="showimageservlet?director=<%=a %>" width="100" height="150">
 				</div>
 				<div class="cine_clear"></div>
 			</div>
