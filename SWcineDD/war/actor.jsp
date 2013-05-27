@@ -18,6 +18,7 @@
 <%@ page import="java.io.OutputStream" %>
 
 <%
+try{
 	String a = request.getParameter("actor");
 	if(a == null) response.sendRedirect("/index.jsp");
 	Actor actor = ActorDAO.getInstance().getActor(Long.valueOf(a));
@@ -126,6 +127,11 @@
 </div>
 
 <%@ include file="bottombanner.jsp" %>
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 
 </body>
 </html>

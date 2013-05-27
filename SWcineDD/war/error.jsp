@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<%try{ %>
 <%@ include file="topbanner.jsp" %>
 
 <!-- ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
@@ -40,7 +40,11 @@
 <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
 
 <%@ include file="bottombanner.jsp" %>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 
 </html>

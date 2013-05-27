@@ -12,6 +12,7 @@
 <body>
 
 <% 
+try{
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
 %>
@@ -93,6 +94,11 @@
 <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
 
 <%@ include file="bottombanner.jsp" %>
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 
 </html>

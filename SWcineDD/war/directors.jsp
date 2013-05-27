@@ -14,6 +14,7 @@
 <%@ page import="com.lvaleromsw.swcine.persistence.Director" %>
 <%@ page import="java.util.List" %>
 <% 
+try{
 	String letter = request.getParameter("letter");
 	List<Director> dir = DirectorDAO.getInstance().getDirectors(letter);
 	session.setAttribute("url","/directors.jsp?letter="+letter);
@@ -128,6 +129,10 @@
 </div>
 
 <%@ include file="bottombanner.jsp" %>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 </html>

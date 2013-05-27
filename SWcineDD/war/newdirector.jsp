@@ -17,6 +17,7 @@
 <body>
 
 <% 
+try{
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
 	String dir  = request.getParameter("director");
@@ -188,6 +189,10 @@
 </div>
 
 <%@ include file="bottombanner.jsp" %>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 </html>

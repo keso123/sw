@@ -18,6 +18,7 @@
 <%@ page import="com.lvaleromsw.swcine.persistence.Actor" %>
 <%@ page import="java.util.List" %>
 <% 
+try{
 	String searchtext = request.getParameter("s");
 	String type = request.getParameter("stype");
 	//System.out.println(request.getParameter("stype"));
@@ -143,6 +144,10 @@
 </div>
 
 <%@ include file="bottombanner.jsp" %>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 </html>

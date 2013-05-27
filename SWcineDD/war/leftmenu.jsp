@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<% try{%>
 <div class="cine_left_menu">
 		<div class="cine_left_menu_box">
 			<h1>Usuarios</h1>
@@ -37,6 +37,10 @@
 		</div>
 		<div class="cine_left_menu_box"></div>
 	</div>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 </html>

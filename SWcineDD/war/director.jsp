@@ -18,6 +18,7 @@
 <%@ page import="java.io.OutputStream" %>
 
 <%
+try{
 	String d = request.getParameter("director");
 	if(d == null) response.sendRedirect("/index.jsp");
 	Director dir = DirectorDAO.getInstance().getDirector(Long.valueOf(d));
@@ -126,6 +127,10 @@
 </div>
 
 <%@ include file="bottombanner.jsp" %>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 </html>

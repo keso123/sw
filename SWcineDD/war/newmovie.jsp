@@ -17,6 +17,8 @@
 <body>
 
 <% 
+try{
+	
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
 	String mov  = request.getParameter("movie");
@@ -177,6 +179,10 @@
 </div>
 
 <%@ include file="bottombanner.jsp" %>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 </html>

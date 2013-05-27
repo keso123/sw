@@ -14,6 +14,7 @@
 <%@ page import="com.lvaleromsw.swcine.persistence.Movie" %>
 <%@ page import="java.util.List" %>
 <% 
+try{
 	String letter = request.getParameter("letter");
 	List<Movie> movies = MovieDAO.getInstance().getMovies(letter);
 	session.setAttribute("url","/movies.jsp?letter="+letter);
@@ -130,6 +131,10 @@
 </div>
 
 <%@ include file="bottombanner.jsp" %>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 </html>

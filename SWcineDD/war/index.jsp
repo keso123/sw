@@ -15,6 +15,7 @@
 <body>
 
 <% 
+try{
 	//Object user = session.getAttribute("username");
 	//Object admin = session.getAttribute("admin");
 	session.setAttribute("url","/index.jsp");
@@ -97,7 +98,11 @@ Se complementar&aacute la informaci&oacuten con ejemplos de c&oacutedigo para qu
 <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
 
 <%@ include file="bottombanner.jsp" %>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 
 </html>

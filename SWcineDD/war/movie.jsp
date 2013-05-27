@@ -18,6 +18,7 @@
 <%@ page import="java.io.OutputStream" %>
 
 <%
+try{
 	String m = request.getParameter("movie");
 	if(m == null) response.sendRedirect("/index.jsp");
 	Movie mov = MovieDAO.getInstance().getMovie(Long.valueOf(m));
@@ -112,6 +113,10 @@
 </div>
 
 <%@ include file="bottombanner.jsp" %>
-
+<%
+}catch(Exception e){
+	response.sendRedirect("../index.jsp");	
+}
+%>
 </body>
 </html>
