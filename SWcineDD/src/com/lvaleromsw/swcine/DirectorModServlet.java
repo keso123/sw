@@ -13,9 +13,7 @@ import com.google.appengine.api.urlfetch.HTTPResponse;
 import com.google.appengine.api.urlfetch.URLFetchService;
 import com.google.appengine.api.urlfetch.URLFetchServiceFactory;
 import com.lvaleromsw.swcine.dao.DirectorDAO;
-import com.lvaleromsw.swcine.dao.MovieDAO;
 import com.lvaleromsw.swcine.persistence.Director;
-import com.lvaleromsw.swcine.persistence.Movie;
 
 @SuppressWarnings("serial")
 public class DirectorModServlet extends HttpServlet {

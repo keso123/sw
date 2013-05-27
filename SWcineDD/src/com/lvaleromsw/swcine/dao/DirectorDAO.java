@@ -3,7 +3,6 @@ package com.lvaleromsw.swcine.dao;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import com.lvaleromsw.swcine.persistence.Director;
-import com.lvaleromsw.swcine.persistence.Movie;
 
 import java.util.ArrayList;
 import java.util.List;
