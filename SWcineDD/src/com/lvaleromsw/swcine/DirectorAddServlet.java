@@ -21,6 +21,9 @@ public class DirectorAddServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
+		String error = "";
+		boolean err = false;
+		
 		try{
 			
 			String title = request.getParameter("title");
@@ -34,49 +37,100 @@ public class DirectorAddServlet extends HttpServlet {
 			String awards = request.getParameter("awards");
 			String filmography = request.getParameter("filmography");
 			
-			System.out.println(title);
-			System.out.println(name);
-			System.out.println(realName);
-			System.out.println(birth);
-			System.out.println(death);
-			System.out.println(age);
-			System.out.println(ocupation);
-			System.out.println(debut);
-			System.out.println(awards);
-			System.out.println(filmography);
-			
-			Director dir = new Director(title, name, realName, birth, death, age, ocupation, debut, awards, filmography);
-			
-			if(request.getParameter("imagefile") != null){
-			
-				URLFetchService fetchService = URLFetchServiceFactory.getURLFetchService();
+			if(title == null || title.equals("")){
+				redirect = "../error.jsp";
+				error ="El titulo no puede ser vacio";
+				err = true;
+			}
+			if(name == null || name.equals("")){
+				redirect = "../error.jsp";
+				error ="El nombre no puede ser vacio";
+				err = true;
+			}
+			if(realName == null || realName.equals("")){
+				redirect = "../error.jsp";
+				error ="El nombre real no puede ser vacio";
+				err = true;
+			}
+			if(birth == null || birth.equals("")){
+				redirect = "../error.jsp";
+				error ="El nacimiento no puede ser vacio";
+				err = true;
+			}
+			if(death == null || death.equals("")){
+				redirect = "../error.jsp";
+				error ="LA muerte no puede ser vacio, poner '-' si no esta muerto";
+				err = true;
+			}
+			if(age == null || age.equals("")){
+				redirect = "../error.jsp";
+				error ="La edad no puede ser vacia";
+				err = true;
+			}
+			if(ocupation == null || ocupation.equals("")){
+				redirect = "../error.jsp";
+				error ="La ocupacion no puede ser vacia";
+				err = true;
+			}
+			if(debut == null || debut.equals("")){
+				redirect = "../error.jsp";
+				error ="El debut no puede ser vacio";
+				err = true;
+			}
+			if(awards == null || awards.equals("")){
+				redirect = "../error.jsp";
+				error ="Los premios no pueden ser vacios, poner '-' si no tiene";
+				err = true;
+			}
+			if(filmography == null || filmography.equals("")){
+				redirect = "../error.jsp";
+				error ="La filmografia no puede ser vacia";
+				err = true;
+			}
+			if(!err){
+				Director dir = new Director(title, name, realName, birth, death, age, ocupation, debut, awards, filmography);
 				
-				HTTPResponse fetchResponse = fetchService.fetch(new URL(request.getParameter("imagefile")));
+				if(request.getParameter("imagefile") != null && !request.getParameter("imagefile").equals("")){
 				
-				String fetchResponseContentType = null;
-				for(HTTPHeader header : fetchResponse.getHeaders()){
-					if(header.getName().equalsIgnoreCase("content-type")){
-						fetchResponseContentType = header.getValue();
-						break;
+					URLFetchService fetchService = URLFetchServiceFactory.getURLFetchService();
+					
+					HTTPResponse fetchResponse = fetchService.fetch(new URL(request.getParameter("imagefile")));
+					
+					String fetchResponseContentType = null;
+					for(HTTPHeader header : fetchResponse.getHeaders()){
+						if(header.getName().equalsIgnoreCase("content-type")){
+							fetchResponseContentType = header.getValue();
+							break;
+						}
 					}
+					
+					dir.setImageType(fetchResponseContentType);
+					dir.setImage(fetchResponse.getContent());
+				}else{
+					redirect = "../error.jsp";
+					error ="La imagen tiene que ser la url de una imagen";
+					err = true;
 				}
 				
-				dir.setImageType(fetchResponseContentType);
-				dir.setImage(fetchResponse.getContent());
-			}
-			
-			DirectorDAO dao = DirectorDAO.getInstance();
-			
-			if(dao.createDirector(dir)){
-				System.out.println("director creado");
-			}else{
-				System.out.println("el director ya existe");
+				if(!err){
+					DirectorDAO dao = DirectorDAO.getInstance();
+					
+					if(dao.createDirector(dir)){
+						//System.out.println("director creado");
+					}else{
+						redirect = "../error.jsp";
+						error ="El director ya existe";
+						err = true;
+					}
+				}
 			}
 			
 		}catch(Exception e){
-			e.printStackTrace();
-			System.out.println("error al crear director");
+			redirect = "../error.jsp";
+			error ="Error interno al crear el director";
+			err = true;
 		}finally{
+			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}

@@ -15,36 +15,50 @@ public class DirectorCommentAddServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
-		String str = request.getParameter("director");
+		String error ="";
+		boolean err = false;
 		
 		try{
-			
+			String str = request.getParameter("director");
 			String comment = request.getParameter("comment");
 			String username = (String) request.getSession(true).getAttribute("username");
-			//String str = request.getParameter("movie");
 			
-			//if(comment == null)System.out.println("comentario nulo");
-			//if(username == null)System.out.println("usuario nulo");
-			//if(str == null)System.out.println("key nulo");
+			if(comment == null || comment.equals("")){
+				err = true;
+				error = "El comentario no puede ser vacio";
+				redirect = "../error.jsp";
+			}
+			if(str == null || str.equals("")){
+				err = true;
+				error = "";
+				redirect = "../index.jsp";
+			}
+			if(username == null || username.equals("")){
+				err = true;
+				error = "";
+				redirect = "../index.jsp";
+			}
 			
-			//System.out.println(comment);
-			//System.out.println(username);
-			//System.out.println(str);
+			if(!err){
 			
-			long key = Long.valueOf(str);
-			
-			DirectorDAO dao = DirectorDAO.getInstance();
-			
-			if(dao.addComment(comment, username, key)){
-				redirect = (String) request.getSession(true).getAttribute("url");
-			}else{
-				System.out.println("la pelicula no existe");
+				long key = Long.valueOf(str);
+				
+				DirectorDAO dao = DirectorDAO.getInstance();
+				
+				if(dao.addComment(comment, username, key)){
+					redirect = (String) request.getSession(true).getAttribute("url");
+				}else{
+					err = true;
+					error ="El director no existe";
+					redirect ="../error.jsp";
+				}
 			}
 			
 		}catch(Exception e){
-			System.out.println("error al añadir comentario");
+			error = "Error interno al crear comentario";
+			redirect = "../error.jsp";
 		}finally{
-			//request.setAttribute("movie",str);
+			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}

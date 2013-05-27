@@ -54,7 +54,7 @@ public class ActorCommentAddServlet extends HttpServlet {
 			}
 			
 		}catch(Exception e){
-			error = "Error interno al a&ntildeadir comentario";
+			error = "Error interno al crear comentario";
 			redirect = "../error.jsp";
 		}finally{
 			if(redirect.equals("../error.jsp")) redirect += "?error="+error;

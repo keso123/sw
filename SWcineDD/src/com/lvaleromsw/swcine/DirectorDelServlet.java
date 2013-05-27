@@ -14,38 +14,66 @@ public class DirectorDelServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
+		String error = "";
+		boolean err = false;
+		
 		try{
 			String str = request.getParameter("director");
-			long key = Long.valueOf(str);
-			DirectorDAO dao = DirectorDAO.getInstance();
-			
-			if(dao.deleteDirector(key)){
-				redirect = "/directors.jsp?letter=a";
-			}else{
-				System.out.println("el director no existe");
+			if(str == null || str.equals("")){
+				error = "";
+				err = true;
+				redirect = "../index.jsp";
+			}
+			if(!err){
+				long key = Long.valueOf(str);
+				DirectorDAO dao = DirectorDAO.getInstance();
+				
+				if(dao.deleteDirector(key)){
+					redirect = "/directors.jsp?letter=a";
+				}else{
+					err = true;
+					error ="El director no existe";
+					redirect ="../error.jsp";
+				}
 			}
 		}catch(Exception e){
-			System.out.println("Error al borrar director");
+			error = "Error interno al borrar director";
+			redirect = "../error.jsp";
 		}finally{
+			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
+		String error = "";
+		boolean err = false;
+		
 		try{
 			String str = request.getParameter("director");
-			long key = Long.valueOf(str);
-			DirectorDAO dao = DirectorDAO.getInstance();
-			
-			if(dao.deleteDirector(key)){
-				redirect = "/directors.jsp?letter=a";
-			}else{
-				System.out.println("el director no existe");
+			if(str == null || str.equals("")){
+				error = "";
+				err = true;
+				redirect = "../index.jsp";
+			}
+			if(!err){
+				long key = Long.valueOf(str);
+				DirectorDAO dao = DirectorDAO.getInstance();
+				
+				if(dao.deleteDirector(key)){
+					redirect = "/directors.jsp?letter=a";
+				}else{
+					err = true;
+					error ="El director no existe";
+					redirect ="../error.jsp";
+				}
 			}
 		}catch(Exception e){
-			System.out.println("Error al borrar director");
+			error = "Error interno al borrar director";
+			redirect = "../error.jsp";
 		}finally{
+			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}

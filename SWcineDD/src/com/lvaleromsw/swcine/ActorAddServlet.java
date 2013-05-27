@@ -115,7 +115,7 @@ public class ActorAddServlet extends HttpServlet {
 					ActorDAO dao = ActorDAO.getInstance();
 					
 					if(dao.createActor(actor)){
-						System.out.println("actor creado");
+						//System.out.println("actor creado");
 					}else{
 						redirect = "../error.jsp";
 						error ="El actor ya existe";

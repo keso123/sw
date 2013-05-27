@@ -20,6 +20,8 @@ public class DirectorModServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		String redirect = "/index.jsp";
+		String error = "";
+		boolean err = false;
 		
 		try{
 			
@@ -38,52 +40,55 @@ public class DirectorModServlet extends HttpServlet {
 			String filmography = request.getParameter("filmography");
 			String imagefile = request.getParameter("imagefile");
 			
-			System.out.println(title);
-			System.out.println(name);
-			System.out.println(realName);
-			System.out.println(birth);
-			System.out.println(death);
-			System.out.println(age);
-			System.out.println(ocupation);
-			System.out.println(debut);
-			System.out.println(awards);
-			System.out.println(filmography);
-			
-			System.out.println(str);
-			
-			long key = Long.valueOf(str);
-			
-			Director dir = new Director(title, name, realName, birth, death, age, ocupation, debut, awards, filmography);
-
-			if(imagefile != null && !imagefile.equals("")){
-				URLFetchService fetchService = URLFetchServiceFactory.getURLFetchService();
-				
-				HTTPResponse fetchResponse = fetchService.fetch(new URL(request.getParameter("imagefile")));
-				
-				String fetchResponseContentType = null;
-				for(HTTPHeader header : fetchResponse.getHeaders()){
-					if(header.getName().equalsIgnoreCase("content-type")){
-						fetchResponseContentType = header.getValue();
-						break;
-					}
-				}
-				dir.setImageType(fetchResponseContentType);
-				dir.setImage(fetchResponse.getContent());
+			if(str == null || str.equals("")){
+				redirect = "/index.jsp";
+				error = "";
+				err = true;
+			}
+			if(redirect == null || redirect.equals("")){
+				redirect = "/index.jsp";
+				error = "";
+				//err = true;
 			}
 			
-			DirectorDAO dao = DirectorDAO.getInstance();
-			
-			if(dao.updateDirector(dir,key)){
-				System.out.println("Director modificado");
-			}else{
-				System.out.println("Error al modificar director");
+			if(!err){
+				long key = Long.valueOf(str);
+				
+				Director dir = new Director(title, name, realName, birth, death, age, ocupation, debut, awards, filmography);
+	
+				if(imagefile != null && !imagefile.equals("")){
+					URLFetchService fetchService = URLFetchServiceFactory.getURLFetchService();
+					
+					HTTPResponse fetchResponse = fetchService.fetch(new URL(request.getParameter("imagefile")));
+					
+					String fetchResponseContentType = null;
+					for(HTTPHeader header : fetchResponse.getHeaders()){
+						if(header.getName().equalsIgnoreCase("content-type")){
+							fetchResponseContentType = header.getValue();
+							break;
+						}
+					}
+					dir.setImageType(fetchResponseContentType);
+					dir.setImage(fetchResponse.getContent());
+				}
+				
+				DirectorDAO dao = DirectorDAO.getInstance();
+				
+				if(dao.updateDirector(dir,key)){
+					//System.out.println("Director modificado");
+				}else{
+					redirect = "../error.jsp";
+					error = "Error al modificar director";
+					err = true;
+				}
 			}
 			
 		}catch(Exception e){
-			e.printStackTrace();
-			System.out.println("Error al modificar director");
+			redirect = "../error.jsp";
+			error = "Error interno al modificar director";
 		}finally{
 			//request.setAttribute("movie",str);
+			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}
