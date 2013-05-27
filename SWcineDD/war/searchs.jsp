@@ -12,8 +12,10 @@
 <body>
 <%@ page import="com.lvaleromsw.swcine.dao.MovieDAO" %>
 <%@ page import="com.lvaleromsw.swcine.dao.DirectorDAO" %>
+<%@ page import="com.lvaleromsw.swcine.dao.ActorDAO" %>
 <%@ page import="com.lvaleromsw.swcine.persistence.Movie" %>
 <%@ page import="com.lvaleromsw.swcine.persistence.Director" %>
+<%@ page import="com.lvaleromsw.swcine.persistence.Actor" %>
 <%@ page import="java.util.List" %>
 <% 
 	String searchtext = request.getParameter("s");
@@ -21,11 +23,16 @@
 	//System.out.println(request.getParameter("stype"));
 	List<Movie> movies = null;
 	List<Director> dir = null;
+	List<Actor> actor = null;
+	
 	if(type.equals("all") || type.equals("title"))
 		movies = MovieDAO.getInstance().searchMovies(searchtext);
 	
 	if(type.equals("all") || type.equals("director"))
 		dir = DirectorDAO.getInstance().searchDirectors(searchtext);
+	
+	if(type.equals("all") || type.equals("cast"))
+		actor = ActorDAO.getInstance().searchActors(searchtext);
 	
 	session.setAttribute("url","/searchs.jsp?s="+searchtext);
 %>
@@ -41,7 +48,7 @@
 		<h1>Busqueda</h1>
 		</div>
 		
-		<% if(movies == null && dir == null){ %>
+		<% if(movies == null && dir == null && actor == null){ %>
 			<div class="cine_list_pags">
 				<p>No se ha encontrado nada</p>
 			</div>
@@ -94,6 +101,34 @@
 					<h1><a href="../director.jsp?director=<%out.println(dir.get(i).getKey().getId());%>"><% out.println(dir.get(i).getRealName()); %></a></h1>
 					<h2><% out.println(dir.get(i).getOcupation()); %></h2>
 					<p><% out.println(dir.get(i).getAwards()); %></p>
+				</div>
+				<div class="cine_clear"></div>
+			</div>
+			
+			
+		</div>
+		
+		<% } %>
+		
+		<%
+				//List<Movie> list = MovieDAO.getInstance().getMovies();
+				if(actor != null)
+				for(int i = 0; i < actor.size(); i++) { 
+		%>
+		
+		<div class="cine_list_pags">
+			<p>Actores</p>
+		</div>
+		<div class="cine_list_content">
+			
+			<div class="cine_list_content_box">
+				<div class="cine_list_content_box_pic">
+					<img alt="" src="showimageservlet?actor=<%= actor.get(i).getKey().getId() %>" width="50" height="75">
+				</div>
+				<div class="cine_list_content_box_text">
+					<h1><a href="../actor.jsp?actor=<%out.println(actor.get(i).getKey().getId());%>"><% out.println(actor.get(i).getRealName()); %></a></h1>
+					<h2><% out.println(actor.get(i).getOcupation()); %></h2>
+					<p><% out.println(actor.get(i).getAwards()); %></p>
 				</div>
 				<div class="cine_clear"></div>
 			</div>

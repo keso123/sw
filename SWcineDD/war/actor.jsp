@@ -22,7 +22,7 @@
 	if(a == null) response.sendRedirect("/index.jsp");
 	Actor actor = ActorDAO.getInstance().getActor(Long.valueOf(a));
 	if(actor == null) response.sendRedirect("../index.jsp");
-	session.setAttribute("url","/actor.jsp?director="+a);
+	session.setAttribute("url","/actor.jsp?actor="+a);
 %>
 
 <%@ include file="topbanner.jsp" %>
@@ -99,7 +99,7 @@
 								<% if(session.getAttribute("username") != null){ %>
 								
 								<div class="cine_moviecard_comment_frame">
-									<form action="directorcommentaddservlet?director=<%= actor.getKey().getId()%>"
+									<form action="actorcommentaddservlet?actor=<%= actor.getKey().getId()%>"
 									method="post">
 										<input type="text" name="comment" size="63" value="">
 										<input type="submit" id="button-coment" value="Comentar">
@@ -113,7 +113,7 @@
 					</dl>
 				</div>
 				<div class="cine_moviecard_content_info_pic">
-					<img alt="" src="showimageservlet?director=<%=a %>" width="100" height="150">
+					<img alt="" src="showimageservlet?actor=<%=a %>" width="100" height="150">
 				</div>
 				<div class="cine_clear"></div>
 			</div>

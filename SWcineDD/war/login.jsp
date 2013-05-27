@@ -50,7 +50,7 @@
 						<h1>Usuario:</h1>
 					</div>
 					<div class="cine_login_frame_colum">
-						<input id="username" type="text" name="username" size="20" value="">
+						<input id="username" type="text" name="username" size="20" value="kesoroot">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
@@ -60,7 +60,7 @@
 						<h1>Contrase&ntildea:</h1>
 					</div>
 					<div class="cine_login_frame_colum">
-						<input id="passwd" type="password" name="passwd" size="20" value="">
+						<input id="passwd" type="password" name="passwd" size="20" value="1234">
 					</div>
 				</div>
 				<div class="cine_clear"></div>
