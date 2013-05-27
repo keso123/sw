@@ -77,7 +77,7 @@
 						<a href="#">Secciones</a>
 						<ul>
 							<li><a href="../movies.jsp?letter=a">Pel&iacuteculas</a></li>
-							<li><a href="#">Directores</a></li>
+							<li><a href="../directors.jsp?letter=a">Directores</a></li>
 							<li><a href="#">Actores</a></li>
 						</ul>
 					</li>
