@@ -41,29 +41,29 @@ try{
 			<h2>Propuesta de web</h2>
 	
 	<p>
-Descripci&oacuten: 
-Desarrollar una web sobre cine. La idea es que cualquier persona pueda encontrar informaci&oacuten de pel&iacuteculas, directores, actores, etc. 
-Se podr&aacuten crear usuarios para que estos comenten en las entradas (pel&iacuteculas, directores, etc) y las puntuen. S&oacutelo se podr&aacute comentar o puntuar si 
-eres un usuario registrado en la web y est&aacutes logeado en ese momento.
+Descripci&oacute;n: 
+Desarrollar una web sobre cine. La idea es que cualquier persona pueda encontrar informaci&oacute;n de pel&iacute;culas, directores, actores, etc. 
+Se podr&aacute;n crear usuarios para que estos comenten en las entradas (pel&iacute;culas, directores, etc) y las puntuen. S&oacute;lo se podr&aacute; comentar o puntuar si 
+eres un usuario registrado en la web y est&aacute;s logeado en ese momento.
 </p>
 	
 	<p>
-En la entrada de un director se encontrar&aacute una descripci&oacuten y se enlazar&aacute una lista con todas sus pel&iacuteculas. En la de un actor se encontrar&aacute otra 
-descripci&oacuten y otra lista con todas sus pel&iacuteculas. En la entrada de una pel&iacutecula se encontrar&aacute toda la informaci&oacuten relativa a la pel&iacutecula (director, 
-reparto, a&ntildeo, premios, etc).
+En la entrada de un director se encontrar&aacute; una descripci&oacute;n y se enlazar&aacute; una lista con todas sus pel&iacute;culas. En la de un actor se encontrar&aacute; otra 
+descripci&oacute;n y otra lista con todas sus pel&iacute;culas. En la entrada de una pel&iacute;cula se encontrar&aacute; toda la informaci&oacute;n relativa a la pel&iacute;cula (director, 
+reparto, a&ntilde;o, premios, etc).
 	</p>
 	
 	<p>
-Parte p&uacuteblica y privada: 
-Cualquier persona podr&aacute ver todos los contenidos de la p&aacutegina web. S&oacutelo usuarios registrados podr&aacuten comentar y puntuar las entradas de la web. 
-Los &uacutenicos que puede editar los contenidos de las entradas ser&aacuten los administradores de la web.
+Parte p&uacute;blica y privada: 
+Cualquier persona podr&aacute; ver todos los contenidos de la p&aacute;gina web. S&oacute;lo usuarios registrados podr&aacute;n comentar y puntuar las entradas de la web. 
+Los &uacute;nicos que puede editar los contenidos de las entradas ser&aacute;n los administradores de la web.
 	</p>
 	
 <p>Tipos de usuarios: </p>
 <ul>
-	<li><p>An&oacutenimo: Usuarios sin registrar, s&oacutelo podr&aacuten visualizar el contenido de la web.</p></li>
-	<li><p>Registrado: Usuarios registrados, podr&aacuten comentar y puntuar todas las entradas.</p></li>
-	<li><p>Administradores: Podr&aacuten crear y administrar todos los contenidos de la web.</p></li>
+	<li><p>An&oacute;nimo: Usuarios sin registrar, s&oacute;lo podr&aacute;n visualizar el contenido de la web.</p></li>
+	<li><p>Registrado: Usuarios registrados, podr&aacute;n comentar y puntuar todas las entradas.</p></li>
+	<li><p>Administradores: Podr&aacute;n crear y administrar todos los contenidos de la web.</p></li>
 </ul>
 
 	<p>
@@ -72,20 +72,20 @@ En proceso.
 	</p>
 	
 	<p>
-Tecnolog&iacuteas: 
-HTML, CSS, y J2EE. Esta informaci&oacuten se completar&aacute en un futuro.
+Tecnolog&iacute;as: 
+HTML, CSS, y J2EE. Esta informaci&oacute;n se completar&aacute; en un futuro.
 	</p>
 	
 	<p>
-Esta informaci&oacuten es orientativa y esta sujeta a posibles cambios y a&ntildeadidos.
+Esta informaci&oacute;n es orientativa y esta sujeta a posibles cambios y a&ntilde;adidos.
 	</p>
 	
 	<h2>Propuesta de trabajo</h2>
 	
 	<p>
-Descripci&oacuten: 
-Realizar un peque&ntildeo tutorial sobre HTML5. Se comparar&aacute HTML5 con HTML, indicando las similitudes y las diferencias entre ambos. 
-Se complementar&aacute la informaci&oacuten con ejemplos de c&oacutedigo para que resulte m&aacutes facil aprender lo b&aacutesico sobre HTML5.
+Descripci&oacute;n: 
+Realizar un peque&ntilde;o tutorial sobre HTML5. Se comparar&aacute; HTML5 con HTML, indicando las similitudes y las diferencias entre ambos. 
+Se complementar&aacute; la informaci&oacute;n con ejemplos de c&oacute;digo para que resulte m&aacute;s facil aprender lo b&aacute;sico sobre HTML5.
 	</p>
 		</div>
 	</div>

@@ -53,19 +53,19 @@ try{
 			<div class="cine_moviecard_content_info">
 				<div class="cine_moviecard_content_info_text">
 					<dl>
-						<dt>T&iacutetulo</dt>
+						<dt>T&iacute;;tulo</dt>
 						<dd><% out.println(mov.getMovieTitle()); %></dd>
-						<dt>T&iacutetulo original</dt>
+						<dt>T&iacute;;tulo original</dt>
 						<dd><% out.println(mov.getRealMovieTitle()); %></dd>
-						<dt>A&ntildeo</dt>
+						<dt>A&ntilde;o</dt>
 						<dd><% out.println(mov.getDate()); %></dd>
-						<dt>Pa&iacutes</dt>
+						<dt>Pa&iacute;;s</dt>
 						<dd><% out.println(mov.getCountry()); %></dd>
 						<dt>Director</dt>
 						<dd><% out.println(mov.getDirector()); %></dd>
 						<dt>Reparto</dt>
 						<dd><% out.println(mov.getCasting()); %></dd>
-						<dt>G&eacutenero</dt>
+						<dt>G&eacute;;nero</dt>
 						<dd><% out.println(mov.getGenre()); %></dd>
 						<dt>Sinopsis</dt>
 						<dd><% out.println(mov.getSynopsis()); %></dd>

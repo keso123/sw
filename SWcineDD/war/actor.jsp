@@ -66,13 +66,13 @@ try{
 						<dd><%=actor.getDeath() %></dd>
 						<dt>Edad</dt>
 						<dd><%=actor.getAge() %></dd>
-						<dt>Ocupaci&oacuten</dt>
+						<dt>Ocupaci&oacute;;n</dt>
 						<dd><%=actor.getOcupation() %></dd>
 						<dt>Debut</dt>
 						<dd><%=actor.getDebut() %></dd>
 						<dt>Premios</dt>
 						<dd><%=actor.getAwards() %></dd>
-						<dt>Filmograf&iacutea</dt>
+						<dt>Filmograf&iacute;;a</dt>
 						<dd><%=actor.getFilmography() %></dd>
 						<dt>Comentarios</dt>
 						<dd>

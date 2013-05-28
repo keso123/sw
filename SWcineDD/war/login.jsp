@@ -58,7 +58,7 @@ try{
 				
 				<div class="cine_login_frame_row">
 					<div class="cine_login_frame_colum">
-						<h1>Contrase&ntildea:</h1>
+						<h1>Contrase&ntilde;a:</h1>
 					</div>
 					<div class="cine_login_frame_colum">
 						<input id="passwd" type="password" name="passwd" size="20" value="">

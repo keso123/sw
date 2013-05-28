@@ -62,7 +62,7 @@ try{
 		%>
 		
 		<div class="cine_list_pags">
-			<p>Pel&iacuteculas</p>
+			<p>Pel&iacute;;culas</p>
 		</div>
 		<div class="cine_list_content">
 			

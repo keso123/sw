@@ -53,12 +53,12 @@ public class ActorAddServlet extends HttpServlet {
 			}
 			if(birth == null || birth.equals("")){
 				redirect = "error.jsp";
-				error ="El a&ntildeo de nacimiento no puede ser vacio";
+				error ="El a&ntilde;o de nacimiento no puede ser vacio";
 				err = true;
 			}
 			if(death == null || death.equals("")){
 				redirect = "error.jsp";
-				error ="El a&ntildeo de muerte no puede ser vacio, poner '-' si no esta muerto";
+				error ="El a&ntilde;o de muerte no puede ser vacio, poner '-' si no esta muerto";
 				err = true;
 			}
 			if(age == null || age.equals("")){

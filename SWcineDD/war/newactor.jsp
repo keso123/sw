@@ -62,7 +62,7 @@ try{
 			<% if(!mode.equals("add")) { %>
 				<h1>Editar</h1>
 			<% }else{ %>
-				<h1>A&ntildeadir</h1>
+				<h1>A&ntilde;adir</h1>
 			<% } %>
 		</div>
 		<div class="cine_edit_frame">
@@ -70,7 +70,7 @@ try{
 			action="<%=servlet %>" method="post" >
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>T&iacutetulo:</h1>
+						<h1>T&iacute;;tulo:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input type="text" name="title" size="60" value="">
@@ -130,7 +130,7 @@ try{
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>Ocupaci&oacuten:</h1>
+						<h1>Ocupaci&oacute;;n:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input type="text" name="ocupation" size="60" value="">
@@ -160,7 +160,7 @@ try{
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>Filmograf&iacutea:</h1>
+						<h1>Filmograf&iacute;;a:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input type="text" name="filmography" size="60" value="">
