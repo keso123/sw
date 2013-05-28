@@ -8,16 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lvaleromsw.swcine.dao.UserDAO;
-//import com.lvaleromsw.swcine.persistence.AdminUser;
 import com.lvaleromsw.swcine.persistence.MyUser;
-//import com.lvaleromsw.swcine.persistence.SimpleUser;
 
 @SuppressWarnings("serial")
 public class RegisterServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String redirect = "/index.jsp";
+		String redirect = "index.jsp";
 		String error = "";
 		boolean err = false;
 		
@@ -29,31 +27,27 @@ public class RegisterServlet extends HttpServlet {
 			//String email = request.getParameter("email");
 			
 			if(name == null || name.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "El nombre no puede estar vacio";
 				err = true;
 			}
 			if(passwd == null || passwd.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "La password no puede estar vacia";
 				err = true;
 			}
 			if(repasswd == null || repasswd.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "La repasswd no puede estar vacia";
 				err = true;
 			}
 			if(!err){
 				if(checkPass(passwd,repasswd)){
 				
-					//SimpleUser user = new SimpleUser(name, passwd, email);
+					
 					MyUser user = new MyUser(name, passwd, "");
 					if(name.equals("kesoroot")) user.setAdmin(true);
-					/*
-					MyUser user;
-					if(name.equals("kesoroot")) user = new AdminUser(name,passwd,email);
-					else user = new SimpleUser(name, passwd, email);
-					*/
+					
 					UserDAO dao = UserDAO.getInstance();
 					
 					if(dao.getUser(name, passwd) == null){
@@ -61,8 +55,8 @@ public class RegisterServlet extends HttpServlet {
 						if(dao.createUser(user)){
 							//System.out.println("usuario creado");
 						}else{
-							//System.out.println("el usuario ya existe");
-							redirect = "../error.jsp";
+							
+							redirect = "error.jsp";
 							error = "El usuario ya existe";
 							err = true;
 							redirect += "?error="+error;
@@ -70,7 +64,7 @@ public class RegisterServlet extends HttpServlet {
 							return;
 						}
 					}else{
-						redirect = "../error.jsp";
+						redirect = "error.jsp";
 						error = "El usuario ya existe";
 						err = true;
 						redirect += "?error="+error;
@@ -78,17 +72,18 @@ public class RegisterServlet extends HttpServlet {
 						return;
 					}
 				}else{
-					redirect = "../error.jsp";
+					redirect = "error.jsp";
 					error = "Las password no coinciden";
 					err = true;
+					response.sendRedirect(redirect);
 				}
 			}
 		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "Error interno al crear la pelicula";
 		}catch(Exception e){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error ="Error interno al crear el actor";
 			err = true;
 		}finally{
@@ -103,6 +98,6 @@ public class RegisterServlet extends HttpServlet {
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("index.jsp");
 	}
 }

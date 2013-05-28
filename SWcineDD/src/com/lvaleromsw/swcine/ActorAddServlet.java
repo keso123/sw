@@ -20,7 +20,7 @@ public class ActorAddServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String redirect = "/index.jsp";
+		String redirect = "index.jsp";
 		String error = "";
 		boolean err = false;
 		try{
@@ -37,52 +37,52 @@ public class ActorAddServlet extends HttpServlet {
 			String filmography = request.getParameter("filmography");
 			
 			if(title == null || title.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="El titulo no puede ser vacio";
 				err = true;
 			}
 			if(name == null || name.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="El nombre no puede ser vacio";
 				err = true;
 			}
 			if(realName == null || realName.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="El nombre real no puede ser vacio";
 				err = true;
 			}
 			if(birth == null || birth.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="El a&ntildeo de nacimiento no puede ser vacio";
 				err = true;
 			}
 			if(death == null || death.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="El a&ntildeo de muerte no puede ser vacio, poner '-' si no esta muerto";
 				err = true;
 			}
 			if(age == null || age.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="La edad no puede ser vacia";
 				err = true;
 			}
 			if(ocupation == null || ocupation.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="La ocupacion no puede ser vacia";
 				err = true;
 			}
 			if(debut == null || debut.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="El debut no puede ser vacio";
 				err = true;
 			}
 			if(awards == null || awards.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="Los premios no pueden ser vacios, poner '-' si no tiene";
 				err = true;
 			}
 			if(filmography == null || filmography.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error ="La filmografia no puede ser vacia";
 				err = true;
 			}
@@ -107,7 +107,7 @@ public class ActorAddServlet extends HttpServlet {
 					actor.setImageType(fetchResponseContentType);
 					actor.setImage(fetchResponse.getContent());
 				}else{
-					redirect = "../error.jsp";
+					redirect = "error.jsp";
 					error ="La imagen tiene que ser la url de una imagen";
 					err = true;
 				}
@@ -117,7 +117,7 @@ public class ActorAddServlet extends HttpServlet {
 					if(dao.createActor(actor)){
 						//System.out.println("actor creado");
 					}else{
-						redirect = "../error.jsp";
+						redirect = "error.jsp";
 						error ="El actor ya existe";
 						err = true;
 					}
@@ -126,19 +126,19 @@ public class ActorAddServlet extends HttpServlet {
 			
 		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "Error interno al crear la pelicula";
 		}catch(Exception e){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error ="Error interno al crear el actor";
 			err = true;
 		}finally{
-			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			if(redirect.equals("error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("index.jsp");
 	}
 }

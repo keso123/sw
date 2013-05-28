@@ -12,7 +12,7 @@ public class SearchServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String redirect = "/index.jsp";
+		String redirect = "index.jsp";
 		boolean err = false;
 		try{
 			String searchtext = request.getParameter("searchtext");
@@ -29,7 +29,7 @@ public class SearchServlet extends HttpServlet {
 			}
 			if((type.equals("all") || type.equals("title") || type.equals("director") || type.equals("cast"))
 					&& err == false){
-				redirect = "/searchs.jsp?stype="+type+"&s="+searchtext;
+				redirect = "searchs.jsp?stype="+type+"&s="+searchtext;
 			}
 			
 		}catch(java.lang.IllegalArgumentException e){
@@ -42,6 +42,6 @@ public class SearchServlet extends HttpServlet {
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("index.jsp");
 	}
 }

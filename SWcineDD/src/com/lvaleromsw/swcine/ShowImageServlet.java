@@ -67,6 +67,6 @@ public class ShowImageServlet extends HttpServlet {
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("index.jsp");
 	}
 }

@@ -14,7 +14,7 @@ public class MovieCommentAddServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String redirect = "/index.jsp";
+		String redirect = "index.jsp";
 		String error = "";
 		boolean err = false;
 		
@@ -26,17 +26,17 @@ public class MovieCommentAddServlet extends HttpServlet {
 			if(comment == null || comment.equals("")){
 				err = true;
 				error = "El comentario no puede ser vacio";
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 			}
 			if(str == null || str.equals("")){
 				err = true;
 				error = "";
-				redirect = "../index.jsp";
+				redirect = "index.jsp";
 			}
 			if(username == null || username.equals("")){
 				err = true;
 				error = "";
-				redirect = "../index.jsp";
+				redirect = "index.jsp";
 			}
 			
 			if(!err){
@@ -53,20 +53,20 @@ public class MovieCommentAddServlet extends HttpServlet {
 			
 		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "Error interno al crear la pelicula";
 		}catch(Exception e){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error ="Error interno al crear el actor";
 			err = true;
 		}finally{
-			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			if(redirect.equals("error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("index.jsp");
 	}
 
 }

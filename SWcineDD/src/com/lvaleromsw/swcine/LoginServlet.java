@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//response.setContentType("text/html");
-		String redirect = "/index.jsp";
+		String redirect = "index.jsp";
 		String error = "";
 		boolean err = false;
 		
@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		String url = (String) sesion.getAttribute("url");
 		
 		if(name == null || name.equals("")){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "El nombre de usuario no puede ser vacio";
 			err = true;
 			redirect += "?error="+error;
@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		if(passwd == null || passwd.equals("")){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "La password no puede ser vacia";
 			err = true;
 			redirect += "?error="+error;
@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 			UserDAO dao = UserDAO.getInstance();
 			MyUser user = dao.getUser(name,passwd);
 			if(user == null){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "El usuario o la password no son validos";
 				redirect += "?error="+error;
 				response.sendRedirect(redirect);
@@ -61,19 +61,19 @@ public class LoginServlet extends HttpServlet {
 				
 				if(url != null && !url.equals("") )
 					redirect = url;
-				response.sendRedirect(redirect);
+				response.sendRedirect(url);
 				return;
 			}
 		}
 		
 		}catch(java.lang.IllegalArgumentException e){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "Error interno al hacer login";
 			redirect += "?error="+error;
 			response.sendRedirect(redirect);
 			return;
 		}catch(Exception e){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error ="Error interno al hacer login";
 			err = true;
 			redirect += "?error="+error;
@@ -85,8 +85,8 @@ public class LoginServlet extends HttpServlet {
 		}*/
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.setContentType("text/html");
-		response.sendRedirect("../index.jsp");
+		response.setContentType("text/html");
+		response.sendRedirect("index.jsp");
 	}
 }
 

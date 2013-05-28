@@ -13,7 +13,7 @@ import com.lvaleromsw.swcine.dao.DirectorDAO;
 public class DirectorDelServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String redirect = "/index.jsp";
+		String redirect = "index.jsp";
 		String error = "";
 		boolean err = false;
 		
@@ -22,36 +22,36 @@ public class DirectorDelServlet extends HttpServlet {
 			if(str == null || str.equals("")){
 				error = "";
 				err = true;
-				redirect = "../index.jsp";
+				redirect = "index.jsp";
 			}
 			if(!err){
 				long key = Long.valueOf(str);
 				DirectorDAO dao = DirectorDAO.getInstance();
 				
 				if(dao.deleteDirector(key)){
-					redirect = "/directors.jsp?letter=a";
+					redirect = "directors.jsp?letter=a";
 				}else{
 					err = true;
 					error ="El director no existe";
-					redirect ="../error.jsp";
+					redirect ="error.jsp";
 				}
 			}
 		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "Error interno al crear la pelicula";
 		}catch(Exception e){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error ="Error interno al crear el actor";
 			err = true;
 		}finally{
-			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			if(redirect.equals("error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String redirect = "/index.jsp";
+		String redirect = "index.jsp";
 		String error = "";
 		boolean err = false;
 		
@@ -60,30 +60,30 @@ public class DirectorDelServlet extends HttpServlet {
 			if(str == null || str.equals("")){
 				error = "";
 				err = true;
-				redirect = "../index.jsp";
+				redirect = "index.jsp";
 			}
 			if(!err){
 				long key = Long.valueOf(str);
 				DirectorDAO dao = DirectorDAO.getInstance();
 				
 				if(dao.deleteDirector(key)){
-					redirect = "/directors.jsp?letter=a";
+					redirect = "directors.jsp?letter=a";
 				}else{
 					err = true;
 					error ="El director no existe";
-					redirect ="../error.jsp";
+					redirect ="error.jsp";
 				}
 			}
 		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "Error interno al crear la pelicula";
 		}catch(Exception e){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error ="Error interno al crear el actor";
 			err = true;
 		}finally{
-			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			if(redirect.equals("error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}

@@ -20,7 +20,7 @@ public class MovieAddServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String redirect = "/index.jsp";
+		String redirect = "index.jsp";
 		boolean err = false;
 		String error = "";
 		try{
@@ -38,53 +38,53 @@ public class MovieAddServlet extends HttpServlet {
 			//String url = request.getParameter("url");
 			
 			if(title == null || title.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "El titulo no puede ser vacio";
 				err = true;
 			}
 			if(movieTitle == null || movieTitle.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "El titulo de la pelicula no puede ser vacio";
 				err = true;
 			}
 			if(realMovieTitle == null || realMovieTitle.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "El titulo original de la pelicula no puede ser vacio";
 				err = true;
 			}
 			if(date == null || date.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "La fecha no puede estar vacia";
 				err = true;
 			}
 			if(country == null || country.equals("")){
 				request.setAttribute("error","El pais no puede estar vacio");
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "El pais no puede estar vacio";
 				err = true;
 			}
 			if(director == null || director.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "El director no puede estar vacio";
 				err = true;
 			}
 			if(casting == null || casting.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "El reparto no puede estar vacio";
 				err = true;
 			}
 			if(genre == null || genre.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "El genero no puede estar vacio";
 				err = true;
 			}
 			if(synopsis == null || synopsis.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "La sinopsis no puede estar vacia";
 				err = true;
 			}
 			if(file == null || file.equals("")){
-				redirect = "../error.jsp";
+				redirect = "error.jsp";
 				error = "La imagen debe ser la url de una imagen";
 				err = true;
 			}
@@ -113,28 +113,28 @@ public class MovieAddServlet extends HttpServlet {
 					//System.out.println("pelicula creada");
 				}else{
 					//System.out.println("la pelicula ya existe");
-					redirect = "../error.jsp";
+					redirect = "error.jsp";
 					error = "La pelicula ya existe";
 				}
 			}
 			
 		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "Error interno al crear la pelicula";
 		}catch(Exception e){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error ="Error interno al crear el actor";
 			err = true;
 		}finally{
-			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			if(redirect.equals("error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 			//request.getRequestDispatcher("../index.jsp").forward(request, response);
 		}
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("index.jsp");
 	}
 	
 }

@@ -19,7 +19,7 @@ import com.lvaleromsw.swcine.persistence.Movie;
 public class MovieModServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String redirect = "/index.jsp";
+		String redirect = "index.jsp";
 		String error = "";
 		boolean err = false;
 		
@@ -39,12 +39,12 @@ public class MovieModServlet extends HttpServlet {
 			String imagefile = request.getParameter("imagefile");
 			
 			if(str == null || str.equals("")){
-				redirect = "/index.jsp";
+				redirect = "index.jsp";
 				error = "";
 				err = true;
 			}
 			if(redirect == null || redirect.equals("")){
-				redirect = "/index.jsp";
+				redirect = "index.jsp";
 				error = "";
 				//err = true;
 			}
@@ -82,7 +82,7 @@ public class MovieModServlet extends HttpServlet {
 				if(dao.updateMovie(mov,key)){
 					//System.out.println("Pelicula modificada");
 				}else{
-					redirect = "../error.jsp";
+					redirect = "error.jsp";
 					error = "Error al modificar pelicula";
 					err = true;
 				}
@@ -90,10 +90,10 @@ public class MovieModServlet extends HttpServlet {
 			
 		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error = "Error interno al crear la pelicula";
 		}catch(Exception e){
-			redirect = "../error.jsp";
+			redirect = "error.jsp";
 			error ="Error interno al crear el actor";
 			err = true;
 		}finally{
@@ -104,7 +104,7 @@ public class MovieModServlet extends HttpServlet {
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("index.jsp");
 	}
 	
 }
