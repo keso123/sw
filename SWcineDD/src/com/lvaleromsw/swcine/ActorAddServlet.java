@@ -124,6 +124,10 @@ public class ActorAddServlet extends HttpServlet {
 				}
 			}
 			
+		}catch(IllegalArgumentException e){
+			//System.out.println("error al crear pelicula");
+			redirect = "../error.jsp";
+			error = "Error interno al crear la pelicula";
 		}catch(Exception e){
 			redirect = "../error.jsp";
 			error ="Error interno al crear el actor";

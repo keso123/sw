@@ -28,9 +28,13 @@ public class LogoutServlet extends HttpServlet {
 				if(url != null && !url.equals("") ) 
 					redirect = url;
 			}
-		}catch(Exception e){
-			error = "Error interno al hacer logout";
+		}catch(IllegalArgumentException e){
+			//System.out.println("error al crear pelicula");
 			redirect = "../error.jsp";
+			error = "Error interno al crear la pelicula";
+		}catch(Exception e){
+			redirect = "../error.jsp";
+			error ="Error interno al crear el actor";
 		}finally{
 			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);

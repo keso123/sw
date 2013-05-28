@@ -37,10 +37,14 @@ public class MovieDelServlet extends HttpServlet {
 					redirect ="../error.jsp";
 				}
 			}
-		}catch(Exception e){
-			//System.out.println("Error al borrar pelicula");
-			error = "Error interno al borrar pelicula";
+		}catch(IllegalArgumentException e){
+			//System.out.println("error al crear pelicula");
 			redirect = "../error.jsp";
+			error = "Error interno al crear la pelicula";
+		}catch(Exception e){
+			redirect = "../error.jsp";
+			error ="Error interno al crear el actor";
+			err = true;
 		}finally{
 			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);

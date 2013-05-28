@@ -82,11 +82,14 @@ public class ActorModServlet extends HttpServlet {
 					err = true;
 				}
 			}
-		}catch(Exception e){
-			//e.printStackTrace();
-			//System.out.println("Error al modificar actor");
+		}catch(IllegalArgumentException e){
+			//System.out.println("error al crear pelicula");
 			redirect = "../error.jsp";
-			error = "Error interno al modificar actor";
+			error = "Error interno al crear la pelicula";
+		}catch(Exception e){
+			redirect = "../error.jsp";
+			error ="Error interno al crear el actor";
+			err = true;
 		}finally{
 			//request.setAttribute("movie",str);
 			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
