@@ -66,7 +66,7 @@
 						<ul>
 							<li><a href="../movies.jsp?letter=a">Pel&iacute;culas</a></li>
 							<li><a href="../directors.jsp?letter=a">Directores</a></li>
-							<li><a href="../actor.jsp?letter=a">Actores</a></li>
+							<li><a href="../actors.jsp?letter=a">Actores</a></li>
 						</ul>
 					</li>
 					
