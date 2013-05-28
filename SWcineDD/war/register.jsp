@@ -5,6 +5,9 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link type="text/css" rel="stylesheet" href="../css/index.css">
 
+<script type="text/javascript" src="../js/jquery-2.0.1.min.js"></script>
+<script type="text/javascript" src="/js/checkmovie.js"></script>
+
 <title>CINE</title>
 
 </head>
@@ -36,7 +39,8 @@ try{
 			<h1>Registro</h1>
 		</div>
 		<div class="cine_login_frame">
-			<form action="registerservlet" method="post">
+			<form name="check_reg" id="check_reg"
+			action="registerservlet" method="post">
 				<div class="cine_login_frame_row">
 					<div class="cine_login_frame_colum">
 						<h1>Usuario:</h1>
@@ -78,7 +82,7 @@ try{
 				<div class="cine_clear"></div>-->
 				
 				<div class="cine_login_frame_row">
-					<input type="submit" id="button-send" value="Enviar">
+					<input type="button" id="button-send" onclick="checkReg()" value="Enviar">
 				</div>
 				<div class="cine_clear"></div>
 				

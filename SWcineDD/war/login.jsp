@@ -6,7 +6,7 @@
 <link type="text/css" rel="stylesheet" href="../css/index.css">
 
 <script type="text/javascript" src="../js/jquery-2.0.1.min.js"></script>
-<script type="text/javascript" src="/js/checklogin.js"></script>
+<script type="text/javascript" src="/js/checkmovie.js"></script>
 
 <title>CINE</title>
 
@@ -67,7 +67,7 @@ try{
 				<div class="cine_clear"></div>
 				
 				<div class="cine_login_frame_row">
-					<input type="submit" id="button-send" value="Enviar">
+					<input type="button" id="button-send" onclick="checkLogin()" value="Enviar">
 				</div>
 				<div class="cine_clear"></div>
 				

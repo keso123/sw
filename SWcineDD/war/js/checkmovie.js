@@ -180,5 +180,41 @@ function checkDirector(){
 		check_director.submit();
 	}
 }
+function checkLogin(){ 
+	var error = 0;
+	if($.trim(check_login.username.value) == ""){
+		error = 1;
+		alert("El nombre no puede ser vacio");
+	}
+	if($.trim(check_login.passwd.value) == ""){
+		error = 1;
+		alert("La password no puede ser vacia");
+	}
+	if(error == 0){
+		check_login.submit();
+	}
+	
+	
+}
+function checkReg(){ 
+	var error = 0;
+	if($.trim(check_reg.username.value) == ""){
+		error = 1;
+		alert("El nombre no puede ser vacio");
+	}
+	if($.trim(check_reg.passwd.value) == ""){
+		error = 1;
+		alert("La password no puede ser vacia");
+	}
+	if($.trim(check_reg.repasswd.value) == ""){
+		error = 1;
+		alert("La password no puede ser vacia");
+	}
+	if(error == 0){
+		check_reg.submit();
+	}
+	
+	
+}
 
 
