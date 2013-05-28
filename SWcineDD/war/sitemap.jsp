@@ -43,7 +43,7 @@
 					</ul>
 				</li>
 				<li>Tutoriales</li>
-				<li>C&uacute;digo</li>
+				<li>C&oacute;digo</li>
 				<li>Diagrama</li>
 				<li>Master</li>
 					<ul>
