@@ -37,17 +37,17 @@
 				</li>
 				<li>Secciones
 					<ul>
-						<li>Pel&iacute;;culas</li>
+						<li>Pel&iacute;culas</li>
 						<li>Directores</li>
 						<li>Actores</li>
 					</ul>
 				</li>
 				<li>Tutoriales</li>
-				<li>C&oacute;;digo</li>
+				<li>C&uacute;digo</li>
 				<li>Diagrama</li>
 				<li>Master</li>
 					<ul>
-						<li>A&ntilde;adir pel&iacute;;cula</li>
+						<li>A&ntilde;adir pel&iacute;cula</li>
 						<li>A&ntilde;adir director</li>
 						<li>A&ntilde;adir actor</li>
 					</ul>

@@ -28,7 +28,7 @@ try{
 	<div class="cine_main_wrapper">
 	
 	<div class="cine_list_title">
-		<h1>Lista de pel&iacute;;culas</h1>
+		<h1>Lista de pel&iacute;culas</h1>
 		</div>
 		<div class="cine_list_abc_wrapper">
 			<div class="cine_list_abc">

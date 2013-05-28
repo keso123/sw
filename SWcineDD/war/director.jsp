@@ -66,13 +66,13 @@ try{
 						<dd><%=dir.getDeath() %></dd>
 						<dt>Edad</dt>
 						<dd><%=dir.getAge() %></dd>
-						<dt>Ocupaci&oacute;;n</dt>
+						<dt>Ocupaci&uacute;n</dt>
 						<dd><%=dir.getOcupation() %></dd>
 						<dt>Debut</dt>
 						<dd><%=dir.getDebut() %></dd>
 						<dt>Premios</dt>
 						<dd><%=dir.getAwards() %></dd>
-						<dt>Filmograf&iacute;;a</dt>
+						<dt>Filmograf&iacute;a</dt>
 						<dd><%=dir.getFilmography() %></dd>
 						<dt>Comentarios</dt>
 						<dd>

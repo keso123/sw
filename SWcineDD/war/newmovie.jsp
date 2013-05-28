@@ -70,7 +70,7 @@ try{
 			
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>T&iacute;;tulo:</h1>
+						<h1>T&iacute;tulo:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input id="title" type="text" name="title" size="60" value="">
@@ -80,7 +80,7 @@ try{
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>T&iacute;;tulo pel&iacute;;cula:</h1>
+						<h1>T&iacute;tulo pel&iacute;cula:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input id="movieTitle" type="text" name="movieTitle" size="60" value="">
@@ -90,7 +90,7 @@ try{
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>T&iacute;;tulo original:</h1>
+						<h1>T&iacute;tulo original:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input id="realMovieTitle" type="text" name="realMovieTitle" size="60" value="">
@@ -100,7 +100,7 @@ try{
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>A&ntilde;;o:</h1>
+						<h1>A&ntildeo:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input id="date" type="text" name="date" size="60" value="">
@@ -110,7 +110,7 @@ try{
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>Pa&iacute;;s:</h1>
+						<h1>Pa&iacute;s:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input id="country" type="text" name="country" size="60" value="">
@@ -140,7 +140,7 @@ try{
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>G&eacute;;nero:</h1>
+						<h1>G&eacute;nero:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input id="genre" type="text" name="genre" size="60" value="">

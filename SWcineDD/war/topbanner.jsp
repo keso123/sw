@@ -17,7 +17,7 @@
 						<input type="text" name="searchtext" size="20" value="">
 						<select name="stype">
 							<option value="all">Todos</option>
-							<option value="title">T&iacute;;tulo</option>
+							<option value="title">T&iacute;tulo</option>
 							<option value="director">Director</option>
 							<option value="cast">Reparto</option>
 						</select>
@@ -64,7 +64,7 @@
 					<li class="cine_top_banner_menu_content_parent">
 						<a href="#">Secciones</a>
 						<ul>
-							<li><a href="../movies.jsp?letter=a">Pel&iacute;;culas</a></li>
+							<li><a href="../movies.jsp?letter=a">Pel&iacute;culas</a></li>
 							<li><a href="../directors.jsp?letter=a">Directores</a></li>
 							<li><a href="../actor.jsp?letter=a">Actores</a></li>
 						</ul>
@@ -94,7 +94,7 @@
 					<li class="cine_top_banner_menu_content_parent">
 						<a href="#">A&ntilde;adir</a>
 						<ul>
-							<li><a href="../newmovie.jsp?c=add">Pel&iacute;;cula</a></li>
+							<li><a href="../newmovie.jsp?c=add">Pel&iacute;cula</a></li>
 							<li><a href="../newdirector.jsp?c=add">Director</a></li>
 							<li><a href="../newactor.jsp?c=add">Actor</a></li>
 						</ul>
