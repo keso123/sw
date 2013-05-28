@@ -25,7 +25,7 @@
 			<p><a href="../tutorial.html">html5</a></p>
 		</div>
 		<div class="cine_left_menu_box">
-			<h1>C&oacute;;digo</h1>
+			<h1>C&oacute;digo</h1>
 			<p><a href="https://github.com/lvalerom/sw/tree/master/SWcineDD">C&oacute;;digo</a></p>
 		</div>
 		<div class="cine_left_menu_box">
