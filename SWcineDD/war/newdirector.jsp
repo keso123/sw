@@ -46,7 +46,7 @@ try{
 		onclick = "";
 	}else {
 		type = "button";
-		onclick = "checkMovie()";
+		onclick = "checkActor()";
 	}
 %>
 
@@ -66,7 +66,7 @@ try{
 			<% } %>
 		</div>
 		<div class="cine_edit_frame">
-			<form name="cheack_director" id="check_director"
+			<form name="check_actor" id="check_actor"
 			action="<%=servlet %>" method="post" >
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
@@ -179,7 +179,7 @@ try{
 				<div class="cine_clear"></div>
 				
 				<div class="cine_edit_frame_row">
-					<input type="submit" id="button-edit" value="Aceptar">
+					<input type=<%=type %> id="button-edit" <% if(mode.equals("add"))out.println("onclick="+onclick); %> value="Aceptar">
 				</div>
 			</form>
 		</div>
