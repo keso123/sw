@@ -38,8 +38,10 @@
 		<div class="cine_left_menu_box"></div>
 	</div>
 <%
+}catch(IllegalArgumentException e){
+	response.sendRedirect("../index.jsp");
 }catch(Exception e){
-	response.sendRedirect("../index.jsp");	
+	response.sendRedirect("../index.jsp");
 }
 %>
 </body>
