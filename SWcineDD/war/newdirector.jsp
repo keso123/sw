@@ -130,7 +130,7 @@ try{
 				
 				<div class="cine_edit_frame_row">
 					<div class="cine_edit_frame_colum_left">
-						<h1>Ocupaci&uacute;n:</h1>
+						<h1>Ocupaci&oacute;n:</h1>
 					</div>
 					<div class="cine_edit_frame_colum_right">
 						<input type="text" name="ocupation" size="60" value="">
