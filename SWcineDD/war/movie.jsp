@@ -115,9 +115,9 @@ try{
 <%@ include file="bottombanner.jsp" %>
 <%
 }catch(java.lang.IllegalArgumentException e){
-	response.sendRedirect("../index.jsp");
+	response.sendRedirect("index.jsp");
 }catch(Exception e){
-	response.sendRedirect("../index.jsp");
+	response.sendRedirect("index.jsp");
 }
 %>
 </body>
