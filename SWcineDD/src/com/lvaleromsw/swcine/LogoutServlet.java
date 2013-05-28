@@ -36,7 +36,7 @@ public class LogoutServlet extends HttpServlet {
 			redirect = "error.jsp";
 			error ="Error interno al crear el actor";
 		}finally{
-			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			if(redirect.equals("error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}

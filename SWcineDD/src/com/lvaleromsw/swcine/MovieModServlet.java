@@ -98,7 +98,7 @@ public class MovieModServlet extends HttpServlet {
 			err = true;
 		}finally{
 			//request.setAttribute("movie",str);
-			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			if(redirect.equals("error.jsp")) redirect += "?error="+error;
 			response.sendRedirect(redirect);
 		}
 	}
