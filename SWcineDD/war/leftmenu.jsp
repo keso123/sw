@@ -24,6 +24,15 @@
 			<h1>Tutoriales</h1>
 			<p><a href="../tutorial.html">html5</a></p>
 		</div>
+		<div class="cine_left_menu_box">
+			<h1>C&oacutedigo</h1>
+			<p><a href="https://github.com/lvalerom/sw/tree/master/SWcineDD">C&oacutedigo</a></p>
+		</div>
+		<div class="cine_left_menu_box">
+			<h1>Diagrama</h1>
+			<p><a href="../uml.jsp">Diagrama</a></p>
+		</div>
+		<div class="cine_left_menu_box"></div>
 		<div class="cine_left_menu_box"></div>
 	</div>
 <%

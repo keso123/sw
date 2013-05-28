@@ -28,30 +28,7 @@
 	<div class="cine_main_wrapper">
 		<div class="cine_sitemap_title">
 			<h1>Mapa del sitio</h1>
-			<ul>
-				<li>Usuarios
-					<ul>
-						<li>Entrar</li>
-						<li>Registrarse</li>
-					</ul>
-				</li>
-				<li>Secciones
-					<ul>
-						<li>Pel&iacuteculas</li>
-						<li>Directores</li>
-						<li>Actores</li>
-					</ul>
-				</li>
-				<li>Tutoriales</li>
-				<li>C&oacutedigo</li>
-				<li>Diagrama</li>
-				<li>Master</li>
-					<ul>
-						<li>A&ntildeadir pel&iacutecula</li>
-						<li>A&ntildeadir director</li>
-						<li>A&ntildeadir actor</li>
-					</ul>
-			</ul>
+			<img alt="" src="../images/UML.png" width="650"> <!-- width="50" height="75"> -->
 		</div>
 	</div>
 	<div class="cine_clear"></div>
