@@ -57,7 +57,7 @@ public class ShowImageServlet extends HttpServlet {
 				
 			}
 			
-		}catch(IllegalArgumentException e){
+		}catch(java.lang.IllegalArgumentException e){
 			
 		}catch(Exception e){
 			

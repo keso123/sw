@@ -32,7 +32,7 @@ public class SearchServlet extends HttpServlet {
 				redirect = "/searchs.jsp?stype="+type+"&s="+searchtext;
 			}
 			
-		}catch(IllegalArgumentException e){
+		}catch(java.lang.IllegalArgumentException e){
 			
 		}catch(Exception e){
 			

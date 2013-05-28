@@ -37,7 +37,7 @@ public class ActorDelServlet extends HttpServlet {
 					redirect ="../error.jsp";
 				}
 			}
-		}catch(IllegalArgumentException e){
+		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
 			redirect = "../error.jsp";
 			error = "Error interno al crear la pelicula";
@@ -76,7 +76,7 @@ public class ActorDelServlet extends HttpServlet {
 					redirect ="../error.jsp";
 				}
 			}
-		}catch(IllegalArgumentException e){
+		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
 			redirect = "../error.jsp";
 			error = "Error interno al crear la pelicula";

@@ -64,7 +64,7 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 		
-		}catch(IllegalArgumentException e){
+		}catch(java.lang.IllegalArgumentException e){
 			//System.out.println("error al crear pelicula");
 			redirect = "../error.jsp";
 			error = "Error interno al crear la pelicula";

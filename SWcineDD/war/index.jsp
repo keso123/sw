@@ -99,7 +99,7 @@ Se complementar&aacute la informaci&oacuten con ejemplos de c&oacutedigo para qu
 
 <%@ include file="bottombanner.jsp" %>
 <%
-}catch(IllegalArgumentException e){
+}catch(java.lang.IllegalArgumentException e){
 	response.sendRedirect("../index.jsp");
 }catch(Exception e){
 	response.sendRedirect("../index.jsp");
