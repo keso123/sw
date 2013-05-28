@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="stylesheet" href="../css/index.css">
-
-<title>CINE</title>
-
-</head>
-
-<body>
 
 <% 
 	//Object user = session.getAttribute("username");
@@ -121,5 +109,3 @@
 	</div>
 
 </div>
-</body>
-</html>

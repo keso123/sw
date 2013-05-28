@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="stylesheet" href="../css/index.css">
-
-<title>CINE</title>
-
-</head>
-
-<body>
 
 <div class="cine_bottom_banner_wrapper">
 	<div class="cine_bottom_banner_content">
@@ -50,6 +38,3 @@
 		</div>
 	</div>
 </div>
-
-</body>
-</html>

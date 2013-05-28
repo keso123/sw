@@ -1,15 +1,4 @@
-<!DOCTYPE html>
 
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="stylesheet" href="../css/index.css">
-
-<title>CINE</title>
-
-</head>
-
-<body>
 <% try{%>
 <div class="cine_left_menu">
 		<div class="cine_left_menu_box">
@@ -44,5 +33,3 @@
 	response.sendRedirect("index.jsp");
 }
 %>
-</body>
-</html>
