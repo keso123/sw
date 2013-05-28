@@ -36,14 +36,17 @@ public class UserDAO {
 			if(list.isEmpty()){
 				pm.makePersistent(user);
 				return true;
+			}else{
+				return false;
 			}
 			
+		}catch(java.lang.IllegalArgumentException e){
+			return false;
+		}catch(Exception e){
+			return false;
 		}finally {
 			pm.close();
 		}
-		
-		return false;
-		
 	}
 	
 	//public SimpleUser getUser(String username,String pass){
@@ -58,14 +61,18 @@ public class UserDAO {
 		try {
 			//List<SimpleUser> user = (List<SimpleUser>) pm.newQuery(query).execute();
 			List<MyUser> user = (List<MyUser>) pm.newQuery(query).execute();
-			if(!user.isEmpty()){
+			if(user.isEmpty()){
+				return null;
+			}else{
 				return user.get(0);
 			}
+		}catch(java.lang.IllegalArgumentException e){
+			return null;
+		}catch(Exception e){
+			return null;
 		}finally {
 			pm.close();
 		}
-		
-		return null;
 	}
 }
 

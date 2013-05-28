@@ -16,69 +16,76 @@ import com.lvaleromsw.swcine.persistence.MyUser;
 public class LoginServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
+		//response.setContentType("text/html");
 		String redirect = "/index.jsp";
 		String error = "";
 		boolean err = false;
 		
 		try{
 		HttpSession sesion = request.getSession(true);
-		String name = request.getParameter("username");
-		String passwd = request.getParameter("passwd");
+		String name = request.getParameter("username").trim();
+		String passwd = request.getParameter("passwd").trim();
 		String url = (String) sesion.getAttribute("url");
 		
 		if(name == null || name.equals("")){
 			redirect = "../error.jsp";
 			error = "El nombre de usuario no puede ser vacio";
 			err = true;
-			//response.sendRedirect("../error.jsp?error=El%usuario%o%la%password%no%son%validos");
+			redirect += "?error="+error;
+			response.sendRedirect(redirect);
+			return;
 		}
 		
 		if(passwd == null || passwd.equals("")){
 			redirect = "../error.jsp";
 			error = "La password no puede ser vacia";
 			err = true;
+			redirect += "?error="+error;
+			response.sendRedirect(redirect);
+			return;
 		}
 			
 		if(!err){
 			UserDAO dao = UserDAO.getInstance();
-			//SimpleUser user = dao.getUser(name,passwd);
 			MyUser user = dao.getUser(name,passwd);
 			if(user == null){
-				//System.out.println("usuario no valido");
 				redirect = "../error.jsp";
-				error = "El usuario o la contraseña no son validos";
-				//if(redirect.equals("../error.jsp")) redirect += "?error="+error;
-				//response.sendRedirect("../error.jsp?error=El%usuario%o%la%password%no%son%validos");
+				error = "El usuario o la password no son validos";
+				redirect += "?error="+error;
+				response.sendRedirect(redirect);
+				return;
 			}else{
-				sesion = request.getSession(true);
 				sesion.setAttribute("username",user.getName());
 				
 				if(user.isAdmin()) sesion.setAttribute("admin","true");
 				
-				//System.out.println("login correcto");
-				//System.out.println(url);
 				if(url != null && !url.equals("") )
 					redirect = url;
-				//response.sendRedirect(redirect);
+				response.sendRedirect(redirect);
+				return;
 			}
 		}
 		
 		}catch(java.lang.IllegalArgumentException e){
-			//System.out.println("error al crear pelicula");
 			redirect = "../error.jsp";
-			error = "Error interno al crear la pelicula";
+			error = "Error interno al hacer login";
+			redirect += "?error="+error;
+			response.sendRedirect(redirect);
+			return;
 		}catch(Exception e){
 			redirect = "../error.jsp";
-			error ="Error interno al crear el actor";
+			error ="Error interno al hacer login";
 			err = true;
-		}finally{
-			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			redirect += "?error="+error;
 			response.sendRedirect(redirect);
-		}
+			return;
+		}/*finally{
+			//if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			//response.sendRedirect("../index.jsp");
+		}*/
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
+		//response.setContentType("text/html");
 		response.sendRedirect("../index.jsp");
 	}
 }

@@ -23,9 +23,9 @@ public class RegisterServlet extends HttpServlet {
 		
 		try
 		{
-			String name = request.getParameter("username");
-			String passwd = request.getParameter("passwd");
-			String repasswd = request.getParameter("repasswd");
+			String name = request.getParameter("username").trim();
+			String passwd = request.getParameter("passwd").trim();
+			String repasswd = request.getParameter("repasswd").trim();
 			//String email = request.getParameter("email");
 			
 			if(name == null || name.equals("")){
@@ -56,13 +56,26 @@ public class RegisterServlet extends HttpServlet {
 					*/
 					UserDAO dao = UserDAO.getInstance();
 					
-					if(dao.createUser(user)){
-						//System.out.println("usuario creado");
+					if(dao.getUser(name, passwd) == null){
+					
+						if(dao.createUser(user)){
+							//System.out.println("usuario creado");
+						}else{
+							//System.out.println("el usuario ya existe");
+							redirect = "../error.jsp";
+							error = "El usuario ya existe";
+							err = true;
+							redirect += "?error="+error;
+							response.sendRedirect(redirect);
+							return;
+						}
 					}else{
-						//System.out.println("el usuario ya existe");
 						redirect = "../error.jsp";
 						error = "El usuario ya existe";
 						err = true;
+						redirect += "?error="+error;
+						response.sendRedirect(redirect);
+						return;
 					}
 				}else{
 					redirect = "../error.jsp";
@@ -79,8 +92,8 @@ public class RegisterServlet extends HttpServlet {
 			error ="Error interno al crear el actor";
 			err = true;
 		}finally{
-			if(redirect.equals("../error.jsp")) redirect += "?error="+error;
-			response.sendRedirect(redirect);
+			//if(redirect.equals("../error.jsp")) redirect += "?error="+error;
+			//response.sendRedirect("../index.jsp");
 		}
 	}
 	
