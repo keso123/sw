@@ -54,6 +54,7 @@ public class RegisterServlet extends HttpServlet {
 					
 						if(dao.createUser(user)){
 							//System.out.println("usuario creado");
+							response.sendRedirect("index.jsp");
 						}else{
 							
 							redirect = "error.jsp";
